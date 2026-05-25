@@ -1,0 +1,61 @@
+specification: API Commons FinOps
+specificationVersion: '0.1'
+provider: Chess.com
+providerId: chess-com
+created: '2026-05-25'
+modified: '2026-05-25'
+tags:
+  - Chess
+  - FinOps
+  - Public API
+  - Consumer Subscription
+description: FinOps surface for Chess.com. The Published Data API itself is free and unmetered, so there
+  is no API-cost surface to align to FOCUS. The consumer subscription product (Basic / Gold / Platinum /
+  Diamond) is the only billable surface, billed monthly or annually in USD via card or PayPal.
+sources:
+  - https://www.chess.com/membership
+  - https://www.chess.com/legal
+focus:
+  alignment: consumer-subscription
+  billingPeriod: monthly | annual
+  currency: USD
+  charges:
+    - chargeCategory: Usage
+      chargeClass: null
+      chargeFrequency: Recurring
+      pricingUnit: user-month
+      sku: chess-com-gold
+      description: Gold subscription
+    - chargeCategory: Usage
+      chargeFrequency: Recurring
+      pricingUnit: user-month
+      sku: chess-com-platinum
+      description: Platinum subscription
+    - chargeCategory: Usage
+      chargeFrequency: Recurring
+      pricingUnit: user-month
+      sku: chess-com-diamond
+      description: Diamond subscription
+    - chargeCategory: Usage
+      chargeFrequency: Recurring
+      pricingUnit: shared-yearly-plan
+      sku: chess-com-friends-family
+      description: Friends and Family Diamond — up to six users on one annual plan
+api:
+  meteringSurface: none
+  cost:
+    perRequest: 0
+    perToken: null
+    perMonth: 0
+    notes: The Published Data API is free, unauthenticated, and unmetered. There is no API spend to
+      report to FOCUS; the only spend that exists is the consumer subscription tied to a single
+      chess.com account.
+governance:
+  identityForBilling: Chess.com member account
+  reportingCadence: monthly statement / annual receipt
+  costCenters: not applicable (consumer)
+  showback: not applicable
+risks:
+  - Sudden parallel traffic spikes can produce 429s but cost nothing — operational risk only.
+  - Chess.com may add a paid commercial API tier in the future; revisit this FinOps surface if that
+    happens.

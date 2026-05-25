@@ -1,0 +1,120 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Chess.com Published Data API - Team Matches
+  description: Daily and live team match details, including individual boards.
+  tags:
+  - Chess.com
+  - Matches
+  - Teams
+  created: '2026-05-25'
+  modified: '2026-05-25'
+binds: []
+capability:
+  consumes:
+  - type: http
+    namespace: matches-matches
+    baseUri: https://api.chess.com/pub
+    description: Chess.com Team Matches surface.
+    resources:
+    - name: match
+      path: /match/{ID}
+      operations:
+      - name: getdailymatch
+        method: GET
+        description: Get Daily Team Match
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: match-board
+      path: /match/{ID}/{board}
+      operations:
+      - name: getdailymatchboard
+        method: GET
+        description: Get Daily Team Match Board
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: match-live
+      path: /match/live/{ID}
+      operations:
+      - name: getlivematch
+        method: GET
+        description: Get Live Team Match
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: match-live-board
+      path: /match/live/{ID}/{board}
+      operations:
+      - name: getlivematchboard
+        method: GET
+        description: Get Live Team Match Board
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: none
+  exposes:
+  - type: rest
+    namespace: matches-matches-rest
+    port: 8080
+    description: REST adapter for Chess.com Team Matches.
+    resources:
+    - path: /v1/match/{ID}
+      name: match
+      operations:
+      - method: GET
+        name: getdailymatch
+        description: Get Daily Team Match
+        call: matches-matches.getdailymatch
+    - path: /v1/match/{ID}/{board}
+      name: match-board
+      operations:
+      - method: GET
+        name: getdailymatchboard
+        description: Get Daily Team Match Board
+        call: matches-matches.getdailymatchboard
+    - path: /v1/match/live/{ID}
+      name: match-live
+      operations:
+      - method: GET
+        name: getlivematch
+        description: Get Live Team Match
+        call: matches-matches.getlivematch
+    - path: /v1/match/live/{ID}/{board}
+      name: match-live-board
+      operations:
+      - method: GET
+        name: getlivematchboard
+        description: Get Live Team Match Board
+        call: matches-matches.getlivematchboard
+  - type: mcp
+    namespace: matches-matches-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Chess.com Team Matches.
+    tools:
+    - name: chesscom-get-daily-match
+      description: Get Daily Team Match
+      hints: {readOnly: true, destructive: false, idempotent: true}
+      call: matches-matches.getdailymatch
+    - name: chesscom-get-daily-match-board
+      description: Get Daily Team Match Board
+      hints: {readOnly: true, destructive: false, idempotent: true}
+      call: matches-matches.getdailymatchboard
+    - name: chesscom-get-live-match
+      description: Get Live Team Match
+      hints: {readOnly: true, destructive: false, idempotent: true}
+      call: matches-matches.getlivematch
+    - name: chesscom-get-live-match-board
+      description: Get Live Team Match Board
+      hints: {readOnly: true, destructive: false, idempotent: true}
+      call: matches-matches.getlivematchboard

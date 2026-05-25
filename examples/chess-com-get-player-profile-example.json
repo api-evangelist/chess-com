@@ -1,0 +1,37 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "https://api.chess.com/pub/player/hikaru",
+    "headers": {
+      "User-Agent": "api-evangelist/chess-com (info@apievangelist.com)",
+      "Accept": "application/json"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json",
+      "ETag": "\"abc123\"",
+      "Cache-Control": "max-age=43200"
+    },
+    "body": {
+      "@id": "https://api.chess.com/pub/player/hikaru",
+      "url": "https://www.chess.com/member/Hikaru",
+      "username": "hikaru",
+      "player_id": 15448422,
+      "title": "GM",
+      "status": "premium",
+      "name": "Hikaru Nakamura",
+      "avatar": "https://images.chesscomfiles.com/uploads/v1/user/15448422.png",
+      "location": "Sunrise, FL",
+      "country": "https://api.chess.com/pub/country/US",
+      "joined": 1389043258,
+      "last_online": 1748147200,
+      "followers": 1500000,
+      "is_streamer": true,
+      "twitch_url": "https://www.twitch.tv/gmhikaru",
+      "fide": 2802,
+      "verified": true
+    }
+  }
+}

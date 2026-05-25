@@ -1,0 +1,97 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Chess.com Published Data API - Countries
+  description: Country profile and per-country rosters of players and clubs.
+  tags:
+  - Chess.com
+  - Countries
+  created: '2026-05-25'
+  modified: '2026-05-25'
+binds: []
+capability:
+  consumes:
+  - type: http
+    namespace: countries-countries
+    baseUri: https://api.chess.com/pub
+    description: Chess.com Countries surface.
+    resources:
+    - name: country
+      path: /country/{iso}
+      operations:
+      - name: getcountry
+        method: GET
+        description: Get Country Profile
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: country-players
+      path: /country/{iso}/players
+      operations:
+      - name: listcountryplayers
+        method: GET
+        description: List Players By Country
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: country-clubs
+      path: /country/{iso}/clubs
+      operations:
+      - name: listcountryclubs
+        method: GET
+        description: List Clubs By Country
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: none
+  exposes:
+  - type: rest
+    namespace: countries-countries-rest
+    port: 8080
+    description: REST adapter for Chess.com Countries.
+    resources:
+    - path: /v1/country/{iso}
+      name: country
+      operations:
+      - method: GET
+        name: getcountry
+        description: Get Country Profile
+        call: countries-countries.getcountry
+    - path: /v1/country/{iso}/players
+      name: country-players
+      operations:
+      - method: GET
+        name: listcountryplayers
+        description: List Players By Country
+        call: countries-countries.listcountryplayers
+    - path: /v1/country/{iso}/clubs
+      name: country-clubs
+      operations:
+      - method: GET
+        name: listcountryclubs
+        description: List Clubs By Country
+        call: countries-countries.listcountryclubs
+  - type: mcp
+    namespace: countries-countries-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Chess.com Countries.
+    tools:
+    - name: chesscom-get-country
+      description: Get Country Profile
+      hints: {readOnly: true, destructive: false, idempotent: true}
+      call: countries-countries.getcountry
+    - name: chesscom-list-country-players
+      description: List Players By Country
+      hints: {readOnly: true, destructive: false, idempotent: true}
+      call: countries-countries.listcountryplayers
+    - name: chesscom-list-country-clubs
+      description: List Clubs By Country
+      hints: {readOnly: true, destructive: false, idempotent: true}
+      call: countries-countries.listcountryclubs

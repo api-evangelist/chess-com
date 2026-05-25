@@ -1,0 +1,48 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "https://api.chess.com/pub/player/hikaru/games/2026/04",
+    "headers": {
+      "User-Agent": "api-evangelist/chess-com (info@apievangelist.com)",
+      "Accept": "application/json"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "games": [
+        {
+          "url": "https://www.chess.com/game/live/0123456789",
+          "pgn": "[Event \"Live Chess\"]\n[Site \"Chess.com\"]\n[Date \"2026.04.02\"]\n[Round \"-\"]\n[White \"Hikaru\"]\n[Black \"MagnusCarlsen\"]\n[Result \"1-0\"]\n\n1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 ... 1-0",
+          "time_control": "180",
+          "end_time": 1743558912,
+          "rated": true,
+          "tcn": "mC0KbsZJgvLBcMD0lBQ?BR5Pmu",
+          "uuid": "abc12345-6789-0abc-def0-123456789abc",
+          "initial_setup": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+          "fen": "8/8/8/8/8/3k4/3K4/8 w - - 0 1",
+          "time_class": "blitz",
+          "rules": "chess",
+          "white": {
+            "rating": 3210,
+            "result": "win",
+            "@id": "https://api.chess.com/pub/player/hikaru",
+            "username": "Hikaru",
+            "uuid": "00000000-0000-0000-0000-000000000001"
+          },
+          "black": {
+            "rating": 3185,
+            "result": "checkmated",
+            "@id": "https://api.chess.com/pub/player/magnuscarlsen",
+            "username": "MagnusCarlsen",
+            "uuid": "00000000-0000-0000-0000-000000000002"
+          },
+          "eco": "https://www.chess.com/openings/Ruy-Lopez"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,53 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Chess.com Published Data API - Streamers
+  description: Active Chess.com streamers and their live channel URLs.
+  tags:
+  - Chess.com
+  - Streamers
+  created: '2026-05-25'
+  modified: '2026-05-25'
+binds: []
+capability:
+  consumes:
+  - type: http
+    namespace: streamers-streamers
+    baseUri: https://api.chess.com/pub
+    description: Chess.com Streamers surface.
+    resources:
+    - name: streamers
+      path: /streamers
+      operations:
+      - name: liststreamers
+        method: GET
+        description: List Chess.com Streamers
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: none
+  exposes:
+  - type: rest
+    namespace: streamers-streamers-rest
+    port: 8080
+    description: REST adapter for Chess.com Streamers.
+    resources:
+    - path: /v1/streamers
+      name: streamers
+      operations:
+      - method: GET
+        name: liststreamers
+        description: List Chess.com Streamers
+        call: streamers-streamers.liststreamers
+  - type: mcp
+    namespace: streamers-streamers-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Chess.com Streamers.
+    tools:
+    - name: chesscom-list-streamers
+      description: List Chess.com Streamers
+      hints: {readOnly: true, destructive: false, idempotent: true}
+      call: streamers-streamers.liststreamers

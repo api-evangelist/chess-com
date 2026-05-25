@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/chess-com/main/json-schema/chess-com-club-schema.json",
+  "title": "Chess.com Club",
+  "description": "Public club profile returned by /pub/club/{url-ID}.",
+  "type": "object",
+  "required": ["@id", "name", "club_id"],
+  "properties": {
+    "@id": { "type": "string", "format": "uri" },
+    "name": { "type": "string" },
+    "club_id": { "type": "integer" },
+    "icon": { "type": "string", "format": "uri" },
+    "country": { "type": "string", "format": "uri" },
+    "average_daily_rating": { "type": "integer" },
+    "members_count": { "type": "integer" },
+    "created": { "type": "integer", "description": "Unix timestamp." },
+    "last_activity": { "type": "integer" },
+    "admin": {
+      "type": "array",
+      "items": { "type": "string", "format": "uri" }
+    },
+    "visibility": {
+      "type": "string",
+      "enum": ["public", "private"]
+    },
+    "join_request": { "type": "string" },
+    "description": { "type": "string" },
+    "url": { "type": "string", "format": "uri" }
+  },
+  "additionalProperties": true
+}

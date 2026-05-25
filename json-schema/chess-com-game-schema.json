@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/chess-com/main/json-schema/chess-com-game-schema.json",
+  "title": "Chess.com Game",
+  "description": "Single chess game record as returned by monthly archive endpoints.",
+  "type": "object",
+  "required": ["url", "pgn", "time_class", "rules", "white", "black"],
+  "properties": {
+    "url": { "type": "string", "format": "uri" },
+    "pgn": { "type": "string", "description": "PGN-formatted game including headers." },
+    "time_control": { "type": "string" },
+    "end_time": { "type": "integer", "description": "Unix timestamp when the game ended." },
+    "rated": { "type": "boolean" },
+    "tcn": { "type": "string", "description": "Chess.com compressed move encoding." },
+    "uuid": { "type": "string", "format": "uuid" },
+    "initial_setup": { "type": "string", "description": "FEN of starting position." },
+    "fen": { "type": "string", "description": "FEN of final position." },
+    "time_class": {
+      "type": "string",
+      "enum": ["daily", "rapid", "blitz", "bullet"]
+    },
+    "rules": {
+      "type": "string",
+      "enum": ["chess", "chess960", "bughouse", "kingofthehill", "threecheck", "crazyhouse"]
+    },
+    "white": { "$ref": "#/$defs/GamePlayer" },
+    "black": { "$ref": "#/$defs/GamePlayer" },
+    "eco": { "type": "string", "format": "uri" },
+    "tournament": { "type": "string", "format": "uri" },
+    "match": { "type": "string", "format": "uri" }
+  },
+  "$defs": {
+    "GamePlayer": {
+      "type": "object",
+      "required": ["rating", "result", "@id", "username"],
+      "properties": {
+        "rating": { "type": "integer" },
+        "result": {
+          "type": "string",
+          "enum": [
+            "win",
+            "checkmated",
+            "agreed",
+            "repetition",
+            "timeout",
+            "resigned",
+            "stalemate",
+            "lose",
+            "insufficient",
+            "50move",
+            "abandoned",
+            "kingofthehill",
+            "threecheck",
+            "bughousepartnerlose"
+          ]
+        },
+        "@id": { "type": "string", "format": "uri" },
+        "username": { "type": "string" },
+        "uuid": { "type": "string", "format": "uuid" }
+      }
+    }
+  }
+}

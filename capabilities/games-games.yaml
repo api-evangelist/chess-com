@@ -1,0 +1,142 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Chess.com Published Data API - Games
+  description: Daily, live, current, to-move, and archived monthly games with PGN download.
+  tags:
+  - Chess.com
+  - Games
+  - PGN
+  created: '2026-05-25'
+  modified: '2026-05-25'
+binds: []
+capability:
+  consumes:
+  - type: http
+    namespace: games-games
+    baseUri: https://api.chess.com/pub
+    description: Chess.com Games surface.
+    resources:
+    - name: player-games
+      path: /player/{username}/games
+      operations:
+      - name: getplayercurrentgames
+        method: GET
+        description: Get Player Current Daily Games
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: player-games-to-move
+      path: /player/{username}/games/to-move
+      operations:
+      - name: getplayergamestomove
+        method: GET
+        description: Get Player Games To Move
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: player-games-archives
+      path: /player/{username}/games/archives
+      operations:
+      - name: listplayerarchives
+        method: GET
+        description: List Player Game Archives
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: player-games-month
+      path: /player/{username}/games/{year}/{month}
+      operations:
+      - name: getplayermonthlyarchive
+        method: GET
+        description: Get Player Monthly Archive
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: player-games-month-pgn
+      path: /player/{username}/games/{year}/{month}/pgn
+      operations:
+      - name: getplayermonthlyarchivepgn
+        method: GET
+        description: Get Player Monthly Archive PGN
+        outputRawFormat: text
+        outputParameters:
+        - name: result
+          type: string
+          value: $.
+    authentication:
+      type: none
+  exposes:
+  - type: rest
+    namespace: games-games-rest
+    port: 8080
+    description: REST adapter for Chess.com Games.
+    resources:
+    - path: /v1/player/{username}/games
+      name: player-games
+      operations:
+      - method: GET
+        name: getplayercurrentgames
+        description: Get Player Current Daily Games
+        call: games-games.getplayercurrentgames
+    - path: /v1/player/{username}/games/to-move
+      name: player-games-to-move
+      operations:
+      - method: GET
+        name: getplayergamestomove
+        description: Get Player Games To Move
+        call: games-games.getplayergamestomove
+    - path: /v1/player/{username}/games/archives
+      name: player-games-archives
+      operations:
+      - method: GET
+        name: listplayerarchives
+        description: List Player Game Archives
+        call: games-games.listplayerarchives
+    - path: /v1/player/{username}/games/{year}/{month}
+      name: player-games-month
+      operations:
+      - method: GET
+        name: getplayermonthlyarchive
+        description: Get Player Monthly Archive
+        call: games-games.getplayermonthlyarchive
+    - path: /v1/player/{username}/games/{year}/{month}/pgn
+      name: player-games-month-pgn
+      operations:
+      - method: GET
+        name: getplayermonthlyarchivepgn
+        description: Get Player Monthly Archive PGN
+        call: games-games.getplayermonthlyarchivepgn
+  - type: mcp
+    namespace: games-games-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Chess.com Games.
+    tools:
+    - name: chesscom-get-current-games
+      description: Get Player Current Daily Games
+      hints: {readOnly: true, destructive: false, idempotent: true}
+      call: games-games.getplayercurrentgames
+    - name: chesscom-get-games-to-move
+      description: Get Player Games To Move
+      hints: {readOnly: true, destructive: false, idempotent: true}
+      call: games-games.getplayergamestomove
+    - name: chesscom-list-archives
+      description: List Player Game Archives
+      hints: {readOnly: true, destructive: false, idempotent: true}
+      call: games-games.listplayerarchives
+    - name: chesscom-get-monthly-archive
+      description: Get Player Monthly Archive
+      hints: {readOnly: true, destructive: false, idempotent: true}
+      call: games-games.getplayermonthlyarchive
+    - name: chesscom-get-monthly-archive-pgn
+      description: Get Player Monthly Archive PGN
+      hints: {readOnly: true, destructive: false, idempotent: true}
+      call: games-games.getplayermonthlyarchivepgn

@@ -1,0 +1,100 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+provider: Chess.com
+providerId: chess-com
+created: '2026-05-25'
+modified: '2026-05-25'
+tags:
+  - Chess
+  - Gaming
+  - Pricing
+  - Membership
+description: Chess.com membership tiers. Note — the Published Data API itself is free and unauthenticated;
+  these plans cover the consumer chess.com product, not API usage.
+sources:
+  - https://www.chess.com/membership
+  - https://support.chess.com/en/articles/8562418-what-does-each-level-of-premium-membership-get-me
+notes:
+  - The Published Data API has no paid tier — all endpoints are public.
+  - Pricing reflects annual-billing equivalent monthly cost in USD.
+plans:
+  - id: basic
+    name: Basic
+    description: Free Chess.com account
+    entries:
+      - geo: US
+        unit: 1
+        label: User
+        limit: 1
+        price: 0
+        metric: user
+        timeFrame: month
+    elements:
+      - name: Play unlimited online games
+      - name: 5 daily puzzles
+      - name: 5 lessons per month
+      - name: 1 daily game review
+      - name: Community access (forums, clubs)
+      - name: Ads displayed
+  - id: gold
+    name: Gold
+    description: Entry-level premium
+    entries:
+      - geo: US
+        unit: 1
+        label: User
+        limit: 1
+        price: 4.17
+        metric: user
+        timeFrame: month
+    elements:
+      - name: Unlimited puzzles
+      - name: Unlimited lessons
+      - name: 25 daily game reviews
+      - name: Ad-free experience
+  - id: platinum
+    name: Platinum
+    description: Mid-tier premium with full analysis
+    entries:
+      - geo: US
+        unit: 1
+        label: User
+        limit: 1
+        price: 6.67
+        metric: user
+        timeFrame: month
+    elements:
+      - name: Everything in Gold
+      - name: Unlimited game reviews / analysis
+      - name: Insights into your games
+      - name: 50 deep-dive analyses per month
+  - id: diamond
+    name: Diamond
+    description: Highest-tier premium with coach explanations
+    entries:
+      - geo: US
+        unit: 1
+        label: User
+        limit: 1
+        price: 12.50
+        metric: user
+        timeFrame: month
+    elements:
+      - name: Everything in Gold and Platinum
+      - name: Coach Aimchess explanations on every move
+      - name: Bot personality matches
+      - name: Highest analysis depth
+  - id: friends-family
+    name: Friends and Family
+    description: Diamond membership shared across up to six members
+    entries:
+      - geo: US
+        unit: 6
+        label: Users
+        limit: 6
+        price: Call
+        metric: user
+        timeFrame: year
+    elements:
+      - name: All Diamond features
+      - name: Up to six member accounts on one yearly plan

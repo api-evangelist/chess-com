@@ -1,0 +1,116 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@vocab": "https://schema.org/",
+    "chesscom": "https://api.chess.com/pub/",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+
+    "Player": {
+      "@id": "chesscom:Player",
+      "@context": {
+        "@id": "@id",
+        "url": { "@id": "schema:url", "@type": "xsd:anyURI" },
+        "username": { "@id": "schema:alternateName", "@type": "xsd:string" },
+        "player_id": { "@id": "schema:identifier", "@type": "xsd:integer" },
+        "name": { "@id": "schema:name", "@type": "xsd:string" },
+        "title": { "@id": "chesscom:Player/title", "@type": "xsd:string" },
+        "status": { "@id": "chesscom:Player/status", "@type": "xsd:string" },
+        "avatar": { "@id": "schema:image", "@type": "xsd:anyURI" },
+        "location": { "@id": "schema:address", "@type": "xsd:string" },
+        "country": { "@id": "schema:nationality", "@type": "xsd:anyURI" },
+        "joined": { "@id": "schema:dateCreated", "@type": "xsd:integer" },
+        "last_online": { "@id": "chesscom:Player/lastOnline", "@type": "xsd:integer" },
+        "followers": { "@id": "chesscom:Player/followers", "@type": "xsd:integer" },
+        "is_streamer": { "@id": "chesscom:Player/isStreamer", "@type": "xsd:boolean" },
+        "twitch_url": { "@id": "chesscom:Player/twitchUrl", "@type": "xsd:anyURI" },
+        "fide": { "@id": "chesscom:Player/fide", "@type": "xsd:integer" }
+      }
+    },
+
+    "Game": {
+      "@id": "chesscom:Game",
+      "@context": {
+        "url": { "@id": "schema:url", "@type": "xsd:anyURI" },
+        "pgn": { "@id": "chesscom:Game/pgn", "@type": "xsd:string" },
+        "time_control": { "@id": "chesscom:Game/timeControl", "@type": "xsd:string" },
+        "end_time": { "@id": "schema:endDate", "@type": "xsd:integer" },
+        "rated": { "@id": "chesscom:Game/rated", "@type": "xsd:boolean" },
+        "fen": { "@id": "chesscom:Game/fen", "@type": "xsd:string" },
+        "time_class": { "@id": "chesscom:Game/timeClass", "@type": "xsd:string" },
+        "rules": { "@id": "chesscom:Game/rules", "@type": "xsd:string" },
+        "white": { "@id": "chesscom:Game/white" },
+        "black": { "@id": "chesscom:Game/black" },
+        "eco": { "@id": "chesscom:Game/eco", "@type": "xsd:anyURI" },
+        "tournament": { "@id": "chesscom:Game/tournament", "@type": "xsd:anyURI" },
+        "match": { "@id": "chesscom:Game/match", "@type": "xsd:anyURI" }
+      }
+    },
+
+    "Club": {
+      "@id": "chesscom:Club",
+      "@context": {
+        "@id": "@id",
+        "name": { "@id": "schema:name", "@type": "xsd:string" },
+        "club_id": { "@id": "schema:identifier", "@type": "xsd:integer" },
+        "country": { "@id": "schema:location", "@type": "xsd:anyURI" },
+        "average_daily_rating": { "@id": "chesscom:Club/averageDailyRating", "@type": "xsd:integer" },
+        "members_count": { "@id": "schema:numberOfEmployees", "@type": "xsd:integer" },
+        "created": { "@id": "schema:dateCreated", "@type": "xsd:integer" },
+        "last_activity": { "@id": "chesscom:Club/lastActivity", "@type": "xsd:integer" },
+        "admin": { "@id": "chesscom:Club/admin", "@container": "@list" },
+        "visibility": { "@id": "chesscom:Club/visibility", "@type": "xsd:string" },
+        "description": { "@id": "schema:description", "@type": "xsd:string" }
+      }
+    },
+
+    "Tournament": {
+      "@id": "chesscom:Tournament",
+      "@context": {
+        "name": { "@id": "schema:name", "@type": "xsd:string" },
+        "url": { "@id": "schema:url", "@type": "xsd:anyURI" },
+        "description": { "@id": "schema:description", "@type": "xsd:string" },
+        "creator": { "@id": "schema:creator", "@type": "xsd:string" },
+        "status": { "@id": "chesscom:Tournament/status", "@type": "xsd:string" },
+        "finish_time": { "@id": "schema:endDate", "@type": "xsd:integer" },
+        "settings": { "@id": "chesscom:Tournament/settings" },
+        "rounds": { "@id": "chesscom:Tournament/rounds", "@container": "@list" }
+      }
+    },
+
+    "Puzzle": {
+      "@id": "chesscom:Puzzle",
+      "@context": {
+        "title": { "@id": "schema:name", "@type": "xsd:string" },
+        "url": { "@id": "schema:url", "@type": "xsd:anyURI" },
+        "publish_time": { "@id": "schema:datePublished", "@type": "xsd:integer" },
+        "fen": { "@id": "chesscom:Puzzle/fen", "@type": "xsd:string" },
+        "pgn": { "@id": "chesscom:Puzzle/pgn", "@type": "xsd:string" },
+        "image": { "@id": "schema:image", "@type": "xsd:anyURI" }
+      }
+    },
+
+    "Streamer": {
+      "@id": "chesscom:Streamer",
+      "@context": {
+        "username": { "@id": "schema:alternateName", "@type": "xsd:string" },
+        "avatar": { "@id": "schema:image", "@type": "xsd:anyURI" },
+        "twitch_url": { "@id": "chesscom:Streamer/twitchUrl", "@type": "xsd:anyURI" },
+        "url": { "@id": "schema:url", "@type": "xsd:anyURI" },
+        "is_live": { "@id": "chesscom:Streamer/isLive", "@type": "xsd:boolean" }
+      }
+    },
+
+    "Leaderboards": {
+      "@id": "chesscom:Leaderboards",
+      "@context": {
+        "daily": { "@id": "chesscom:Leaderboards/daily", "@container": "@list" },
+        "live_rapid": { "@id": "chesscom:Leaderboards/liveRapid", "@container": "@list" },
+        "live_blitz": { "@id": "chesscom:Leaderboards/liveBlitz", "@container": "@list" },
+        "live_bullet": { "@id": "chesscom:Leaderboards/liveBullet", "@container": "@list" },
+        "tactics": { "@id": "chesscom:Leaderboards/tactics", "@container": "@list" },
+        "lessons": { "@id": "chesscom:Leaderboards/lessons", "@container": "@list" }
+      }
+    }
+  }
+}

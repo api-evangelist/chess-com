@@ -1,0 +1,75 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Chess.com Published Data API - Puzzles
+  description: Daily puzzle and random past-daily puzzle.
+  tags:
+  - Chess.com
+  - Puzzles
+  created: '2026-05-25'
+  modified: '2026-05-25'
+binds: []
+capability:
+  consumes:
+  - type: http
+    namespace: puzzles-puzzles
+    baseUri: https://api.chess.com/pub
+    description: Chess.com Puzzles surface.
+    resources:
+    - name: puzzle
+      path: /puzzle
+      operations:
+      - name: getdailypuzzle
+        method: GET
+        description: Get Daily Puzzle
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: puzzle-random
+      path: /puzzle/random
+      operations:
+      - name: getrandompuzzle
+        method: GET
+        description: Get Random Daily Puzzle
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: none
+  exposes:
+  - type: rest
+    namespace: puzzles-puzzles-rest
+    port: 8080
+    description: REST adapter for Chess.com Puzzles.
+    resources:
+    - path: /v1/puzzle
+      name: puzzle
+      operations:
+      - method: GET
+        name: getdailypuzzle
+        description: Get Daily Puzzle
+        call: puzzles-puzzles.getdailypuzzle
+    - path: /v1/puzzle/random
+      name: puzzle-random
+      operations:
+      - method: GET
+        name: getrandompuzzle
+        description: Get Random Daily Puzzle
+        call: puzzles-puzzles.getrandompuzzle
+  - type: mcp
+    namespace: puzzles-puzzles-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Chess.com Puzzles.
+    tools:
+    - name: chesscom-get-daily-puzzle
+      description: Get Daily Puzzle
+      hints: {readOnly: true, destructive: false, idempotent: true}
+      call: puzzles-puzzles.getdailypuzzle
+    - name: chesscom-get-random-puzzle
+      description: Get Random Daily Puzzle
+      hints: {readOnly: true, destructive: false, idempotent: true}
+      call: puzzles-puzzles.getrandompuzzle

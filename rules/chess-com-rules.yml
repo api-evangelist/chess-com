@@ -1,0 +1,60 @@
+extends: [[spectral:oas, all]]
+functions: []
+documentationUrl: https://www.chess.com/news/view/published-data-api
+rules:
+  chess-com-base-url:
+    description: All Chess.com API operations must live under https://api.chess.com/pub
+    message: '{{property}} server URL must start with https://api.chess.com/pub'
+    severity: error
+    given: $.servers[*].url
+    then:
+      function: pattern
+      functionOptions:
+        match: '^https://api\.chess\.com/pub'
+
+  chess-com-no-auth:
+    description: Chess.com Published Data API is public; no security scheme should be required
+    message: Chess.com endpoints must not require authentication.
+    severity: warn
+    given: $.paths[*][*].security
+    then:
+      function: falsy
+
+  chess-com-title-case-summary:
+    description: Operation summaries should be Title Case
+    message: '{{property}} summary should use Title Case (e.g. "Get Player Profile").'
+    severity: warn
+    given: $.paths[*][get,post,put,patch,delete].summary
+    then:
+      function: pattern
+      functionOptions:
+        match: '^[A-Z][A-Za-z0-9]*( [A-Z][A-Za-z0-9]*)*'
+
+  chess-com-username-lowercase:
+    description: Username path parameters must be documented as all-lowercase
+    message: Username parameter should specify that values are lowercased.
+    severity: warn
+    given: $.paths..parameters[?(@.name=='username')].description
+    then:
+      function: pattern
+      functionOptions:
+        match: '(?i)lowercase|all-lowercase'
+
+  chess-com-rate-limit-mention:
+    description: API description should mention 429 / parallel-request throttling
+    message: Top-level info.description should mention Chess.com parallel-request rate limits.
+    severity: info
+    given: $.info.description
+    then:
+      function: pattern
+      functionOptions:
+        match: '(?i)429|rate|parallel'
+
+  chess-com-user-agent-mention:
+    description: API description should mention the User-Agent best practice
+    severity: info
+    given: $.info.description
+    then:
+      function: pattern
+      functionOptions:
+        match: '(?i)User-Agent'

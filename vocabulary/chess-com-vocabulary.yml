@@ -1,0 +1,107 @@
+specification: API Commons Vocabulary
+specificationVersion: '0.1'
+provider: Chess.com
+providerId: chess-com
+created: '2026-05-25'
+modified: '2026-05-25'
+tags:
+  - Chess
+  - Gaming
+  - Vocabulary
+description: Operational and capability vocabulary for the Chess.com Published Data API.
+
+concepts:
+  - term: Player
+    definition: A Chess.com member identified by a permanent numeric player_id and a mutable lowercased username.
+  - term: Title
+    definition: FIDE title abbreviation. Enumerated as GM, WGM, IM, WIM, FM, WFM, NM, WNM, CM, WCM.
+  - term: Club
+    definition: A group of players that play team matches together. Identified by a URL-ID slug.
+  - term: Tournament
+    definition: A Chess.com-hosted competition (Swiss or round-robin). Composed of rounds and groups.
+  - term: Team Match
+    definition: A scheduled match between two clubs across multiple boards. Variants are Daily and Live.
+  - term: Daily Game
+    definition: Correspondence chess game played over hours or days. Time class "daily".
+  - term: Live Game
+    definition: Real-time game in one of three time classes: rapid, blitz, bullet.
+  - term: PGN
+    definition: Portable Game Notation — textual representation of a chess game with headers and moves.
+  - term: FEN
+    definition: Forsyth-Edwards Notation — textual representation of a single position.
+  - term: ECO
+    definition: Encyclopedia of Chess Openings code identifying the opening sequence.
+  - term: Puzzle
+    definition: A tactical or strategic exercise. Chess.com publishes one daily puzzle plus a random-puzzle endpoint.
+  - term: Streamer
+    definition: A Chess.com partner who streams live on Twitch or YouTube.
+  - term: Leaderboard
+    definition: Top-50 ranking for a given time control, variant, tactics, or lessons.
+
+resultCodes:
+  - code: win
+  - code: checkmated
+  - code: agreed
+  - code: repetition
+  - code: timeout
+  - code: resigned
+  - code: stalemate
+  - code: lose
+  - code: insufficient
+  - code: 50move
+  - code: abandoned
+  - code: kingofthehill
+  - code: threecheck
+  - code: bughousepartnerlose
+
+timeClasses:
+  - daily
+  - rapid
+  - blitz
+  - bullet
+
+variants:
+  - chess
+  - chess960
+  - bughouse
+  - kingofthehill
+  - threecheck
+  - crazyhouse
+
+titles:
+  - GM
+  - WGM
+  - IM
+  - WIM
+  - FM
+  - WFM
+  - NM
+  - WNM
+  - CM
+  - WCM
+
+protocols:
+  format: JSON-LD
+  caching:
+    - ETag
+    - Last-Modified
+    - max-age (12-24h typical)
+  encoding:
+    - gzip
+  callback:
+    - JSONP via `?callback=`
+
+responseCodes:
+  - 200
+  - 301
+  - 304
+  - 404
+  - 410
+  - 429
+
+authentication: none
+
+operationalGuidance:
+  - Send a User-Agent header containing a contact email or URL to avoid being blocked.
+  - Prefer serial requests; parallel callers will receive 429 responses.
+  - Cache aggressively using ETag and Last-Modified; data refreshes at most every 12-24 hours.

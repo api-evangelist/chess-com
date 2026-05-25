@@ -1,0 +1,60 @@
+{
+  "$schema": "https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/json-structure-0.1.json",
+  "name": "chess-com-player",
+  "title": "Chess.com Player Structure",
+  "description": "JSON Structure 0.1 description of the Chess.com Player resource — identity, social signals, and ratings hooks.",
+  "version": "0.1",
+  "provider": "Chess.com",
+  "providerId": "chess-com",
+  "created": "2026-05-25",
+  "modified": "2026-05-25",
+  "resource": "Player",
+  "humanURL": "https://www.chess.com/news/view/published-data-api",
+  "identity": [
+    {
+      "field": "player_id",
+      "type": "integer",
+      "description": "Permanent numeric Chess.com identifier. Does not change when username changes."
+    },
+    {
+      "field": "username",
+      "type": "string",
+      "description": "Lowercased username. May change over time."
+    },
+    {
+      "field": "@id",
+      "type": "uri",
+      "description": "Canonical API URL for this player."
+    }
+  ],
+  "categorical": [
+    {
+      "field": "title",
+      "type": "enum",
+      "values": ["GM", "WGM", "IM", "WIM", "FM", "WFM", "NM", "WNM", "CM", "WCM"],
+      "description": "FIDE title abbreviation when applicable."
+    },
+    {
+      "field": "status",
+      "type": "enum",
+      "values": ["basic", "premium", "mod", "staff", "closed", "closed:fair_play_violations"]
+    },
+    {
+      "field": "country",
+      "type": "uri",
+      "description": "Country resource URL — links to /pub/country/{iso}."
+    }
+  ],
+  "temporal": [
+    { "field": "joined", "type": "unix-timestamp" },
+    { "field": "last_online", "type": "unix-timestamp" }
+  ],
+  "social": [
+    { "field": "followers", "type": "integer" },
+    { "field": "is_streamer", "type": "boolean" },
+    { "field": "twitch_url", "type": "uri" }
+  ],
+  "rating": [
+    { "field": "fide", "type": "integer", "description": "FIDE rating, populated for titled players when known." }
+  ]
+}

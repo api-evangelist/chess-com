@@ -1,0 +1,207 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Chess.com Published Data API - Players
+  description: Player profile, stats, online state, archives, clubs, matches, and tournaments capability.
+    Public, unauthenticated.
+  tags:
+  - Chess.com
+  - Players
+  created: '2026-05-25'
+  modified: '2026-05-25'
+binds: []
+capability:
+  consumes:
+  - type: http
+    namespace: players-players
+    baseUri: https://api.chess.com/pub
+    description: Chess.com Players surface. No auth required.
+    resources:
+    - name: player
+      path: /player/{username}
+      operations:
+      - name: getplayerprofile
+        method: GET
+        description: Get Player Profile
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: player-stats
+      path: /player/{username}/stats
+      operations:
+      - name: getplayerstats
+        method: GET
+        description: Get Player Stats
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: player-is-online
+      path: /player/{username}/is-online
+      operations:
+      - name: getplayeronline
+        method: GET
+        description: Get Player Online Status
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: player-clubs
+      path: /player/{username}/clubs
+      operations:
+      - name: getplayerclubs
+        method: GET
+        description: Get Player Club Memberships
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: player-matches
+      path: /player/{username}/matches
+      operations:
+      - name: getplayermatches
+        method: GET
+        description: Get Player Team Matches
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: player-tournaments
+      path: /player/{username}/tournaments
+      operations:
+      - name: getplayertournaments
+        method: GET
+        description: Get Player Tournaments
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: titled
+      path: /titled/{title-abbrev}
+      operations:
+      - name: listtitledplayers
+        method: GET
+        description: List Titled Players
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: none
+  exposes:
+  - type: rest
+    namespace: players-players-rest
+    port: 8080
+    description: REST adapter for Chess.com Players capability.
+    resources:
+    - path: /v1/player/{username}
+      name: player
+      operations:
+      - method: GET
+        name: getplayerprofile
+        description: Get Player Profile
+        call: players-players.getplayerprofile
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/player/{username}/stats
+      name: player-stats
+      operations:
+      - method: GET
+        name: getplayerstats
+        description: Get Player Stats
+        call: players-players.getplayerstats
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/player/{username}/is-online
+      name: player-is-online
+      operations:
+      - method: GET
+        name: getplayeronline
+        description: Get Player Online Status
+        call: players-players.getplayeronline
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/player/{username}/clubs
+      name: player-clubs
+      operations:
+      - method: GET
+        name: getplayerclubs
+        description: Get Player Club Memberships
+        call: players-players.getplayerclubs
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/player/{username}/matches
+      name: player-matches
+      operations:
+      - method: GET
+        name: getplayermatches
+        description: Get Player Team Matches
+        call: players-players.getplayermatches
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/player/{username}/tournaments
+      name: player-tournaments
+      operations:
+      - method: GET
+        name: getplayertournaments
+        description: Get Player Tournaments
+        call: players-players.getplayertournaments
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/titled/{title-abbrev}
+      name: titled
+      operations:
+      - method: GET
+        name: listtitledplayers
+        description: List Titled Players
+        call: players-players.listtitledplayers
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: players-players-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Chess.com Players.
+    tools:
+    - name: chesscom-get-player-profile
+      description: Get Player Profile
+      hints: {readOnly: true, destructive: false, idempotent: true}
+      call: players-players.getplayerprofile
+    - name: chesscom-get-player-stats
+      description: Get Player Stats
+      hints: {readOnly: true, destructive: false, idempotent: true}
+      call: players-players.getplayerstats
+    - name: chesscom-get-player-online
+      description: Get Player Online Status
+      hints: {readOnly: true, destructive: false, idempotent: true}
+      call: players-players.getplayeronline
+    - name: chesscom-get-player-clubs
+      description: Get Player Club Memberships
+      hints: {readOnly: true, destructive: false, idempotent: true}
+      call: players-players.getplayerclubs
+    - name: chesscom-get-player-matches
+      description: Get Player Team Matches
+      hints: {readOnly: true, destructive: false, idempotent: true}
+      call: players-players.getplayermatches
+    - name: chesscom-get-player-tournaments
+      description: Get Player Tournaments
+      hints: {readOnly: true, destructive: false, idempotent: true}
+      call: players-players.getplayertournaments
+    - name: chesscom-list-titled-players
+      description: List Titled Players
+      hints: {readOnly: true, destructive: false, idempotent: true}
+      call: players-players.listtitledplayers

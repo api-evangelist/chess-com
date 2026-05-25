@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/chess-com/main/json-schema/chess-com-player-schema.json",
+  "title": "Chess.com Player",
+  "description": "Public Chess.com player profile as returned by /pub/player/{username}.",
+  "type": "object",
+  "required": ["@id", "url", "username", "player_id"],
+  "properties": {
+    "@id": {
+      "type": "string",
+      "format": "uri",
+      "description": "Canonical API URL for the player."
+    },
+    "url": {
+      "type": "string",
+      "format": "uri",
+      "description": "Player profile URL on chess.com."
+    },
+    "username": {
+      "type": "string",
+      "description": "All-lowercase username."
+    },
+    "player_id": {
+      "type": "integer",
+      "description": "Non-changing Chess.com identifier."
+    },
+    "name": { "type": "string" },
+    "title": {
+      "type": "string",
+      "description": "FIDE title abbreviation (GM, IM, etc.)",
+      "enum": ["GM", "WGM", "IM", "WIM", "FM", "WFM", "NM", "WNM", "CM", "WCM"]
+    },
+    "status": {
+      "type": "string",
+      "enum": ["closed", "closed:fair_play_violations", "basic", "premium", "mod", "staff"]
+    },
+    "avatar": { "type": "string", "format": "uri" },
+    "location": { "type": "string" },
+    "country": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL to the country resource."
+    },
+    "joined": { "type": "integer", "description": "Unix timestamp." },
+    "last_online": { "type": "integer" },
+    "followers": { "type": "integer" },
+    "is_streamer": { "type": "boolean" },
+    "twitch_url": { "type": "string", "format": "uri" },
+    "fide": { "type": "integer", "description": "FIDE rating, when available." },
+    "verified": { "type": "boolean" }
+  },
+  "additionalProperties": true
+}

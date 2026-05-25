@@ -1,0 +1,48 @@
+specification: API Commons Rate Limits
+specificationVersion: '0.1'
+provider: Chess.com
+providerId: chess-com
+created: '2026-05-25'
+modified: '2026-05-25'
+tags:
+  - Chess
+  - Rate Limiting
+  - Public API
+description: Rate-limit posture for the Chess.com Published Data API. The API does not publish a numeric
+  limit but enforces throttling on parallel requests.
+sources:
+  - https://www.chess.com/news/view/published-data-api
+  - https://support.chess.com/en/articles/9650547-published-data-api
+algorithm: parallel-request-throttle
+responseCodes:
+  throttled: 429
+  notFound: 404
+  gone: 410
+authentication: none
+headers:
+  conditional:
+    - If-Modified-Since
+    - If-None-Match
+  responseCaching:
+    - ETag
+    - Last-Modified
+    - Cache-Control
+policies:
+  - name: Serial requests unlimited
+    description: Serial (non-parallel) client traffic is unlimited in practice.
+  - name: Parallel requests throttled
+    description: Concurrent requests against the same path or against many paths in parallel will receive
+      429 Too Many Requests responses. There is no published per-IP or per-key quota.
+  - name: Cache refresh window
+    description: Most endpoints refresh at most every 12-24 hours. Clients SHOULD honor ETag and
+      Last-Modified to avoid revalidation traffic.
+  - name: User-Agent requirement
+    description: Clients SHOULD include a recognizable User-Agent header containing a contact email or
+      URL. Generic or empty User-Agents may be blocked.
+  - name: Stale-player tolerance
+    description: About 3% of players still using legacy V2 website may have slightly stale data.
+recommendations:
+  - Use HTTP conditional GETs (If-Modified-Since, If-None-Match) to receive 304 Not Modified.
+  - Back off exponentially on 429 (start at 60 seconds and double).
+  - Avoid concurrent requests; serialize calls per host.
+  - Cache responses for at least the documented 12-hour refresh window.

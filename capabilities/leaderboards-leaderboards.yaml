@@ -1,0 +1,53 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Chess.com Published Data API - Leaderboards
+  description: Live top-50 leaderboards across all time controls, variants, tactics, and lessons.
+  tags:
+  - Chess.com
+  - Leaderboards
+  created: '2026-05-25'
+  modified: '2026-05-25'
+binds: []
+capability:
+  consumes:
+  - type: http
+    namespace: leaderboards-leaderboards
+    baseUri: https://api.chess.com/pub
+    description: Chess.com Leaderboards surface.
+    resources:
+    - name: leaderboards
+      path: /leaderboards
+      operations:
+      - name: getleaderboards
+        method: GET
+        description: Get Leaderboards
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: none
+  exposes:
+  - type: rest
+    namespace: leaderboards-leaderboards-rest
+    port: 8080
+    description: REST adapter for Chess.com Leaderboards.
+    resources:
+    - path: /v1/leaderboards
+      name: leaderboards
+      operations:
+      - method: GET
+        name: getleaderboards
+        description: Get Leaderboards
+        call: leaderboards-leaderboards.getleaderboards
+  - type: mcp
+    namespace: leaderboards-leaderboards-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Chess.com Leaderboards.
+    tools:
+    - name: chesscom-get-leaderboards
+      description: Get Leaderboards
+      hints: {readOnly: true, destructive: false, idempotent: true}
+      call: leaderboards-leaderboards.getleaderboards
