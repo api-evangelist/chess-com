@@ -1,151 +1,134 @@
 aid: chess-com
 url: https://raw.githubusercontent.com/api-evangelist/chess-com/refs/heads/main/apis.yml
 apis:
-- aid: chess-com:chess-com-published-data-api
-  name: Chess.com Published Data API
-  tags:
-  - Chess
-  - Gaming
-  - Players
-  - Public Data
-  humanURL: https://www.chess.com/news/view/published-data-api
-  baseURL: https://api.chess.com/pub/
-  properties:
-  - url: https://www.chess.com/news/view/published-data-api
-    type: Documentation
-  - url: https://support.chess.com/en/articles/9650547-published-data-api
-    type: Documentation
-  - url: openapi/chess-com-published-data-api-openapi.yml
-    type: OpenAPI
-  - url: json-schema/chess-com-player-schema.json
-    type: JSONSchema
-  - url: json-schema/chess-com-game-schema.json
-    type: JSONSchema
-  - url: json-schema/chess-com-club-schema.json
-    type: JSONSchema
-  - url: json-ld/chess-com-context.jsonld
-    type: JSONLD
-  - type: NaftikoCapability
-    url: capabilities/players-players.yaml
-  - type: NaftikoCapability
-    url: capabilities/games-games.yaml
-  - type: NaftikoCapability
-    url: capabilities/clubs-clubs.yaml
-  - type: NaftikoCapability
-    url: capabilities/tournaments-tournaments.yaml
-  - type: NaftikoCapability
-    url: capabilities/matches-matches.yaml
-  - type: NaftikoCapability
-    url: capabilities/countries-countries.yaml
-  - type: NaftikoCapability
-    url: capabilities/puzzles-puzzles.yaml
-  - type: NaftikoCapability
-    url: capabilities/leaderboards-leaderboards.yaml
-  - type: NaftikoCapability
-    url: capabilities/streamers-streamers.yaml
-  description: Public, unauthenticated REST API exposing player profiles, monthly game archives (with PGN
-    download), club rosters, daily and live team matches, Swiss/round-robin tournaments, titled players, country
-    rosters, the daily puzzle, the streamer list, and live leaderboards across daily, blitz, bullet, rapid,
-    tactics, lessons, and chess variants. JSON-LD response shape with ETag, Last-Modified, gzip, and JSONP
-    support; data refreshes at most every 12-24 hours.
+  - aid: chess-com:chess-com-published-data-api
+    name: Chess.com Published Data API
+    tags:
+      - Chess
+      - Gaming
+      - Players
+      - Public Data
+    humanURL: https://www.chess.com/news/view/published-data-api
+    baseURL: https://api.chess.com/pub/
+    properties:
+      - url: https://www.chess.com/news/view/published-data-api
+        type: Documentation
+      - url: https://support.chess.com/en/articles/9650547-published-data-api
+        type: Documentation
+      - url: openapi/chess-com-published-data-api-openapi.yml
+        type: OpenAPI
+      - url: json-schema/chess-com-player-schema.json
+        type: JSONSchema
+      - url: json-schema/chess-com-game-schema.json
+        type: JSONSchema
+      - url: json-schema/chess-com-club-schema.json
+        type: JSONSchema
+      - url: json-ld/chess-com-context.jsonld
+        type: JSONLD
+    description: >-
+      Public, unauthenticated REST API exposing player profiles, monthly game archives (with PGN download), club
+      rosters, daily and live team matches, Swiss/round-robin tournaments, titled players, country rosters, the daily
+      puzzle, the streamer list, and live leaderboards across daily, blitz, bullet, rapid, tactics, lessons, and chess
+      variants. JSON-LD response shape with ETag, Last-Modified, gzip, and JSONP support; data refreshes at most every
+      12-24 hours.
 name: Chess.com
 tags:
-- Chess
-- Gaming
-- Online Games
-- Sports
-- Community
-- Education
+  - Chess
+  - Gaming
+  - Online Games
+  - Sports
+  - Community
+  - Education
 kind: contract
 image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party
 common:
-- url: https://www.chess.com
-  name: Chess.com Home
-  type: Portal
-- url: https://www.chess.com/news/view/published-data-api
-  name: Published Data API
-  type: Documentation
-- url: https://support.chess.com/en/articles/9650547-published-data-api
-  name: Help Center — PubAPI
-  type: Documentation
-- url: https://www.chess.com/membership
-  name: Premium Membership
-  type: Pricing
-- url: https://www.chess.com/legal/privacy
-  name: Privacy Policy
-  type: PrivacyPolicy
-- url: https://www.chess.com/legal
-  name: Terms of Service
-  type: TermsOfService
-- url: https://www.chess.com/about
-  name: About Chess.com
-  type: AboutUs
-- url: https://www.chess.com/news
-  name: News
-  type: Blog
-- url: https://www.chess.com/article
-  name: Articles
-  type: Blog
-- url: https://www.chess.com/forum
-  name: Forums
-  type: Forum
-- url: https://www.linkedin.com/company/chess-com
-  name: LinkedIn
-  type: LinkedIn
-- url: https://twitter.com/chesscom
-  name: Twitter / X
-  type: Twitter
-- url: https://www.youtube.com/chess
-  name: YouTube
-  type: YouTube
-- url: https://www.twitch.tv/chess
-  name: Twitch
-  type: Twitch
-- url: https://github.com/chess
-  name: Chess.com GitHub
-  type: GitHubOrganization
-- url: https://www.chess.com/coaches
-  name: Coaches
-  type: Support
-- url: https://www.chess.com/streamers
-  name: Streamers
-  type: Documentation
-- url: https://www.chess.com/leaderboard
-  name: Leaderboards
-  type: Documentation
-- url: https://github.com/andyruwruw/chess-web-api
-  name: chess-web-api (Node.js wrapper)
-  type: SDK
-- url: https://www.npmjs.com/package/chess-web-api
-  name: chess-web-api on npm
-  type: SDK
-- url: https://github.com/sarartur/chess.com
-  name: chess.com (Python wrapper)
-  type: SDK
-- url: https://github.com/Stupidoodle/chess-com-api
-  name: chess-com-api (async Python)
-  type: SDK
-- url: https://github.com/sornerol/chess-com-pubapi-java-wrapper
-  name: chess-com-pubapi-java-wrapper (Java)
-  type: SDK
-- url: https://github.com/chrismaltais/chess-pub-api-client
-  name: chess-pub-api-client (Ruby)
-  type: SDK
-- url: plans/chess-com-plans-pricing.yml
-  name: Chess.com Plans
-  type: Plans
-- url: rate-limits/chess-com-rate-limits.yml
-  name: Chess.com Rate Limits
-  type: RateLimits
-- url: finops/chess-com-finops.yml
-  name: Chess.com FinOps
-  type: FinOps
-- url: vocabulary/chess-com-vocabulary.yml
-  name: Chess.com Vocabulary
-  type: Vocabulary
+  - url: https://www.chess.com
+    name: Chess.com Home
+    type: Portal
+  - url: https://www.chess.com/news/view/published-data-api
+    name: Published Data API
+    type: Documentation
+  - url: https://support.chess.com/en/articles/9650547-published-data-api
+    name: Help Center — PubAPI
+    type: Documentation
+  - url: https://www.chess.com/membership
+    name: Premium Membership
+    type: Pricing
+  - url: https://www.chess.com/legal/privacy
+    name: Privacy Policy
+    type: PrivacyPolicy
+  - url: https://www.chess.com/legal
+    name: Terms of Service
+    type: TermsOfService
+  - url: https://www.chess.com/about
+    name: About Chess.com
+    type: AboutUs
+  - url: https://www.chess.com/news
+    name: News
+    type: Blog
+  - url: https://www.chess.com/article
+    name: Articles
+    type: Blog
+  - url: https://www.chess.com/forum
+    name: Forums
+    type: Forum
+  - url: https://www.linkedin.com/company/chess-com
+    name: LinkedIn
+    type: LinkedIn
+  - url: https://twitter.com/chesscom
+    name: Twitter / X
+    type: Twitter
+  - url: https://www.youtube.com/chess
+    name: YouTube
+    type: YouTube
+  - url: https://www.twitch.tv/chess
+    name: Twitch
+    type: Twitch
+  - url: https://github.com/chess
+    name: Chess.com GitHub
+    type: GitHubOrganization
+  - url: https://www.chess.com/coaches
+    name: Coaches
+    type: Support
+  - url: https://www.chess.com/streamers
+    name: Streamers
+    type: Documentation
+  - url: https://www.chess.com/leaderboard
+    name: Leaderboards
+    type: Documentation
+  - url: https://github.com/andyruwruw/chess-web-api
+    name: chess-web-api (Node.js wrapper)
+    type: SDK
+  - url: https://www.npmjs.com/package/chess-web-api
+    name: chess-web-api on npm
+    type: SDK
+  - url: https://github.com/sarartur/chess.com
+    name: chess.com (Python wrapper)
+    type: SDK
+  - url: https://github.com/Stupidoodle/chess-com-api
+    name: chess-com-api (async Python)
+    type: SDK
+  - url: https://github.com/sornerol/chess-com-pubapi-java-wrapper
+    name: chess-com-pubapi-java-wrapper (Java)
+    type: SDK
+  - url: https://github.com/chrismaltais/chess-pub-api-client
+    name: chess-pub-api-client (Ruby)
+    type: SDK
+  - url: plans/chess-com-plans-pricing.yml
+    name: Chess.com Plans
+    type: Plans
+  - url: rate-limits/chess-com-rate-limits.yml
+    name: Chess.com Rate Limits
+    type: RateLimits
+  - url: finops/chess-com-finops.yml
+    name: Chess.com FinOps
+    type: FinOps
+  - url: vocabulary/chess-com-vocabulary.yml
+    name: Chess.com Vocabulary
+    type: Vocabulary
 maintainers:
-- FN: Kin Lane
-  email: info@apievangelist.com
+  - FN: Kin Lane
+    email: info@apievangelist.com
 created: '2026-05-25'
 modified: '2026-05-25'
