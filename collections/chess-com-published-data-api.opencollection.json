@@ -1,0 +1,651 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Chess.com Published Data API",
+    "version": "2026-05-25"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Players",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Player Profile",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chess.com/pub/player/:username",
+            "params": [
+              {
+                "name": "username",
+                "value": "",
+                "type": "path",
+                "description": "All-lowercase Chess.com username"
+              }
+            ]
+          },
+          "docs": "Get Player Profile"
+        },
+        {
+          "info": {
+            "name": "Get Player Stats",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chess.com/pub/player/:username/stats",
+            "params": [
+              {
+                "name": "username",
+                "value": "",
+                "type": "path",
+                "description": "All-lowercase Chess.com username"
+              }
+            ]
+          },
+          "docs": "Get Player Stats"
+        },
+        {
+          "info": {
+            "name": "Get Player Online Status",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chess.com/pub/player/:username/is-online",
+            "params": [
+              {
+                "name": "username",
+                "value": "",
+                "type": "path",
+                "description": "All-lowercase Chess.com username"
+              }
+            ]
+          },
+          "docs": "Get Player Online Status"
+        },
+        {
+          "info": {
+            "name": "Get Player Current Daily Games",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chess.com/pub/player/:username/games",
+            "params": [
+              {
+                "name": "username",
+                "value": "",
+                "type": "path",
+                "description": "All-lowercase Chess.com username"
+              }
+            ]
+          },
+          "docs": "Get Player Current Daily Games"
+        },
+        {
+          "info": {
+            "name": "Get Player Games To Move",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chess.com/pub/player/:username/games/to-move",
+            "params": [
+              {
+                "name": "username",
+                "value": "",
+                "type": "path",
+                "description": "All-lowercase Chess.com username"
+              }
+            ]
+          },
+          "docs": "Get Player Games To Move"
+        },
+        {
+          "info": {
+            "name": "List Player Game Archives",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chess.com/pub/player/:username/games/archives",
+            "params": [
+              {
+                "name": "username",
+                "value": "",
+                "type": "path",
+                "description": "All-lowercase Chess.com username"
+              }
+            ]
+          },
+          "docs": "List Player Game Archives"
+        },
+        {
+          "info": {
+            "name": "Get Player Monthly Archive",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chess.com/pub/player/:username/games/:year/:month",
+            "params": [
+              {
+                "name": "username",
+                "value": "",
+                "type": "path",
+                "description": "All-lowercase Chess.com username"
+              },
+              {
+                "name": "year",
+                "value": "",
+                "type": "path",
+                "description": "Four-digit year"
+              },
+              {
+                "name": "month",
+                "value": "",
+                "type": "path",
+                "description": "Two-digit month"
+              }
+            ]
+          },
+          "docs": "Get Player Monthly Archive"
+        },
+        {
+          "info": {
+            "name": "Get Player Monthly Archive PGN",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chess.com/pub/player/:username/games/:year/:month/pgn",
+            "params": [
+              {
+                "name": "username",
+                "value": "",
+                "type": "path",
+                "description": "All-lowercase Chess.com username"
+              },
+              {
+                "name": "year",
+                "value": "",
+                "type": "path",
+                "description": "Four-digit year"
+              },
+              {
+                "name": "month",
+                "value": "",
+                "type": "path",
+                "description": "Two-digit month"
+              }
+            ]
+          },
+          "docs": "Get Player Monthly Archive PGN"
+        },
+        {
+          "info": {
+            "name": "Get Player Club Memberships",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chess.com/pub/player/:username/clubs",
+            "params": [
+              {
+                "name": "username",
+                "value": "",
+                "type": "path",
+                "description": "All-lowercase Chess.com username"
+              }
+            ]
+          },
+          "docs": "Get Player Club Memberships"
+        },
+        {
+          "info": {
+            "name": "Get Player Team Matches",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chess.com/pub/player/:username/matches",
+            "params": [
+              {
+                "name": "username",
+                "value": "",
+                "type": "path",
+                "description": "All-lowercase Chess.com username"
+              }
+            ]
+          },
+          "docs": "Get Player Team Matches"
+        },
+        {
+          "info": {
+            "name": "Get Player Tournaments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chess.com/pub/player/:username/tournaments",
+            "params": [
+              {
+                "name": "username",
+                "value": "",
+                "type": "path",
+                "description": "All-lowercase Chess.com username"
+              }
+            ]
+          },
+          "docs": "Get Player Tournaments"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Titled Players",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Titled Players",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chess.com/pub/titled/:title-abbrev",
+            "params": [
+              {
+                "name": "title-abbrev",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List Titled Players"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Clubs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Club Profile",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chess.com/pub/club/:url-ID",
+            "params": [
+              {
+                "name": "url-ID",
+                "value": "",
+                "type": "path",
+                "description": "Club URL-ID slug from chess.com/club/{url-ID}"
+              }
+            ]
+          },
+          "docs": "Get Club Profile"
+        },
+        {
+          "info": {
+            "name": "Get Club Members",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chess.com/pub/club/:url-ID/members",
+            "params": [
+              {
+                "name": "url-ID",
+                "value": "",
+                "type": "path",
+                "description": "Club URL-ID slug from chess.com/club/{url-ID}"
+              }
+            ]
+          },
+          "docs": "Get Club Members"
+        },
+        {
+          "info": {
+            "name": "Get Club Matches",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chess.com/pub/club/:url-ID/matches",
+            "params": [
+              {
+                "name": "url-ID",
+                "value": "",
+                "type": "path",
+                "description": "Club URL-ID slug from chess.com/club/{url-ID}"
+              }
+            ]
+          },
+          "docs": "Get Club Matches"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Tournaments",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Tournament",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chess.com/pub/tournament/:url-ID",
+            "params": [
+              {
+                "name": "url-ID",
+                "value": "",
+                "type": "path",
+                "description": "Tournament URL-ID slug from chess.com/tournament/{url-ID}"
+              }
+            ]
+          },
+          "docs": "Get Tournament"
+        },
+        {
+          "info": {
+            "name": "Get Tournament Round",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chess.com/pub/tournament/:url-ID/:round",
+            "params": [
+              {
+                "name": "url-ID",
+                "value": "",
+                "type": "path",
+                "description": "Tournament URL-ID slug from chess.com/tournament/{url-ID}"
+              },
+              {
+                "name": "round",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Tournament Round"
+        },
+        {
+          "info": {
+            "name": "Get Tournament Round Group",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chess.com/pub/tournament/:url-ID/:round/:group",
+            "params": [
+              {
+                "name": "url-ID",
+                "value": "",
+                "type": "path",
+                "description": "Tournament URL-ID slug from chess.com/tournament/{url-ID}"
+              },
+              {
+                "name": "round",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "group",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Tournament Round Group"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Matches",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Daily Team Match",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chess.com/pub/match/:ID",
+            "params": [
+              {
+                "name": "ID",
+                "value": "",
+                "type": "path",
+                "description": "Numeric team-match ID"
+              }
+            ]
+          },
+          "docs": "Get Daily Team Match"
+        },
+        {
+          "info": {
+            "name": "Get Daily Team Match Board",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chess.com/pub/match/:ID/:board",
+            "params": [
+              {
+                "name": "ID",
+                "value": "",
+                "type": "path",
+                "description": "Numeric team-match ID"
+              },
+              {
+                "name": "board",
+                "value": "",
+                "type": "path",
+                "description": "Board number within the team match"
+              }
+            ]
+          },
+          "docs": "Get Daily Team Match Board"
+        },
+        {
+          "info": {
+            "name": "Get Live Team Match",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chess.com/pub/match/live/:ID",
+            "params": [
+              {
+                "name": "ID",
+                "value": "",
+                "type": "path",
+                "description": "Numeric team-match ID"
+              }
+            ]
+          },
+          "docs": "Get Live Team Match"
+        },
+        {
+          "info": {
+            "name": "Get Live Team Match Board",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chess.com/pub/match/live/:ID/:board",
+            "params": [
+              {
+                "name": "ID",
+                "value": "",
+                "type": "path",
+                "description": "Numeric team-match ID"
+              },
+              {
+                "name": "board",
+                "value": "",
+                "type": "path",
+                "description": "Board number within the team match"
+              }
+            ]
+          },
+          "docs": "Get Live Team Match Board"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Countries",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Country Profile",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chess.com/pub/country/:iso",
+            "params": [
+              {
+                "name": "iso",
+                "value": "",
+                "type": "path",
+                "description": "ISO 3166-1 alpha-2 country code (e.g. US, RU, IN)"
+              }
+            ]
+          },
+          "docs": "Get Country Profile"
+        },
+        {
+          "info": {
+            "name": "List Players By Country",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chess.com/pub/country/:iso/players",
+            "params": [
+              {
+                "name": "iso",
+                "value": "",
+                "type": "path",
+                "description": "ISO 3166-1 alpha-2 country code (e.g. US, RU, IN)"
+              }
+            ]
+          },
+          "docs": "List Players By Country"
+        },
+        {
+          "info": {
+            "name": "List Clubs By Country",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chess.com/pub/country/:iso/clubs",
+            "params": [
+              {
+                "name": "iso",
+                "value": "",
+                "type": "path",
+                "description": "ISO 3166-1 alpha-2 country code (e.g. US, RU, IN)"
+              }
+            ]
+          },
+          "docs": "List Clubs By Country"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Puzzles",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Daily Puzzle",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chess.com/pub/puzzle"
+          },
+          "docs": "Get Daily Puzzle"
+        },
+        {
+          "info": {
+            "name": "Get Random Daily Puzzle",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chess.com/pub/puzzle/random"
+          },
+          "docs": "Get Random Daily Puzzle"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Streamers",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Chess.com Streamers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chess.com/pub/streamers"
+          },
+          "docs": "List Chess.com Streamers"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Leaderboards",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Leaderboards",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chess.com/pub/leaderboards"
+          },
+          "docs": "Get Leaderboards"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

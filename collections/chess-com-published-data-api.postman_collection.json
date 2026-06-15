@@ -1,0 +1,3868 @@
+{
+  "item": [
+    {
+      "id": "81553434-2f9d-4d9a-a4f2-a1032d19f9fc",
+      "name": "Players",
+      "description": {
+        "content": "Profiles, stats, online state, archives, clubs, matches, tournaments",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "efb9bd8d-76dc-4726-94d5-f7581593e978",
+          "name": "Get Player Profile",
+          "request": {
+            "name": "Get Player Profile",
+            "description": {},
+            "url": {
+              "path": [
+                "player",
+                ":username"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "username",
+                  "description": "(Required) All-lowercase Chess.com username"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8ba87a0e-76d1-4cf6-8859-7deaa129e51b",
+              "name": "Player profile",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "player",
+                    ":username"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "username",
+                      "description": "(Required) All-lowercase Chess.com username"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"@id\": \"https://aLwmrXatcckp.oimyxjx-ddvg4t3x08SnHrVU\",\n  \"url\": \"http://MmtKjHXHBjqbrYIuzQiOiSYlN.qiihtXYWG.e4WQlPU4rbF8iBPuvxRO8JIUNPi5OHb2btTmdTdfJrz53Q\",\n  \"username\": \"string\",\n  \"player_id\": 6448,\n  \"title\": \"string\",\n  \"status\": \"string\",\n  \"name\": \"string\",\n  \"avatar\": \"http://WhrwwEUAMsfw.ycgmvviHK+,5pz8PV-1LDQzNWabyuv-ik8+9cl0bDeWp0TTjj5Wv.MjY\",\n  \"location\": \"string\",\n  \"country\": \"http://lcsjzWtoQsyNCjUB.qqyB8sg+VjP6O.YiKjZ6MGuMP.rI\",\n  \"joined\": 4121,\n  \"last_online\": 1212,\n  \"followers\": 6919,\n  \"is_streamer\": false,\n  \"twitch_url\": \"https://iLWrsKZhhVDlAMjIzFFduAgrsxr.pmntkOd3t9K6.cei7vjQvSlAR3t7gFYDZLmioCG64E2ToonAkxZn-PjvK4HO-\",\n  \"fide\": 7636\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0d05c40e-0824-470e-b558-ce5178992733",
+              "name": "Resource not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "player",
+                    ":username"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "username",
+                      "description": "(Required) All-lowercase Chess.com username"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7930,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a79c0347-7e41-44f4-b41a-6141911f3e0a",
+              "name": "Too Many Requests — parallel-request throttling",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "player",
+                    ":username"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "username",
+                      "description": "(Required) All-lowercase Chess.com username"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7930,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9d736a0a-1657-48ab-9020-a78858405bc2",
+          "name": "Get Player Stats",
+          "request": {
+            "name": "Get Player Stats",
+            "description": {},
+            "url": {
+              "path": [
+                "player",
+                ":username",
+                "stats"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "username",
+                  "description": "(Required) All-lowercase Chess.com username"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a1017e67-a785-46af-bb95-d558b14cba61",
+              "name": "Ratings and statistics across time controls and modes",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "player",
+                    ":username",
+                    "stats"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "username",
+                      "description": "(Required) All-lowercase Chess.com username"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"chess_daily\": {\n    \"last\": {\n      \"rating\": 9642,\n      \"date\": 9275,\n      \"rd\": 1134\n    },\n    \"best\": {},\n    \"record\": {\n      \"win\": 2465,\n      \"loss\": 6416,\n      \"draw\": 2569\n    }\n  },\n  \"chess_rapid\": {\n    \"last\": {\n      \"rating\": 1652,\n      \"date\": 3740,\n      \"rd\": 2262\n    },\n    \"best\": {},\n    \"record\": {\n      \"win\": 3104,\n      \"loss\": 7771,\n      \"draw\": 1738\n    }\n  },\n  \"chess_blitz\": {\n    \"last\": {\n      \"rating\": 7672,\n      \"date\": 6945,\n      \"rd\": 2511\n    },\n    \"best\": {},\n    \"record\": {\n      \"win\": 4832,\n      \"loss\": 6936,\n      \"draw\": 9520\n    }\n  },\n  \"chess_bullet\": {\n    \"last\": {\n      \"rating\": 2722,\n      \"date\": 9445,\n      \"rd\": 1336\n    },\n    \"best\": {},\n    \"record\": {\n      \"win\": 1744,\n      \"loss\": 1071,\n      \"draw\": 4875\n    }\n  },\n  \"tactics\": {},\n  \"puzzle_rush\": {},\n  \"fide\": 578\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "74e19481-be01-40b4-99ca-c248a5ba0d9c",
+              "name": "Resource not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "player",
+                    ":username",
+                    "stats"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "username",
+                      "description": "(Required) All-lowercase Chess.com username"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 7930,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "dec80c7c-5da4-471e-a927-442bf23191be",
+          "name": "Get Player Online Status",
+          "request": {
+            "name": "Get Player Online Status",
+            "description": {},
+            "url": {
+              "path": [
+                "player",
+                ":username",
+                "is-online"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "username",
+                  "description": "(Required) All-lowercase Chess.com username"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "10c9849c-0445-4f93-a854-626b4a90a70a",
+              "name": "Online state",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "player",
+                    ":username",
+                    "is-online"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "username",
+                      "description": "(Required) All-lowercase Chess.com username"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"online\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7d07d3db-9591-4ef0-921d-16659f58edea",
+          "name": "Get Player Current Daily Games",
+          "request": {
+            "name": "Get Player Current Daily Games",
+            "description": {},
+            "url": {
+              "path": [
+                "player",
+                ":username",
+                "games"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "username",
+                  "description": "(Required) All-lowercase Chess.com username"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8decfdd7-210c-4672-8ceb-461f26b86e95",
+              "name": "In-progress daily chess games",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "player",
+                    ":username",
+                    "games"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "username",
+                      "description": "(Required) All-lowercase Chess.com username"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"games\": [\n    {\n      \"url\": \"http://GeeXIdfaHGFbCWJTzwp.fywX1sZAtSI-FRelQttyaZ8wtHtjQ2UpN2jvWoc5Jfbo-8-beADM2qWQh0IMY\",\n      \"pgn\": \"string\",\n      \"time_control\": \"string\",\n      \"end_time\": 9805,\n      \"rated\": false,\n      \"fen\": \"string\",\n      \"time_class\": \"blitz\",\n      \"rules\": \"kingofthehill\",\n      \"white\": {\n        \"rating\": 338,\n        \"result\": \"checkmated\",\n        \"@id\": \"http://TdhrDK.moaAuMKXtIDEZigkRXyrW9FOFxoVEmqJByivL0k,giTT+xVk\",\n        \"username\": \"string\"\n      },\n      \"black\": {\n        \"rating\": 6486,\n        \"result\": \"insufficient\",\n        \"@id\": \"http://dbiemZVPYASsEPkxX.krfM0OsdK3vzdK4KxwBHlpdaCeKn2\",\n        \"username\": \"string\"\n      }\n    },\n    {\n      \"url\": \"https://gwitmtaUETZRURxBJmEwJ.qhm2aZ3KMtiaGcRQqlFYPoTjyPbSh6zL4xDt\",\n      \"pgn\": \"string\",\n      \"time_control\": \"string\",\n      \"end_time\": 6077,\n      \"rated\": true,\n      \"fen\": \"string\",\n      \"time_class\": \"rapid\",\n      \"rules\": \"kingofthehill\",\n      \"white\": {\n        \"rating\": 4920,\n        \"result\": \"bughousepartnerlose\",\n        \"@id\": \"https://PvBRyRaqILGCSUtywDi.txvIjYZSnW1ohczor0r2Q64ZMK3SgFg3btwXadkIn9QOpW3BV9dd7GHagwwLdGED\",\n        \"username\": \"string\"\n      },\n      \"black\": {\n        \"rating\": 7518,\n        \"result\": \"insufficient\",\n        \"@id\": \"http://MauflSAsINGunXqpbYC.jnzaY+RWk0W4EuGDbROL1pQ0v5s634yYzh8-UIw,344cBqabjFjn\",\n        \"username\": \"string\"\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9c9d404f-29a3-47fc-9755-fba03123abad",
+          "name": "Get Player Games To Move",
+          "request": {
+            "name": "Get Player Games To Move",
+            "description": {},
+            "url": {
+              "path": [
+                "player",
+                ":username",
+                "games",
+                "to-move"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "username",
+                  "description": "(Required) All-lowercase Chess.com username"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b927668e-d1ca-420b-bfda-e782b234df94",
+              "name": "Daily games waiting on the player to move",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "player",
+                    ":username",
+                    "games",
+                    "to-move"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "username",
+                      "description": "(Required) All-lowercase Chess.com username"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "66d1c90e-0517-4a81-ad3f-a9acead80c7b",
+          "name": "List Player Game Archives",
+          "request": {
+            "name": "List Player Game Archives",
+            "description": {},
+            "url": {
+              "path": [
+                "player",
+                ":username",
+                "games",
+                "archives"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "username",
+                  "description": "(Required) All-lowercase Chess.com username"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "60d2690f-aa88-410c-8fad-03d15e57e5fa",
+              "name": "URLs of available monthly archives",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "player",
+                    ":username",
+                    "games",
+                    "archives"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "username",
+                      "description": "(Required) All-lowercase Chess.com username"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"archives\": [\n    \"http://ZPsRJySjARwKlHeDrclDOWmo.xccidsvyM9UYx3NPbS0kmWk,..L\",\n    \"https://XwSowFIRcUZtU.mwpqV3,GMGsEFbXxQvUtoy\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3240b190-77cc-4c36-956b-70c1b3974eaa",
+          "name": "Get Player Monthly Archive",
+          "request": {
+            "name": "Get Player Monthly Archive",
+            "description": {},
+            "url": {
+              "path": [
+                "player",
+                ":username",
+                "games",
+                ":year",
+                ":month"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "username",
+                  "description": "(Required) All-lowercase Chess.com username"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "year",
+                  "description": "(Required) Four-digit year"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "month",
+                  "description": "(Required) Two-digit month"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2246c61d-f8ed-4867-a509-cf2a646695c3",
+              "name": "All games completed in the given month",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "player",
+                    ":username",
+                    "games",
+                    ":year",
+                    ":month"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "username",
+                      "description": "(Required) All-lowercase Chess.com username"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "year",
+                      "description": "(Required) Four-digit year"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "month",
+                      "description": "(Required) Two-digit month"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"games\": [\n    {\n      \"url\": \"http://GeeXIdfaHGFbCWJTzwp.fywX1sZAtSI-FRelQttyaZ8wtHtjQ2UpN2jvWoc5Jfbo-8-beADM2qWQh0IMY\",\n      \"pgn\": \"string\",\n      \"time_control\": \"string\",\n      \"end_time\": 9805,\n      \"rated\": false,\n      \"fen\": \"string\",\n      \"time_class\": \"blitz\",\n      \"rules\": \"kingofthehill\",\n      \"white\": {\n        \"rating\": 338,\n        \"result\": \"checkmated\",\n        \"@id\": \"http://TdhrDK.moaAuMKXtIDEZigkRXyrW9FOFxoVEmqJByivL0k,giTT+xVk\",\n        \"username\": \"string\"\n      },\n      \"black\": {\n        \"rating\": 6486,\n        \"result\": \"insufficient\",\n        \"@id\": \"http://dbiemZVPYASsEPkxX.krfM0OsdK3vzdK4KxwBHlpdaCeKn2\",\n        \"username\": \"string\"\n      }\n    },\n    {\n      \"url\": \"https://gwitmtaUETZRURxBJmEwJ.qhm2aZ3KMtiaGcRQqlFYPoTjyPbSh6zL4xDt\",\n      \"pgn\": \"string\",\n      \"time_control\": \"string\",\n      \"end_time\": 6077,\n      \"rated\": true,\n      \"fen\": \"string\",\n      \"time_class\": \"rapid\",\n      \"rules\": \"kingofthehill\",\n      \"white\": {\n        \"rating\": 4920,\n        \"result\": \"bughousepartnerlose\",\n        \"@id\": \"https://PvBRyRaqILGCSUtywDi.txvIjYZSnW1ohczor0r2Q64ZMK3SgFg3btwXadkIn9QOpW3BV9dd7GHagwwLdGED\",\n        \"username\": \"string\"\n      },\n      \"black\": {\n        \"rating\": 7518,\n        \"result\": \"insufficient\",\n        \"@id\": \"http://MauflSAsINGunXqpbYC.jnzaY+RWk0W4EuGDbROL1pQ0v5s634yYzh8-UIw,344cBqabjFjn\",\n        \"username\": \"string\"\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3b6c896a-c6bf-4ce0-8b7e-2a892f8b9929",
+          "name": "Get Player Monthly Archive PGN",
+          "request": {
+            "name": "Get Player Monthly Archive PGN",
+            "description": {},
+            "url": {
+              "path": [
+                "player",
+                ":username",
+                "games",
+                ":year",
+                ":month",
+                "pgn"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "username",
+                  "description": "(Required) All-lowercase Chess.com username"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "year",
+                  "description": "(Required) Four-digit year"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "month",
+                  "description": "(Required) Two-digit month"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/x-chess-pgn"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0cd73512-2d7a-480e-beef-d6965963f009",
+              "name": "All games in the given month as a multi-game PGN stream",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "player",
+                    ":username",
+                    "games",
+                    ":year",
+                    ":month",
+                    "pgn"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "username",
+                      "description": "(Required) All-lowercase Chess.com username"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "year",
+                      "description": "(Required) Four-digit year"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "month",
+                      "description": "(Required) Two-digit month"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/x-chess-pgn"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/x-chess-pgn"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3044cfb6-7cfc-4874-bf80-f88984ed34f0",
+          "name": "Get Player Club Memberships",
+          "request": {
+            "name": "Get Player Club Memberships",
+            "description": {},
+            "url": {
+              "path": [
+                "player",
+                ":username",
+                "clubs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "username",
+                  "description": "(Required) All-lowercase Chess.com username"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7e05b5b8-097f-45f6-85a1-0c119d9ec9ec",
+              "name": "Clubs the player belongs to",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "player",
+                    ":username",
+                    "clubs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "username",
+                      "description": "(Required) All-lowercase Chess.com username"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1a921232-a383-42e8-b8a4-1f955c758fb8",
+          "name": "Get Player Team Matches",
+          "request": {
+            "name": "Get Player Team Matches",
+            "description": {},
+            "url": {
+              "path": [
+                "player",
+                ":username",
+                "matches"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "username",
+                  "description": "(Required) All-lowercase Chess.com username"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d8864416-353c-45ae-868c-0786c2801561",
+              "name": "Team match participation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "player",
+                    ":username",
+                    "matches"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "username",
+                      "description": "(Required) All-lowercase Chess.com username"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c545ad65-0e8f-4b7f-a3e1-8ec1a77aed08",
+          "name": "Get Player Tournaments",
+          "request": {
+            "name": "Get Player Tournaments",
+            "description": {},
+            "url": {
+              "path": [
+                "player",
+                ":username",
+                "tournaments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "username",
+                  "description": "(Required) All-lowercase Chess.com username"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3d4699ee-1da3-4106-8903-14e2d13280d5",
+              "name": "Tournaments the player has registered for",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "player",
+                    ":username",
+                    "tournaments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "username",
+                      "description": "(Required) All-lowercase Chess.com username"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "be69d213-2dfb-4211-b81f-80ac3b40a312",
+          "name": "List Players By Country",
+          "request": {
+            "name": "List Players By Country",
+            "description": {},
+            "url": {
+              "path": [
+                "country",
+                ":iso",
+                "players"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "iso",
+                  "description": "(Required) ISO 3166-1 alpha-2 country code (e.g. US, RU, IN)"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "40e98678-d1e7-496f-8cc1-8568c4f70cc6",
+              "name": "Players for the given country",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "country",
+                    ":iso",
+                    "players"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "iso",
+                      "description": "(Required) ISO 3166-1 alpha-2 country code (e.g. US, RU, IN)"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"players\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "2f263ef8-fbe4-4f0e-ba2d-bc2064115f69",
+      "name": "Games",
+      "description": {
+        "content": "Daily, live, and archived games (JSON and PGN)",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "82f84cce-01c0-47b6-b586-4feeb5983cf1",
+          "name": "Get Player Current Daily Games",
+          "request": {
+            "name": "Get Player Current Daily Games",
+            "description": {},
+            "url": {
+              "path": [
+                "player",
+                ":username",
+                "games"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "username",
+                  "description": "(Required) All-lowercase Chess.com username"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6ea10269-a0bd-46b1-a207-dfdb464272c0",
+              "name": "In-progress daily chess games",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "player",
+                    ":username",
+                    "games"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "username",
+                      "description": "(Required) All-lowercase Chess.com username"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"games\": [\n    {\n      \"url\": \"https://jKhaymReJHCSXIJtnmwcROHha.phrSvsSnSL,3pH\",\n      \"pgn\": \"string\",\n      \"time_control\": \"string\",\n      \"end_time\": 157,\n      \"rated\": false,\n      \"fen\": \"string\",\n      \"time_class\": \"bullet\",\n      \"rules\": \"crazyhouse\",\n      \"white\": {\n        \"rating\": 2351,\n        \"result\": \"insufficient\",\n        \"@id\": \"https://CvBayMhsCVBZXqEAOhQxsFenc.vbahTVZSRNIEJNBFz.StFPwrBz8evCdS,2p34Bap\",\n        \"username\": \"string\"\n      },\n      \"black\": {\n        \"rating\": 6406,\n        \"result\": \"bughousepartnerlose\",\n        \"@id\": \"http://ctRaYNwIIKcNtUuIUkqJqSleWvnto.lnzdqjfkGfn.elBZReDgH2mj1YGmarOyR-htuUqo94-TUGA1Qvla8qoAyNHTc4BU,tGQgFgy1Mq+bENYvnFrsytD\",\n        \"username\": \"string\"\n      }\n    },\n    {\n      \"url\": \"http://KfHMDmotGkOAeFdtHL.fjqiKQwU3hDI\",\n      \"pgn\": \"string\",\n      \"time_control\": \"string\",\n      \"end_time\": 4947,\n      \"rated\": true,\n      \"fen\": \"string\",\n      \"time_class\": \"blitz\",\n      \"rules\": \"threecheck\",\n      \"white\": {\n        \"rating\": 9948,\n        \"result\": \"checkmated\",\n        \"@id\": \"http://HK.enqckjK-IC5AZz.ZWUhPCNWOsM5Ctl,o65FHxXED13fkRac6ktdN\",\n        \"username\": \"string\"\n      },\n      \"black\": {\n        \"rating\": 2218,\n        \"result\": \"lose\",\n        \"@id\": \"http://OrElbILKWivUXofFpWV.oznEevZD-ls,SyeefxaxgAQyBWVwt0\",\n        \"username\": \"string\"\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f5056f56-7a60-4a61-88ea-0009d1eb13ea",
+          "name": "Get Player Games To Move",
+          "request": {
+            "name": "Get Player Games To Move",
+            "description": {},
+            "url": {
+              "path": [
+                "player",
+                ":username",
+                "games",
+                "to-move"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "username",
+                  "description": "(Required) All-lowercase Chess.com username"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "00cb9b53-b172-42d1-9737-2943f8a1ec0a",
+              "name": "Daily games waiting on the player to move",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "player",
+                    ":username",
+                    "games",
+                    "to-move"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "username",
+                      "description": "(Required) All-lowercase Chess.com username"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f2b9ecb1-924f-4018-b23c-1f050eb94ef2",
+          "name": "List Player Game Archives",
+          "request": {
+            "name": "List Player Game Archives",
+            "description": {},
+            "url": {
+              "path": [
+                "player",
+                ":username",
+                "games",
+                "archives"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "username",
+                  "description": "(Required) All-lowercase Chess.com username"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "66e076d7-a17d-4e17-88f8-3e4bc4cbc059",
+              "name": "URLs of available monthly archives",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "player",
+                    ":username",
+                    "games",
+                    "archives"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "username",
+                      "description": "(Required) All-lowercase Chess.com username"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"archives\": [\n    \"https://dJVabUylSf.yfqItLzAwY2MwVTSKJAnTuejHnF9C1ko\",\n    \"http://wnzLRPvuEoUp.ufHhwy4XWbsCdxymm-5mGU\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "69df93ed-9bf2-4811-b189-0630d0404d7a",
+          "name": "Get Player Monthly Archive",
+          "request": {
+            "name": "Get Player Monthly Archive",
+            "description": {},
+            "url": {
+              "path": [
+                "player",
+                ":username",
+                "games",
+                ":year",
+                ":month"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "username",
+                  "description": "(Required) All-lowercase Chess.com username"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "year",
+                  "description": "(Required) Four-digit year"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "month",
+                  "description": "(Required) Two-digit month"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1619185f-3349-4b9e-bd3a-cc64d2b6d955",
+              "name": "All games completed in the given month",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "player",
+                    ":username",
+                    "games",
+                    ":year",
+                    ":month"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "username",
+                      "description": "(Required) All-lowercase Chess.com username"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "year",
+                      "description": "(Required) Four-digit year"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "month",
+                      "description": "(Required) Two-digit month"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"games\": [\n    {\n      \"url\": \"https://jKhaymReJHCSXIJtnmwcROHha.phrSvsSnSL,3pH\",\n      \"pgn\": \"string\",\n      \"time_control\": \"string\",\n      \"end_time\": 157,\n      \"rated\": false,\n      \"fen\": \"string\",\n      \"time_class\": \"bullet\",\n      \"rules\": \"crazyhouse\",\n      \"white\": {\n        \"rating\": 2351,\n        \"result\": \"insufficient\",\n        \"@id\": \"https://CvBayMhsCVBZXqEAOhQxsFenc.vbahTVZSRNIEJNBFz.StFPwrBz8evCdS,2p34Bap\",\n        \"username\": \"string\"\n      },\n      \"black\": {\n        \"rating\": 6406,\n        \"result\": \"bughousepartnerlose\",\n        \"@id\": \"http://ctRaYNwIIKcNtUuIUkqJqSleWvnto.lnzdqjfkGfn.elBZReDgH2mj1YGmarOyR-htuUqo94-TUGA1Qvla8qoAyNHTc4BU,tGQgFgy1Mq+bENYvnFrsytD\",\n        \"username\": \"string\"\n      }\n    },\n    {\n      \"url\": \"http://KfHMDmotGkOAeFdtHL.fjqiKQwU3hDI\",\n      \"pgn\": \"string\",\n      \"time_control\": \"string\",\n      \"end_time\": 4947,\n      \"rated\": true,\n      \"fen\": \"string\",\n      \"time_class\": \"blitz\",\n      \"rules\": \"threecheck\",\n      \"white\": {\n        \"rating\": 9948,\n        \"result\": \"checkmated\",\n        \"@id\": \"http://HK.enqckjK-IC5AZz.ZWUhPCNWOsM5Ctl,o65FHxXED13fkRac6ktdN\",\n        \"username\": \"string\"\n      },\n      \"black\": {\n        \"rating\": 2218,\n        \"result\": \"lose\",\n        \"@id\": \"http://OrElbILKWivUXofFpWV.oznEevZD-ls,SyeefxaxgAQyBWVwt0\",\n        \"username\": \"string\"\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "17fd8ce4-7209-4a8b-ac46-3ad444437397",
+          "name": "Get Player Monthly Archive PGN",
+          "request": {
+            "name": "Get Player Monthly Archive PGN",
+            "description": {},
+            "url": {
+              "path": [
+                "player",
+                ":username",
+                "games",
+                ":year",
+                ":month",
+                "pgn"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "username",
+                  "description": "(Required) All-lowercase Chess.com username"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "year",
+                  "description": "(Required) Four-digit year"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "month",
+                  "description": "(Required) Two-digit month"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/x-chess-pgn"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6fadbcde-24d8-47fd-9329-a7f8750292fd",
+              "name": "All games in the given month as a multi-game PGN stream",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "player",
+                    ":username",
+                    "games",
+                    ":year",
+                    ":month",
+                    "pgn"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "username",
+                      "description": "(Required) All-lowercase Chess.com username"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "year",
+                      "description": "(Required) Four-digit year"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "month",
+                      "description": "(Required) Two-digit month"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/x-chess-pgn"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/x-chess-pgn"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "3024c654-7879-4bde-a2ba-391acab90701",
+      "name": "Clubs",
+      "description": {
+        "content": "Club profiles, members, and team matches",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "59b47b7a-e997-48a5-9399-1a1f326d4fe1",
+          "name": "Get Player Club Memberships",
+          "request": {
+            "name": "Get Player Club Memberships",
+            "description": {},
+            "url": {
+              "path": [
+                "player",
+                ":username",
+                "clubs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "username",
+                  "description": "(Required) All-lowercase Chess.com username"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "80d4ceb1-5491-451d-85c2-50a77528f715",
+              "name": "Clubs the player belongs to",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "player",
+                    ":username",
+                    "clubs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "username",
+                      "description": "(Required) All-lowercase Chess.com username"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "708ed910-724d-4df9-954c-27ead9bbfad0",
+          "name": "Get Club Profile",
+          "request": {
+            "name": "Get Club Profile",
+            "description": {},
+            "url": {
+              "path": [
+                "club",
+                ":url-ID"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "url-ID",
+                  "description": "(Required) Club URL-ID slug from chess.com/club/{url-ID}"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "bc18f162-d54f-4c35-8cd1-d477c5862910",
+              "name": "Club profile",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "club",
+                    ":url-ID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "url-ID",
+                      "description": "(Required) Club URL-ID slug from chess.com/club/{url-ID}"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"@id\": \"string\",\n  \"name\": \"string\",\n  \"club_id\": 7965,\n  \"country\": \"string\",\n  \"average_daily_rating\": 9499,\n  \"members_count\": 2011,\n  \"created\": 3343,\n  \"last_activity\": 5022,\n  \"admin\": [\n    \"string\",\n    \"string\"\n  ],\n  \"visibility\": \"string\",\n  \"join_request\": \"string\",\n  \"description\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b6d9ff16-90e3-4b1f-8704-a79542592fb0",
+          "name": "Get Club Members",
+          "request": {
+            "name": "Get Club Members",
+            "description": {},
+            "url": {
+              "path": [
+                "club",
+                ":url-ID",
+                "members"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "url-ID",
+                  "description": "(Required) Club URL-ID slug from chess.com/club/{url-ID}"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "41bc881c-47b5-4901-a56b-b5d274e4ec8d",
+              "name": "Club members grouped by activity level",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "club",
+                    ":url-ID",
+                    "members"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "url-ID",
+                      "description": "(Required) Club URL-ID slug from chess.com/club/{url-ID}"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"weekly\": [\n    {\n      \"username\": \"string\",\n      \"joined\": 2418\n    },\n    {\n      \"username\": \"string\",\n      \"joined\": 1672\n    }\n  ],\n  \"monthly\": [\n    {\n      \"username\": \"string\",\n      \"joined\": 4856\n    },\n    {\n      \"username\": \"string\",\n      \"joined\": 7391\n    }\n  ],\n  \"all_time\": [\n    {\n      \"username\": \"string\",\n      \"joined\": 3066\n    },\n    {\n      \"username\": \"string\",\n      \"joined\": 1552\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ea5ea991-eb2c-4a16-a3e5-f1ad4345dd98",
+          "name": "Get Club Matches",
+          "request": {
+            "name": "Get Club Matches",
+            "description": {},
+            "url": {
+              "path": [
+                "club",
+                ":url-ID",
+                "matches"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "url-ID",
+                  "description": "(Required) Club URL-ID slug from chess.com/club/{url-ID}"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ec7c9fd5-e6f1-4f8b-a1c2-fbca05371259",
+              "name": "Team matches for the club",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "club",
+                    ":url-ID",
+                    "matches"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "url-ID",
+                      "description": "(Required) Club URL-ID slug from chess.com/club/{url-ID}"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4147cfbd-58c0-4292-b9a9-a7c6758d8c31",
+          "name": "List Clubs By Country",
+          "request": {
+            "name": "List Clubs By Country",
+            "description": {},
+            "url": {
+              "path": [
+                "country",
+                ":iso",
+                "clubs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "iso",
+                  "description": "(Required) ISO 3166-1 alpha-2 country code (e.g. US, RU, IN)"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c39699ab-22a3-49e5-9b59-bcbbbffbd480",
+              "name": "Clubs for the given country",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "country",
+                    ":iso",
+                    "clubs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "iso",
+                      "description": "(Required) ISO 3166-1 alpha-2 country code (e.g. US, RU, IN)"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"clubs\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "8d89a2a1-7e03-48c1-b2bd-52639d17a161",
+      "name": "Tournaments",
+      "description": {
+        "content": "Tournament details, rounds, and groups",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "971c3986-59e0-456c-bd1d-70dad8d81b3b",
+          "name": "Get Player Tournaments",
+          "request": {
+            "name": "Get Player Tournaments",
+            "description": {},
+            "url": {
+              "path": [
+                "player",
+                ":username",
+                "tournaments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "username",
+                  "description": "(Required) All-lowercase Chess.com username"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4af3f8c1-ace9-436e-9cd4-16a2d48addd1",
+              "name": "Tournaments the player has registered for",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "player",
+                    ":username",
+                    "tournaments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "username",
+                      "description": "(Required) All-lowercase Chess.com username"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "35e5fb8c-f96e-4903-a742-50d92c4c1f57",
+          "name": "Get Tournament",
+          "request": {
+            "name": "Get Tournament",
+            "description": {},
+            "url": {
+              "path": [
+                "tournament",
+                ":url-ID"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "url-ID",
+                  "description": "(Required) Tournament URL-ID slug from chess.com/tournament/{url-ID}"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a183c2eb-9e5b-4c11-999f-09871a1e2739",
+              "name": "Tournament summary",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "tournament",
+                    ":url-ID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "url-ID",
+                      "description": "(Required) Tournament URL-ID slug from chess.com/tournament/{url-ID}"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5335bc3c-c43e-4f35-b0dc-c0f70b35babf",
+          "name": "Get Tournament Round",
+          "request": {
+            "name": "Get Tournament Round",
+            "description": {},
+            "url": {
+              "path": [
+                "tournament",
+                ":url-ID",
+                ":round"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "url-ID",
+                  "description": "(Required) Tournament URL-ID slug from chess.com/tournament/{url-ID}"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "round",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c876d0c6-4d9e-4842-b91b-22edd8bdf3ed",
+              "name": "Round details",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "tournament",
+                    ":url-ID",
+                    ":round"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "url-ID",
+                      "description": "(Required) Tournament URL-ID slug from chess.com/tournament/{url-ID}"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "round",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bef175b8-c34e-4eb3-ac0d-3a59559b34b9",
+          "name": "Get Tournament Round Group",
+          "request": {
+            "name": "Get Tournament Round Group",
+            "description": {},
+            "url": {
+              "path": [
+                "tournament",
+                ":url-ID",
+                ":round",
+                ":group"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "url-ID",
+                  "description": "(Required) Tournament URL-ID slug from chess.com/tournament/{url-ID}"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "round",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "group",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "64c95a6e-8c53-4cd8-a2cc-911b5549d4d7",
+              "name": "Group standings within a round",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "tournament",
+                    ":url-ID",
+                    ":round",
+                    ":group"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "url-ID",
+                      "description": "(Required) Tournament URL-ID slug from chess.com/tournament/{url-ID}"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "round",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "group",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "6bf6ec3a-8c9d-4665-b152-adc149914c55",
+      "name": "Matches",
+      "description": {
+        "content": "Daily and live team match details",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5a21d8f7-a8fa-4976-93a8-9f36f8c735ef",
+          "name": "Get Player Team Matches",
+          "request": {
+            "name": "Get Player Team Matches",
+            "description": {},
+            "url": {
+              "path": [
+                "player",
+                ":username",
+                "matches"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "username",
+                  "description": "(Required) All-lowercase Chess.com username"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7d7233e1-0bd5-410f-b0d2-e2e2b37f88f3",
+              "name": "Team match participation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "player",
+                    ":username",
+                    "matches"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "username",
+                      "description": "(Required) All-lowercase Chess.com username"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2203612e-059c-40db-b81e-d72157233df9",
+          "name": "Get Club Matches",
+          "request": {
+            "name": "Get Club Matches",
+            "description": {},
+            "url": {
+              "path": [
+                "club",
+                ":url-ID",
+                "matches"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "url-ID",
+                  "description": "(Required) Club URL-ID slug from chess.com/club/{url-ID}"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8243b39a-b8b8-4d4e-9aee-205d66a42567",
+              "name": "Team matches for the club",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "club",
+                    ":url-ID",
+                    "matches"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "url-ID",
+                      "description": "(Required) Club URL-ID slug from chess.com/club/{url-ID}"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "12aebdaa-6e2f-46fb-8963-41586f05804e",
+          "name": "Get Daily Team Match",
+          "request": {
+            "name": "Get Daily Team Match",
+            "description": {},
+            "url": {
+              "path": [
+                "match",
+                ":ID"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "ID",
+                  "description": "(Required) Numeric team-match ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fa0275a8-824a-4a7c-a549-2d4a254f11ce",
+              "name": "Daily team match details",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "match",
+                    ":ID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "ID",
+                      "description": "(Required) Numeric team-match ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cbcca421-1208-4cfa-a552-930088c3d629",
+          "name": "Get Daily Team Match Board",
+          "request": {
+            "name": "Get Daily Team Match Board",
+            "description": {},
+            "url": {
+              "path": [
+                "match",
+                ":ID",
+                ":board"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "ID",
+                  "description": "(Required) Numeric team-match ID"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "board",
+                  "description": "(Required) Board number within the team match"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "22f6baf0-860c-41f8-afa5-f28f45bab45c",
+              "name": "Daily team match board",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "match",
+                    ":ID",
+                    ":board"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "ID",
+                      "description": "(Required) Numeric team-match ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "board",
+                      "description": "(Required) Board number within the team match"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "df3ef854-f284-41e2-a491-4cd1aeb2cb12",
+          "name": "Get Live Team Match",
+          "request": {
+            "name": "Get Live Team Match",
+            "description": {},
+            "url": {
+              "path": [
+                "match",
+                "live",
+                ":ID"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "ID",
+                  "description": "(Required) Numeric team-match ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "363ca902-16c7-42d7-806e-38bc72229096",
+              "name": "Live team match details",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "match",
+                    "live",
+                    ":ID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "ID",
+                      "description": "(Required) Numeric team-match ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d19da851-c042-473f-b31f-563e5a07950d",
+          "name": "Get Live Team Match Board",
+          "request": {
+            "name": "Get Live Team Match Board",
+            "description": {},
+            "url": {
+              "path": [
+                "match",
+                "live",
+                ":ID",
+                ":board"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "ID",
+                  "description": "(Required) Numeric team-match ID"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "board",
+                  "description": "(Required) Board number within the team match"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c0867cf9-57e6-4e17-9b2d-39d276e9f4ff",
+              "name": "Live team match board",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "match",
+                    "live",
+                    ":ID",
+                    ":board"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "ID",
+                      "description": "(Required) Numeric team-match ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "board",
+                      "description": "(Required) Board number within the team match"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "56af2acc-8a42-4b11-bbe1-157849bd32ae",
+      "name": "Countries",
+      "description": {
+        "content": "Country profiles, players, and clubs",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "4ff0aeb2-33f4-4700-9d5b-a46f2c0113c2",
+          "name": "Get Country Profile",
+          "request": {
+            "name": "Get Country Profile",
+            "description": {},
+            "url": {
+              "path": [
+                "country",
+                ":iso"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "iso",
+                  "description": "(Required) ISO 3166-1 alpha-2 country code (e.g. US, RU, IN)"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fb31e5a3-c37c-4f99-b504-92aab5741ed2",
+              "name": "Country profile",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "country",
+                    ":iso"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "iso",
+                      "description": "(Required) ISO 3166-1 alpha-2 country code (e.g. US, RU, IN)"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"@id\": \"string\",\n  \"name\": \"string\",\n  \"code\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ee30ca36-cd42-4134-a1f2-63a39d88a1b6",
+          "name": "List Players By Country",
+          "request": {
+            "name": "List Players By Country",
+            "description": {},
+            "url": {
+              "path": [
+                "country",
+                ":iso",
+                "players"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "iso",
+                  "description": "(Required) ISO 3166-1 alpha-2 country code (e.g. US, RU, IN)"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "30214bc1-a056-4c42-ac43-7a45491ac088",
+              "name": "Players for the given country",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "country",
+                    ":iso",
+                    "players"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "iso",
+                      "description": "(Required) ISO 3166-1 alpha-2 country code (e.g. US, RU, IN)"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"players\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d0b76b20-716a-412c-8468-85b7eff0545b",
+          "name": "List Clubs By Country",
+          "request": {
+            "name": "List Clubs By Country",
+            "description": {},
+            "url": {
+              "path": [
+                "country",
+                ":iso",
+                "clubs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "iso",
+                  "description": "(Required) ISO 3166-1 alpha-2 country code (e.g. US, RU, IN)"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2e21a81a-5610-44d3-981a-b87b05319fdd",
+              "name": "Clubs for the given country",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "country",
+                    ":iso",
+                    "clubs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "iso",
+                      "description": "(Required) ISO 3166-1 alpha-2 country code (e.g. US, RU, IN)"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"clubs\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "92f2b519-0ae2-4b94-9df9-1b65e3d07e89",
+      "name": "Puzzles",
+      "description": {
+        "content": "Daily and random puzzles",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ca036cb6-4dc2-4728-9060-aca8c9020c25",
+          "name": "Get Daily Puzzle",
+          "request": {
+            "name": "Get Daily Puzzle",
+            "description": {},
+            "url": {
+              "path": [
+                "puzzle"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0c02a5a2-38e1-4420-b42d-ad8697834f45",
+              "name": "The daily puzzle",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "puzzle"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"title\": \"string\",\n  \"url\": \"https://GcKkOTSDPOqBQuSnayOtwKG.ajsxHdPg4prVF9yrl5o50,hWyd\",\n  \"publish_time\": 1030,\n  \"fen\": \"string\",\n  \"pgn\": \"string\",\n  \"image\": \"https://hn.iaJ,Svk3C-NcVD2wrC6Pk,eozOgHErrJOGIkN0Us,X.0dcncrj,oReo\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b83464af-29bd-4e0c-9b2b-19d8c4efdc38",
+          "name": "Get Random Daily Puzzle",
+          "request": {
+            "name": "Get Random Daily Puzzle",
+            "description": {},
+            "url": {
+              "path": [
+                "puzzle",
+                "random"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "20be3802-99bb-4fbc-999f-d977fdfc95be",
+              "name": "A randomly selected past daily puzzle",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "puzzle",
+                    "random"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"title\": \"string\",\n  \"url\": \"https://GcKkOTSDPOqBQuSnayOtwKG.ajsxHdPg4prVF9yrl5o50,hWyd\",\n  \"publish_time\": 1030,\n  \"fen\": \"string\",\n  \"pgn\": \"string\",\n  \"image\": \"https://hn.iaJ,Svk3C-NcVD2wrC6Pk,eozOgHErrJOGIkN0Us,X.0dcncrj,oReo\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "665ca815-40f0-4009-8b9c-d53b1264c9ab",
+      "name": "Streamers",
+      "description": {
+        "content": "Chess.com streamers",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0707ddbc-a366-41ff-a9f2-4c2164ad2ce5",
+          "name": "List Chess.com Streamers",
+          "request": {
+            "name": "List Chess.com Streamers",
+            "description": {},
+            "url": {
+              "path": [
+                "streamers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b5ccf58f-9e4d-4862-863c-00d4ba7aed6d",
+              "name": "Chess.com streamers and their channel URLs",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "streamers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"streamers\": [\n    {\n      \"username\": \"string\",\n      \"avatar\": \"http://mQIouwA.akhQbguai0e\",\n      \"twitch_url\": \"http://itmPNPEIuMbRSyhd.jouxhPIM0aER4mUF0A1zIGlg5heFNkTNlGpvLTU3c26hWLUv8m1e4DtA7jCdoyq4zXc1E.y\",\n      \"url\": \"https://ufVlbYZDKcUnsFkrtTtLTQTORdBSucQg.fhjY0zBB9wdKRWXD8KBXIyMeCOBYf3INj.+s7JYKhOVGTF,PQWJfMV,2fVFty+lUj2pUj76PpqF\",\n      \"is_live\": false\n    },\n    {\n      \"username\": \"string\",\n      \"avatar\": \"http://CVUEsbDb.kstkjXMHdVL5\",\n      \"twitch_url\": \"http://KuSKyqBefDVsNBaMayaByD.wlenMSIoPyepuhcxkiw.k-qrTmlHB7fOFI,imT65a6L3z2l4acS7ReV9lMqK6,ewPkcJ7X+iAKkUDduBq+LvY3\",\n      \"url\": \"https://OKpAKNjlZGHxcOozDrjM.rqfxCq.SZYGgbtS4JQJPtV-e1MCdDYW+UD7wZiIPDH\",\n      \"is_live\": true\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "997af746-a1d4-405c-8628-64c0903cda5d",
+      "name": "Leaderboards",
+      "description": {
+        "content": "Live leaderboards across time controls and variants",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a1924432-49ee-42cb-8c78-a45a19ec1aad",
+          "name": "Get Leaderboards",
+          "request": {
+            "name": "Get Leaderboards",
+            "description": {},
+            "url": {
+              "path": [
+                "leaderboards"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "99700547-ffb0-444f-a0fc-a996f523704c",
+              "name": "Top 50 players across all formats",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "leaderboards"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "b7838ada-2260-4c8d-9b3d-7f53edfc79ba",
+      "name": "Titled Players",
+      "description": {
+        "content": "Lists of titled players by FIDE title",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f085afd2-b128-47c0-9b97-f88775c39eba",
+          "name": "List Titled Players",
+          "request": {
+            "name": "List Titled Players",
+            "description": {},
+            "url": {
+              "path": [
+                "titled",
+                ":title-abbrev"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "title-abbrev",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "48762686-89e1-4dff-a677-13a54e1d585a",
+              "name": "List of titled players",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "titled",
+                    ":title-abbrev"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "title-abbrev",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"players\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.chess.com/pub",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "87ff738c-fd44-4f9a-bbfc-989e8f02def1",
+    "name": "Chess.com Published Data API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Public, read-only REST API exposing Chess.com data: player profiles and stats, monthly game\narchives (JSON and PGN), clubs and members, daily and live team matches, Swiss and round-robin\ntournaments, titled-player lists, country rosters, the daily puzzle, the streamer list, and\nlive leaderboards.\n\nThe API is unauthenticated; rate limiting applies to parallel requests (429 Too Many Requests).\nResponses use JSON-LD with ETag, Last-Modified, gzip, and JSONP support. Most endpoints refresh\nat most every 12-24 hours. Clients are encouraged to send a recognizable User-Agent including a\ncontact email or URL.\n\n\nContact Support:\n Name: Chess.com Support",
+      "type": "text/plain"
+    }
+  }
+}

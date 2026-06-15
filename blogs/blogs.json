@@ -2,20 +2,34 @@
   "repo": "chess-com",
   "feeds": [
     {
+      "source": "https://www.chess.com/rss/news",
+      "feed_url": "https://www.chess.com/rss/news",
+      "title": "",
+      "saved": 11,
+      "method": "feed"
+    },
+    {
+      "source": "https://www.chess.com/rss/articles",
+      "feed_url": "https://www.chess.com/rss/articles",
+      "title": "",
+      "saved": 4,
+      "method": "feed"
+    },
+    {
       "source": "https://www.chess.com/news",
       "feed_url": "https://www.chess.com/rss/news",
       "title": "",
-      "saved": 14,
+      "saved": 0,
       "method": "discovered"
     },
     {
       "source": "https://www.chess.com/article",
       "feed_url": "https://www.chess.com/rss/articles",
       "title": "",
-      "saved": 4,
+      "saved": 0,
       "method": "discovered"
     }
   ],
-  "post_count": 18,
-  "fetched": "2026-06-01T23:35:02Z"
+  "post_count": 43,
+  "fetched": "2026-06-14T20:42:17Z"
 }
