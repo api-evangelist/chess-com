@@ -72,7 +72,7 @@ common:
     type: Blog
   - url: https://www.chess.com/forum
     name: Forums
-    type: Forum
+    type: Forums
   - url: https://www.linkedin.com/company/chess-com
     name: LinkedIn
     type: LinkedIn
@@ -99,22 +99,22 @@ common:
     type: Documentation
   - url: https://github.com/andyruwruw/chess-web-api
     name: chess-web-api (Node.js wrapper)
-    type: SDK
+    type: SDKs
   - url: https://www.npmjs.com/package/chess-web-api
     name: chess-web-api on npm
-    type: SDK
+    type: SDKs
   - url: https://github.com/sarartur/chess.com
     name: chess.com (Python wrapper)
-    type: SDK
+    type: SDKs
   - url: https://github.com/Stupidoodle/chess-com-api
     name: chess-com-api (async Python)
-    type: SDK
+    type: SDKs
   - url: https://github.com/sornerol/chess-com-pubapi-java-wrapper
     name: chess-com-pubapi-java-wrapper (Java)
-    type: SDK
+    type: SDKs
   - url: https://github.com/chrismaltais/chess-pub-api-client
     name: chess-pub-api-client (Ruby)
-    type: SDK
+    type: SDKs
   - url: plans/chess-com-plans-pricing.yml
     name: Chess.com Plans
     type: Plans
