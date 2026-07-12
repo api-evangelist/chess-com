@@ -43,6 +43,10 @@ kind: contract
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 access: 3rd-Party
 common:
+  - type: VulnerabilityDisclosure
+    url: security/chess-com-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/chess-com-domain-security.yml
   - url: https://www.chess.com
     name: Chess.com Home
     type: Portal
