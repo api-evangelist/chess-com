@@ -5,14 +5,14 @@
       "source": "https://www.chess.com/rss/news",
       "feed_url": "https://www.chess.com/rss/news",
       "title": "",
-      "saved": 12,
+      "saved": 0,
       "method": "feed"
     },
     {
       "source": "https://www.chess.com/rss/articles",
       "feed_url": "https://www.chess.com/rss/articles",
       "title": "",
-      "saved": 3,
+      "saved": 0,
       "method": "feed"
     },
     {
@@ -30,6 +30,6 @@
       "method": "discovered"
     }
   ],
-  "post_count": 73,
-  "fetched": "2026-06-27T12:03:07Z"
+  "post_count": 114,
+  "fetched": "2026-07-11T11:50:51Z"
 }
