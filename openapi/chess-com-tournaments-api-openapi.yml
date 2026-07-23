@@ -1,0 +1,125 @@
+openapi: 3.1.0
+info:
+  title: Chess.com Published Data Clubs Tournaments API
+  description: 'Public, read-only REST API exposing Chess.com data: player profiles and stats, monthly game
+
+    archives (JSON and PGN), clubs and members, daily and live team matches, Swiss and round-robin
+
+    tournaments, titled-player lists, country rosters, the daily puzzle, the streamer list, and
+
+    live leaderboards.
+
+
+    The API is unauthenticated; rate limiting applies to parallel requests (429 Too Many Requests).
+
+    Responses use JSON-LD with ETag, Last-Modified, gzip, and JSONP support. Most endpoints refresh
+
+    at most every 12-24 hours. Clients are encouraged to send a recognizable User-Agent including a
+
+    contact email or URL.
+
+    '
+  version: '2026-05-25'
+  contact:
+    name: Chess.com Support
+    url: https://support.chess.com
+  x-logo:
+    url: https://www.chess.com/favicon.ico
+servers:
+- url: https://api.chess.com/pub
+  description: Chess.com Published Data API
+tags:
+- name: Tournaments
+  description: Tournament details, rounds, and groups
+paths:
+  /player/{username}/tournaments:
+    get:
+      summary: Get Player Tournaments
+      operationId: getPlayerTournaments
+      tags:
+      - Tournaments
+      parameters:
+      - $ref: '#/components/parameters/Username'
+      responses:
+        '200':
+          description: Tournaments the player has registered for
+          content:
+            application/json:
+              schema:
+                type: object
+  /tournament/{url-ID}:
+    get:
+      summary: Get Tournament
+      operationId: getTournament
+      tags:
+      - Tournaments
+      parameters:
+      - $ref: '#/components/parameters/TournamentUrlId'
+      responses:
+        '200':
+          description: Tournament summary
+          content:
+            application/json:
+              schema:
+                type: object
+  /tournament/{url-ID}/{round}:
+    get:
+      summary: Get Tournament Round
+      operationId: getTournamentRound
+      tags:
+      - Tournaments
+      parameters:
+      - $ref: '#/components/parameters/TournamentUrlId'
+      - name: round
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Round details
+          content:
+            application/json:
+              schema:
+                type: object
+  /tournament/{url-ID}/{round}/{group}:
+    get:
+      summary: Get Tournament Round Group
+      operationId: getTournamentRoundGroup
+      tags:
+      - Tournaments
+      parameters:
+      - $ref: '#/components/parameters/TournamentUrlId'
+      - name: round
+        in: path
+        required: true
+        schema:
+          type: integer
+      - name: group
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Group standings within a round
+          content:
+            application/json:
+              schema:
+                type: object
+components:
+  parameters:
+    Username:
+      name: username
+      in: path
+      required: true
+      description: All-lowercase Chess.com username
+      schema:
+        type: string
+    TournamentUrlId:
+      name: url-ID
+      in: path
+      required: true
+      description: Tournament URL-ID slug from chess.com/tournament/{url-ID}
+      schema:
+        type: string

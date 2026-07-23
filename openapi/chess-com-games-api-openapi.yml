@@ -1,0 +1,218 @@
+openapi: 3.1.0
+info:
+  title: Chess.com Published Data Clubs Games API
+  description: 'Public, read-only REST API exposing Chess.com data: player profiles and stats, monthly game
+
+    archives (JSON and PGN), clubs and members, daily and live team matches, Swiss and round-robin
+
+    tournaments, titled-player lists, country rosters, the daily puzzle, the streamer list, and
+
+    live leaderboards.
+
+
+    The API is unauthenticated; rate limiting applies to parallel requests (429 Too Many Requests).
+
+    Responses use JSON-LD with ETag, Last-Modified, gzip, and JSONP support. Most endpoints refresh
+
+    at most every 12-24 hours. Clients are encouraged to send a recognizable User-Agent including a
+
+    contact email or URL.
+
+    '
+  version: '2026-05-25'
+  contact:
+    name: Chess.com Support
+    url: https://support.chess.com
+  x-logo:
+    url: https://www.chess.com/favicon.ico
+servers:
+- url: https://api.chess.com/pub
+  description: Chess.com Published Data API
+tags:
+- name: Games
+  description: Daily, live, and archived games (JSON and PGN)
+paths:
+  /player/{username}/games:
+    get:
+      summary: Get Player Current Daily Games
+      operationId: getPlayerCurrentGames
+      tags:
+      - Games
+      parameters:
+      - $ref: '#/components/parameters/Username'
+      responses:
+        '200':
+          description: In-progress daily chess games
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  games:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Game'
+  /player/{username}/games/to-move:
+    get:
+      summary: Get Player Games To Move
+      operationId: getPlayerGamesToMove
+      tags:
+      - Games
+      parameters:
+      - $ref: '#/components/parameters/Username'
+      responses:
+        '200':
+          description: Daily games waiting on the player to move
+          content:
+            application/json:
+              schema:
+                type: object
+  /player/{username}/games/archives:
+    get:
+      summary: List Player Game Archives
+      operationId: listPlayerArchives
+      tags:
+      - Games
+      parameters:
+      - $ref: '#/components/parameters/Username'
+      responses:
+        '200':
+          description: URLs of available monthly archives
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  archives:
+                    type: array
+                    items:
+                      type: string
+                      format: uri
+  /player/{username}/games/{year}/{month}:
+    get:
+      summary: Get Player Monthly Archive
+      operationId: getPlayerMonthlyArchive
+      tags:
+      - Games
+      parameters:
+      - $ref: '#/components/parameters/Username'
+      - $ref: '#/components/parameters/Year'
+      - $ref: '#/components/parameters/Month'
+      responses:
+        '200':
+          description: All games completed in the given month
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  games:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Game'
+  /player/{username}/games/{year}/{month}/pgn:
+    get:
+      summary: Get Player Monthly Archive PGN
+      operationId: getPlayerMonthlyArchivePgn
+      tags:
+      - Games
+      parameters:
+      - $ref: '#/components/parameters/Username'
+      - $ref: '#/components/parameters/Year'
+      - $ref: '#/components/parameters/Month'
+      responses:
+        '200':
+          description: All games in the given month as a multi-game PGN stream
+          content:
+            application/x-chess-pgn:
+              schema:
+                type: string
+components:
+  schemas:
+    Game:
+      type: object
+      properties:
+        url:
+          type: string
+          format: uri
+        pgn:
+          type: string
+        time_control:
+          type: string
+        end_time:
+          type: integer
+        rated:
+          type: boolean
+        fen:
+          type: string
+        time_class:
+          type: string
+          enum:
+          - daily
+          - rapid
+          - blitz
+          - bullet
+        rules:
+          type: string
+          enum:
+          - chess
+          - chess960
+          - bughouse
+          - kingofthehill
+          - threecheck
+          - crazyhouse
+        white:
+          $ref: '#/components/schemas/GamePlayer'
+        black:
+          $ref: '#/components/schemas/GamePlayer'
+    GamePlayer:
+      type: object
+      properties:
+        rating:
+          type: integer
+        result:
+          type: string
+          enum:
+          - win
+          - checkmated
+          - agreed
+          - repetition
+          - timeout
+          - resigned
+          - stalemate
+          - lose
+          - insufficient
+          - 50move
+          - abandoned
+          - kingofthehill
+          - threecheck
+          - bughousepartnerlose
+        '@id':
+          type: string
+          format: uri
+        username:
+          type: string
+  parameters:
+    Month:
+      name: month
+      in: path
+      required: true
+      description: Two-digit month
+      schema:
+        type: string
+        pattern: ^(0[1-9]|1[0-2])$
+    Username:
+      name: username
+      in: path
+      required: true
+      description: All-lowercase Chess.com username
+      schema:
+        type: string
+    Year:
+      name: year
+      in: path
+      required: true
+      description: Four-digit year
+      schema:
+        type: string
+        pattern: ^[0-9]{4}$

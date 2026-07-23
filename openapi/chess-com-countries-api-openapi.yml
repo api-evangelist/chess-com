@@ -1,0 +1,107 @@
+openapi: 3.1.0
+info:
+  title: Chess.com Published Data Clubs Countries API
+  description: 'Public, read-only REST API exposing Chess.com data: player profiles and stats, monthly game
+
+    archives (JSON and PGN), clubs and members, daily and live team matches, Swiss and round-robin
+
+    tournaments, titled-player lists, country rosters, the daily puzzle, the streamer list, and
+
+    live leaderboards.
+
+
+    The API is unauthenticated; rate limiting applies to parallel requests (429 Too Many Requests).
+
+    Responses use JSON-LD with ETag, Last-Modified, gzip, and JSONP support. Most endpoints refresh
+
+    at most every 12-24 hours. Clients are encouraged to send a recognizable User-Agent including a
+
+    contact email or URL.
+
+    '
+  version: '2026-05-25'
+  contact:
+    name: Chess.com Support
+    url: https://support.chess.com
+  x-logo:
+    url: https://www.chess.com/favicon.ico
+servers:
+- url: https://api.chess.com/pub
+  description: Chess.com Published Data API
+tags:
+- name: Countries
+  description: Country profiles, players, and clubs
+paths:
+  /country/{iso}:
+    get:
+      summary: Get Country Profile
+      operationId: getCountry
+      tags:
+      - Countries
+      parameters:
+      - $ref: '#/components/parameters/Iso'
+      responses:
+        '200':
+          description: Country profile
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  '@id':
+                    type: string
+                  name:
+                    type: string
+                  code:
+                    type: string
+  /country/{iso}/players:
+    get:
+      summary: List Players By Country
+      operationId: listCountryPlayers
+      tags:
+      - Countries
+      parameters:
+      - $ref: '#/components/parameters/Iso'
+      responses:
+        '200':
+          description: Players for the given country
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  players:
+                    type: array
+                    items:
+                      type: string
+  /country/{iso}/clubs:
+    get:
+      summary: List Clubs By Country
+      operationId: listCountryClubs
+      tags:
+      - Countries
+      parameters:
+      - $ref: '#/components/parameters/Iso'
+      responses:
+        '200':
+          description: Clubs for the given country
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  clubs:
+                    type: array
+                    items:
+                      type: string
+components:
+  parameters:
+    Iso:
+      name: iso
+      in: path
+      required: true
+      description: ISO 3166-1 alpha-2 country code (e.g. US, RU, IN)
+      schema:
+        type: string
+        minLength: 2
+        maxLength: 2
