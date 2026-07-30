@@ -1,36 +1,226 @@
 aid: chess-com
 url: https://raw.githubusercontent.com/api-evangelist/chess-com/refs/heads/main/apis.yml
 apis:
-  - aid: chess-com:chess-com-published-data-api
-    name: Chess.com Published Data API
-    tags:
-      - Chess
-      - Gaming
-      - Players
-      - Public Data
-    humanURL: https://www.chess.com/news/view/published-data-api
-    baseURL: https://api.chess.com/pub/
-    properties:
-      - url: https://www.chess.com/news/view/published-data-api
-        type: Documentation
-      - url: https://support.chess.com/en/articles/9650547-published-data-api
-        type: Documentation
-      - url: openapi/chess-com-published-data-api-openapi.yml
-        type: OpenAPI
-      - url: json-schema/chess-com-player-schema.json
-        type: JSONSchema
-      - url: json-schema/chess-com-game-schema.json
-        type: JSONSchema
-      - url: json-schema/chess-com-club-schema.json
-        type: JSONSchema
-      - url: json-ld/chess-com-context.jsonld
-        type: JSONLD
-    description: >-
-      Public, unauthenticated REST API exposing player profiles, monthly game archives (with PGN download), club
-      rosters, daily and live team matches, Swiss/round-robin tournaments, titled players, country rosters, the daily
-      puzzle, the streamer list, and live leaderboards across daily, blitz, bullet, rapid, tactics, lessons, and chess
-      variants. JSON-LD response shape with ETag, Last-Modified, gzip, and JSONP support; data refreshes at most every
-      12-24 hours.
+- aid: chess-com:chess-com-clubs-api
+  name: Chess.com Clubs API
+  description: Club profiles, members, and team matches
+  humanURL: https://www.chess.com/news/view/published-data-api
+  baseURL: https://api.chess.com/pub/
+  tags:
+  - Clubs
+  properties:
+  - type: OpenAPI
+    url: openapi/chess-com-clubs-api-openapi.yml
+  - type: Documentation
+    url: https://www.chess.com/news/view/published-data-api
+  - type: Documentation
+    url: https://support.chess.com/en/articles/9650547-published-data-api
+  - type: JSONSchema
+    url: json-schema/chess-com-player-schema.json
+  - type: JSONSchema
+    url: json-schema/chess-com-game-schema.json
+  - type: JSONSchema
+    url: json-schema/chess-com-club-schema.json
+  - type: JSONLD
+    url: json-ld/chess-com-context.jsonld
+- aid: chess-com:chess-com-countries-api
+  name: Chess.com Countries API
+  description: Country profiles, players, and clubs
+  humanURL: https://www.chess.com/news/view/published-data-api
+  baseURL: https://api.chess.com/pub/
+  tags:
+  - Countries
+  properties:
+  - type: OpenAPI
+    url: openapi/chess-com-countries-api-openapi.yml
+  - type: Documentation
+    url: https://www.chess.com/news/view/published-data-api
+  - type: Documentation
+    url: https://support.chess.com/en/articles/9650547-published-data-api
+  - type: JSONSchema
+    url: json-schema/chess-com-player-schema.json
+  - type: JSONSchema
+    url: json-schema/chess-com-game-schema.json
+  - type: JSONSchema
+    url: json-schema/chess-com-club-schema.json
+  - type: JSONLD
+    url: json-ld/chess-com-context.jsonld
+- aid: chess-com:chess-com-games-api
+  name: Chess.com Games API
+  description: Daily, live, and archived games (JSON and PGN)
+  humanURL: https://www.chess.com/news/view/published-data-api
+  baseURL: https://api.chess.com/pub/
+  tags:
+  - Games
+  properties:
+  - type: OpenAPI
+    url: openapi/chess-com-games-api-openapi.yml
+  - type: Documentation
+    url: https://www.chess.com/news/view/published-data-api
+  - type: Documentation
+    url: https://support.chess.com/en/articles/9650547-published-data-api
+  - type: JSONSchema
+    url: json-schema/chess-com-player-schema.json
+  - type: JSONSchema
+    url: json-schema/chess-com-game-schema.json
+  - type: JSONSchema
+    url: json-schema/chess-com-club-schema.json
+  - type: JSONLD
+    url: json-ld/chess-com-context.jsonld
+- aid: chess-com:chess-com-leaderboards-api
+  name: Chess.com Leaderboards API
+  description: Live leaderboards across time controls and variants
+  humanURL: https://www.chess.com/news/view/published-data-api
+  baseURL: https://api.chess.com/pub/
+  tags:
+  - Leaderboards
+  properties:
+  - type: OpenAPI
+    url: openapi/chess-com-leaderboards-api-openapi.yml
+  - type: Documentation
+    url: https://www.chess.com/news/view/published-data-api
+  - type: Documentation
+    url: https://support.chess.com/en/articles/9650547-published-data-api
+  - type: JSONSchema
+    url: json-schema/chess-com-player-schema.json
+  - type: JSONSchema
+    url: json-schema/chess-com-game-schema.json
+  - type: JSONSchema
+    url: json-schema/chess-com-club-schema.json
+  - type: JSONLD
+    url: json-ld/chess-com-context.jsonld
+- aid: chess-com:chess-com-matches-api
+  name: Chess.com Matches API
+  description: Daily and live team match details
+  humanURL: https://www.chess.com/news/view/published-data-api
+  baseURL: https://api.chess.com/pub/
+  tags:
+  - Matches
+  properties:
+  - type: OpenAPI
+    url: openapi/chess-com-matches-api-openapi.yml
+  - type: Documentation
+    url: https://www.chess.com/news/view/published-data-api
+  - type: Documentation
+    url: https://support.chess.com/en/articles/9650547-published-data-api
+  - type: JSONSchema
+    url: json-schema/chess-com-player-schema.json
+  - type: JSONSchema
+    url: json-schema/chess-com-game-schema.json
+  - type: JSONSchema
+    url: json-schema/chess-com-club-schema.json
+  - type: JSONLD
+    url: json-ld/chess-com-context.jsonld
+- aid: chess-com:chess-com-players-api
+  name: Chess.com Players API
+  description: Profiles, stats, online state, archives, clubs, matches, tournaments
+  humanURL: https://www.chess.com/news/view/published-data-api
+  baseURL: https://api.chess.com/pub/
+  tags:
+  - Players
+  properties:
+  - type: OpenAPI
+    url: openapi/chess-com-players-api-openapi.yml
+  - type: Documentation
+    url: https://www.chess.com/news/view/published-data-api
+  - type: Documentation
+    url: https://support.chess.com/en/articles/9650547-published-data-api
+  - type: JSONSchema
+    url: json-schema/chess-com-player-schema.json
+  - type: JSONSchema
+    url: json-schema/chess-com-game-schema.json
+  - type: JSONSchema
+    url: json-schema/chess-com-club-schema.json
+  - type: JSONLD
+    url: json-ld/chess-com-context.jsonld
+- aid: chess-com:chess-com-puzzles-api
+  name: Chess.com Puzzles API
+  description: Daily and random puzzles
+  humanURL: https://www.chess.com/news/view/published-data-api
+  baseURL: https://api.chess.com/pub/
+  tags:
+  - Puzzles
+  properties:
+  - type: OpenAPI
+    url: openapi/chess-com-puzzles-api-openapi.yml
+  - type: Documentation
+    url: https://www.chess.com/news/view/published-data-api
+  - type: Documentation
+    url: https://support.chess.com/en/articles/9650547-published-data-api
+  - type: JSONSchema
+    url: json-schema/chess-com-player-schema.json
+  - type: JSONSchema
+    url: json-schema/chess-com-game-schema.json
+  - type: JSONSchema
+    url: json-schema/chess-com-club-schema.json
+  - type: JSONLD
+    url: json-ld/chess-com-context.jsonld
+- aid: chess-com:chess-com-streamers-api
+  name: Chess.com Streamers API
+  description: Chess.com streamers
+  humanURL: https://www.chess.com/news/view/published-data-api
+  baseURL: https://api.chess.com/pub/
+  tags:
+  - Streamers
+  properties:
+  - type: OpenAPI
+    url: openapi/chess-com-streamers-api-openapi.yml
+  - type: Documentation
+    url: https://www.chess.com/news/view/published-data-api
+  - type: Documentation
+    url: https://support.chess.com/en/articles/9650547-published-data-api
+  - type: JSONSchema
+    url: json-schema/chess-com-player-schema.json
+  - type: JSONSchema
+    url: json-schema/chess-com-game-schema.json
+  - type: JSONSchema
+    url: json-schema/chess-com-club-schema.json
+  - type: JSONLD
+    url: json-ld/chess-com-context.jsonld
+- aid: chess-com:chess-com-titled-players-api
+  name: Chess.com Titled Players API
+  description: Lists of titled players by FIDE title
+  humanURL: https://www.chess.com/news/view/published-data-api
+  baseURL: https://api.chess.com/pub/
+  tags:
+  - Titled Players
+  properties:
+  - type: OpenAPI
+    url: openapi/chess-com-titled-players-api-openapi.yml
+  - type: Documentation
+    url: https://www.chess.com/news/view/published-data-api
+  - type: Documentation
+    url: https://support.chess.com/en/articles/9650547-published-data-api
+  - type: JSONSchema
+    url: json-schema/chess-com-player-schema.json
+  - type: JSONSchema
+    url: json-schema/chess-com-game-schema.json
+  - type: JSONSchema
+    url: json-schema/chess-com-club-schema.json
+  - type: JSONLD
+    url: json-ld/chess-com-context.jsonld
+- aid: chess-com:chess-com-tournaments-api
+  name: Chess.com Tournaments API
+  description: Tournament details, rounds, and groups
+  humanURL: https://www.chess.com/news/view/published-data-api
+  baseURL: https://api.chess.com/pub/
+  tags:
+  - Tournaments
+  properties:
+  - type: OpenAPI
+    url: openapi/chess-com-tournaments-api-openapi.yml
+  - type: Documentation
+    url: https://www.chess.com/news/view/published-data-api
+  - type: Documentation
+    url: https://support.chess.com/en/articles/9650547-published-data-api
+  - type: JSONSchema
+    url: json-schema/chess-com-player-schema.json
+  - type: JSONSchema
+    url: json-schema/chess-com-game-schema.json
+  - type: JSONSchema
+    url: json-schema/chess-com-club-schema.json
+  - type: JSONLD
+    url: json-ld/chess-com-context.jsonld
 name: Chess.com
 tags:
   - Chess
@@ -40,7 +230,19 @@ tags:
   - Community
   - Education
 kind: contract
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: paid
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Paid
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/chess-com.png
 access: 3rd-Party
 common:
   - type: AgenticAccess
