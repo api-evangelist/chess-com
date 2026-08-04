@@ -1,0 +1,32 @@
+{
+  "provider": "chess-com",
+  "sources": [
+    "chess-com-clubs-api-openapi.yml",
+    "chess-com-countries-api-openapi.yml",
+    "chess-com-games-api-openapi.yml",
+    "chess-com-leaderboards-api-openapi.yml",
+    "chess-com-matches-api-openapi.yml",
+    "chess-com-players-api-openapi.yml",
+    "chess-com-puzzles-api-openapi.yml",
+    "chess-com-streamers-api-openapi.yml",
+    "chess-com-titled-players-api-openapi.yml",
+    "chess-com-tournaments-api-openapi.yml"
+  ],
+  "outputs": [
+    "chess-com-clubs-api-openapi.yml",
+    "chess-com-countries-api-openapi.yml",
+    "chess-com-games-api-openapi.yml",
+    "chess-com-leaderboards-api-openapi.yml",
+    "chess-com-matches-api-openapi.yml",
+    "chess-com-players-api-openapi.yml",
+    "chess-com-puzzles-api-openapi.yml",
+    "chess-com-streamers-api-openapi.yml",
+    "chess-com-titled-players-api-openapi.yml",
+    "chess-com-tournaments-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
