@@ -24,7 +24,7 @@ concepts:
   - term: Daily Game
     definition: Correspondence chess game played over hours or days. Time class "daily".
   - term: Live Game
-    definition: Real-time game in one of three time classes: rapid, blitz, bullet.
+    definition: "Real-time game in one of three time classes: rapid, blitz, bullet."
   - term: PGN
     definition: Portable Game Notation — textual representation of a chess game with headers and moves.
   - term: FEN
