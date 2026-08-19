@@ -1,0 +1,465 @@
+{
+  "item": [
+    {
+      "id": "62319964-e347-42dd-b586-4e7c5751610b",
+      "name": "Clubs",
+      "description": {
+        "content": "Club profiles, members, and team matches",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9c94ddd5-5635-4b96-93dc-c45bb1783514",
+          "name": "Get Player Club Memberships",
+          "request": {
+            "name": "Get Player Club Memberships",
+            "description": {},
+            "url": {
+              "path": [
+                "player",
+                ":username",
+                "clubs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "username",
+                  "description": "(Required) All-lowercase Chess.com username"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a44736dd-600b-451f-8739-c74a316a90ec",
+              "name": "Clubs the player belongs to",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "player",
+                    ":username",
+                    "clubs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "username",
+                      "description": "(Required) All-lowercase Chess.com username"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ecd3c3ca-3cb8-4079-ab80-909229cf2bb5",
+          "name": "Get Club Profile",
+          "request": {
+            "name": "Get Club Profile",
+            "description": {},
+            "url": {
+              "path": [
+                "club",
+                ":url-ID"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "url-ID",
+                  "description": "(Required) Club URL-ID slug from chess.com/club/{url-ID}"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d272c643-1d22-47e9-876b-63ebf2a6488d",
+              "name": "Club profile",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "club",
+                    ":url-ID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "url-ID",
+                      "description": "(Required) Club URL-ID slug from chess.com/club/{url-ID}"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"@id\": \"string\",\n  \"name\": \"string\",\n  \"club_id\": 8657,\n  \"country\": \"string\",\n  \"average_daily_rating\": 1012,\n  \"members_count\": 5911,\n  \"created\": 353,\n  \"last_activity\": 7401,\n  \"admin\": [\n    \"string\",\n    \"string\"\n  ],\n  \"visibility\": \"string\",\n  \"join_request\": \"string\",\n  \"description\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "13e95e2f-ec98-4477-8fa8-c720e579d307",
+          "name": "Get Club Members",
+          "request": {
+            "name": "Get Club Members",
+            "description": {},
+            "url": {
+              "path": [
+                "club",
+                ":url-ID",
+                "members"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "url-ID",
+                  "description": "(Required) Club URL-ID slug from chess.com/club/{url-ID}"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "109cec18-1d16-4692-b535-6ecc77aaec4f",
+              "name": "Club members grouped by activity level",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "club",
+                    ":url-ID",
+                    "members"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "url-ID",
+                      "description": "(Required) Club URL-ID slug from chess.com/club/{url-ID}"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"weekly\": [\n    {\n      \"username\": \"string\",\n      \"joined\": 7143\n    },\n    {\n      \"username\": \"string\",\n      \"joined\": 4508\n    }\n  ],\n  \"monthly\": [\n    {\n      \"username\": \"string\",\n      \"joined\": 7812\n    },\n    {\n      \"username\": \"string\",\n      \"joined\": 4975\n    }\n  ],\n  \"all_time\": [\n    {\n      \"username\": \"string\",\n      \"joined\": 4036\n    },\n    {\n      \"username\": \"string\",\n      \"joined\": 5774\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "87ff6b4d-d50d-45d6-a5d2-8dea1b6d5f07",
+          "name": "Get Club Matches",
+          "request": {
+            "name": "Get Club Matches",
+            "description": {},
+            "url": {
+              "path": [
+                "club",
+                ":url-ID",
+                "matches"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "url-ID",
+                  "description": "(Required) Club URL-ID slug from chess.com/club/{url-ID}"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "038a0a62-8d20-4fcb-bba9-88b86e5d0722",
+              "name": "Team matches for the club",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "club",
+                    ":url-ID",
+                    "matches"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "url-ID",
+                      "description": "(Required) Club URL-ID slug from chess.com/club/{url-ID}"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f8c2dc65-a3f5-43e3-8cfb-4487a82c7ec2",
+          "name": "List Clubs By Country",
+          "request": {
+            "name": "List Clubs By Country",
+            "description": {},
+            "url": {
+              "path": [
+                "country",
+                ":iso",
+                "clubs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "iso",
+                  "description": "(Required) ISO 3166-1 alpha-2 country code (e.g. US, RU, IN)"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2051b11d-a6dc-4061-a1a9-1a235e91037f",
+              "name": "Clubs for the given country",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "country",
+                    ":iso",
+                    "clubs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "iso",
+                      "description": "(Required) ISO 3166-1 alpha-2 country code (e.g. US, RU, IN)"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"clubs\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.chess.com/pub",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "8875402f-0cc2-464d-953f-bef1023ce88a",
+    "name": "Chess.com Published Data Clubs API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Public, read-only REST API exposing Chess.com data: player profiles and stats, monthly game\narchives (JSON and PGN), clubs and members, daily and live team matches, Swiss and round-robin\ntournaments, titled-player lists, country rosters, the daily puzzle, the streamer list, and\nlive leaderboards.\n\nThe API is unauthenticated; rate limiting applies to parallel requests (429 Too Many Requests).\nResponses use JSON-LD with ETag, Last-Modified, gzip, and JSONP support. Most endpoints refresh\nat most every 12-24 hours. Clients are encouraged to send a recognizable User-Agent including a\ncontact email or URL.\n\n\nContact Support:\n Name: Chess.com Support",
+      "type": "text/plain"
+    }
+  }
+}

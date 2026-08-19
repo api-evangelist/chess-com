@@ -1,0 +1,270 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Chess.com Published Data Clubs Players API",
+    "version": "2026-05-25"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Players",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Player Profile",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chess.com/pub/player/:username",
+            "params": [
+              {
+                "name": "username",
+                "value": "",
+                "type": "path",
+                "description": "All-lowercase Chess.com username"
+              }
+            ]
+          },
+          "docs": "Get Player Profile"
+        },
+        {
+          "info": {
+            "name": "Get Player Stats",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chess.com/pub/player/:username/stats",
+            "params": [
+              {
+                "name": "username",
+                "value": "",
+                "type": "path",
+                "description": "All-lowercase Chess.com username"
+              }
+            ]
+          },
+          "docs": "Get Player Stats"
+        },
+        {
+          "info": {
+            "name": "Get Player Online Status",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chess.com/pub/player/:username/is-online",
+            "params": [
+              {
+                "name": "username",
+                "value": "",
+                "type": "path",
+                "description": "All-lowercase Chess.com username"
+              }
+            ]
+          },
+          "docs": "Get Player Online Status"
+        },
+        {
+          "info": {
+            "name": "Get Player Current Daily Games",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chess.com/pub/player/:username/games",
+            "params": [
+              {
+                "name": "username",
+                "value": "",
+                "type": "path",
+                "description": "All-lowercase Chess.com username"
+              }
+            ]
+          },
+          "docs": "Get Player Current Daily Games"
+        },
+        {
+          "info": {
+            "name": "Get Player Games To Move",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chess.com/pub/player/:username/games/to-move",
+            "params": [
+              {
+                "name": "username",
+                "value": "",
+                "type": "path",
+                "description": "All-lowercase Chess.com username"
+              }
+            ]
+          },
+          "docs": "Get Player Games To Move"
+        },
+        {
+          "info": {
+            "name": "List Player Game Archives",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chess.com/pub/player/:username/games/archives",
+            "params": [
+              {
+                "name": "username",
+                "value": "",
+                "type": "path",
+                "description": "All-lowercase Chess.com username"
+              }
+            ]
+          },
+          "docs": "List Player Game Archives"
+        },
+        {
+          "info": {
+            "name": "Get Player Monthly Archive",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chess.com/pub/player/:username/games/:year/:month",
+            "params": [
+              {
+                "name": "username",
+                "value": "",
+                "type": "path",
+                "description": "All-lowercase Chess.com username"
+              },
+              {
+                "name": "year",
+                "value": "",
+                "type": "path",
+                "description": "Four-digit year"
+              },
+              {
+                "name": "month",
+                "value": "",
+                "type": "path",
+                "description": "Two-digit month"
+              }
+            ]
+          },
+          "docs": "Get Player Monthly Archive"
+        },
+        {
+          "info": {
+            "name": "Get Player Monthly Archive PGN",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chess.com/pub/player/:username/games/:year/:month/pgn",
+            "params": [
+              {
+                "name": "username",
+                "value": "",
+                "type": "path",
+                "description": "All-lowercase Chess.com username"
+              },
+              {
+                "name": "year",
+                "value": "",
+                "type": "path",
+                "description": "Four-digit year"
+              },
+              {
+                "name": "month",
+                "value": "",
+                "type": "path",
+                "description": "Two-digit month"
+              }
+            ]
+          },
+          "docs": "Get Player Monthly Archive PGN"
+        },
+        {
+          "info": {
+            "name": "Get Player Club Memberships",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chess.com/pub/player/:username/clubs",
+            "params": [
+              {
+                "name": "username",
+                "value": "",
+                "type": "path",
+                "description": "All-lowercase Chess.com username"
+              }
+            ]
+          },
+          "docs": "Get Player Club Memberships"
+        },
+        {
+          "info": {
+            "name": "Get Player Team Matches",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chess.com/pub/player/:username/matches",
+            "params": [
+              {
+                "name": "username",
+                "value": "",
+                "type": "path",
+                "description": "All-lowercase Chess.com username"
+              }
+            ]
+          },
+          "docs": "Get Player Team Matches"
+        },
+        {
+          "info": {
+            "name": "Get Player Tournaments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chess.com/pub/player/:username/tournaments",
+            "params": [
+              {
+                "name": "username",
+                "value": "",
+                "type": "path",
+                "description": "All-lowercase Chess.com username"
+              }
+            ]
+          },
+          "docs": "Get Player Tournaments"
+        },
+        {
+          "info": {
+            "name": "List Players By Country",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chess.com/pub/country/:iso/players",
+            "params": [
+              {
+                "name": "iso",
+                "value": "",
+                "type": "path",
+                "description": "ISO 3166-1 alpha-2 country code (e.g. US, RU, IN)"
+              }
+            ]
+          },
+          "docs": "List Players By Country"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

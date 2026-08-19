@@ -1,0 +1,40 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Chess.com Published Data Clubs Puzzles API",
+    "version": "2026-05-25"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Puzzles",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Daily Puzzle",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chess.com/pub/puzzle"
+          },
+          "docs": "Get Daily Puzzle"
+        },
+        {
+          "info": {
+            "name": "Get Random Daily Puzzle",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chess.com/pub/puzzle/random"
+          },
+          "docs": "Get Random Daily Puzzle"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,144 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Chess.com Published Data Clubs Matches API",
+    "version": "2026-05-25"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Matches",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Player Team Matches",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chess.com/pub/player/:username/matches",
+            "params": [
+              {
+                "name": "username",
+                "value": "",
+                "type": "path",
+                "description": "All-lowercase Chess.com username"
+              }
+            ]
+          },
+          "docs": "Get Player Team Matches"
+        },
+        {
+          "info": {
+            "name": "Get Club Matches",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chess.com/pub/club/:url-ID/matches",
+            "params": [
+              {
+                "name": "url-ID",
+                "value": "",
+                "type": "path",
+                "description": "Club URL-ID slug from chess.com/club/{url-ID}"
+              }
+            ]
+          },
+          "docs": "Get Club Matches"
+        },
+        {
+          "info": {
+            "name": "Get Daily Team Match",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chess.com/pub/match/:ID",
+            "params": [
+              {
+                "name": "ID",
+                "value": "",
+                "type": "path",
+                "description": "Numeric team-match ID"
+              }
+            ]
+          },
+          "docs": "Get Daily Team Match"
+        },
+        {
+          "info": {
+            "name": "Get Daily Team Match Board",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chess.com/pub/match/:ID/:board",
+            "params": [
+              {
+                "name": "ID",
+                "value": "",
+                "type": "path",
+                "description": "Numeric team-match ID"
+              },
+              {
+                "name": "board",
+                "value": "",
+                "type": "path",
+                "description": "Board number within the team match"
+              }
+            ]
+          },
+          "docs": "Get Daily Team Match Board"
+        },
+        {
+          "info": {
+            "name": "Get Live Team Match",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chess.com/pub/match/live/:ID",
+            "params": [
+              {
+                "name": "ID",
+                "value": "",
+                "type": "path",
+                "description": "Numeric team-match ID"
+              }
+            ]
+          },
+          "docs": "Get Live Team Match"
+        },
+        {
+          "info": {
+            "name": "Get Live Team Match Board",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chess.com/pub/match/live/:ID/:board",
+            "params": [
+              {
+                "name": "ID",
+                "value": "",
+                "type": "path",
+                "description": "Numeric team-match ID"
+              },
+              {
+                "name": "board",
+                "value": "",
+                "type": "path",
+                "description": "Board number within the team match"
+              }
+            ]
+          },
+          "docs": "Get Live Team Match Board"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

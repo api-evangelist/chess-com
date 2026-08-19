@@ -1,0 +1,422 @@
+{
+  "item": [
+    {
+      "id": "91e98171-0fa4-4222-8548-fc87dc133866",
+      "name": "Tournaments",
+      "description": {
+        "content": "Tournament details, rounds, and groups",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "7b9f0610-de90-486e-af6c-83622a45ee85",
+          "name": "Get Player Tournaments",
+          "request": {
+            "name": "Get Player Tournaments",
+            "description": {},
+            "url": {
+              "path": [
+                "player",
+                ":username",
+                "tournaments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "username",
+                  "description": "(Required) All-lowercase Chess.com username"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c6dfc581-d5b3-4ec4-9ce8-0b3bed7887c8",
+              "name": "Tournaments the player has registered for",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "player",
+                    ":username",
+                    "tournaments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "username",
+                      "description": "(Required) All-lowercase Chess.com username"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b97dc6a1-58a6-4e84-a3ff-aabae4258a33",
+          "name": "Get Tournament",
+          "request": {
+            "name": "Get Tournament",
+            "description": {},
+            "url": {
+              "path": [
+                "tournament",
+                ":url-ID"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "url-ID",
+                  "description": "(Required) Tournament URL-ID slug from chess.com/tournament/{url-ID}"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f2832deb-5dc8-4726-b078-defb3d701845",
+              "name": "Tournament summary",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "tournament",
+                    ":url-ID"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "url-ID",
+                      "description": "(Required) Tournament URL-ID slug from chess.com/tournament/{url-ID}"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a3d05788-c502-43b0-beb0-ef27728a3ff6",
+          "name": "Get Tournament Round",
+          "request": {
+            "name": "Get Tournament Round",
+            "description": {},
+            "url": {
+              "path": [
+                "tournament",
+                ":url-ID",
+                ":round"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "url-ID",
+                  "description": "(Required) Tournament URL-ID slug from chess.com/tournament/{url-ID}"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "round",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5282ddd4-0683-4d06-97c8-b57ffdc4ae3e",
+              "name": "Round details",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "tournament",
+                    ":url-ID",
+                    ":round"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "url-ID",
+                      "description": "(Required) Tournament URL-ID slug from chess.com/tournament/{url-ID}"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "round",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3145e84c-ba89-4aef-91de-e3554dce6d99",
+          "name": "Get Tournament Round Group",
+          "request": {
+            "name": "Get Tournament Round Group",
+            "description": {},
+            "url": {
+              "path": [
+                "tournament",
+                ":url-ID",
+                ":round",
+                ":group"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "url-ID",
+                  "description": "(Required) Tournament URL-ID slug from chess.com/tournament/{url-ID}"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "round",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "group",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1518a0a5-d421-4405-b525-9dfbd614c8f7",
+              "name": "Group standings within a round",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "tournament",
+                    ":url-ID",
+                    ":round",
+                    ":group"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "url-ID",
+                      "description": "(Required) Tournament URL-ID slug from chess.com/tournament/{url-ID}"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "round",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "group",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.chess.com/pub",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "4125b074-8d62-4bf7-bc9c-a5071ba366db",
+    "name": "Chess.com Published Data Clubs Tournaments API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Public, read-only REST API exposing Chess.com data: player profiles and stats, monthly game\narchives (JSON and PGN), clubs and members, daily and live team matches, Swiss and round-robin\ntournaments, titled-player lists, country rosters, the daily puzzle, the streamer list, and\nlive leaderboards.\n\nThe API is unauthenticated; rate limiting applies to parallel requests (429 Too Many Requests).\nResponses use JSON-LD with ETag, Last-Modified, gzip, and JSONP support. Most endpoints refresh\nat most every 12-24 hours. Clients are encouraged to send a recognizable User-Agent including a\ncontact email or URL.\n\n\nContact Support:\n Name: Chess.com Support",
+      "type": "text/plain"
+    }
+  }
+}

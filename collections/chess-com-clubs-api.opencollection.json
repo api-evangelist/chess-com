@@ -1,0 +1,113 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Chess.com Published Data Clubs API",
+    "version": "2026-05-25"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Clubs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Player Club Memberships",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chess.com/pub/player/:username/clubs",
+            "params": [
+              {
+                "name": "username",
+                "value": "",
+                "type": "path",
+                "description": "All-lowercase Chess.com username"
+              }
+            ]
+          },
+          "docs": "Get Player Club Memberships"
+        },
+        {
+          "info": {
+            "name": "Get Club Profile",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chess.com/pub/club/:url-ID",
+            "params": [
+              {
+                "name": "url-ID",
+                "value": "",
+                "type": "path",
+                "description": "Club URL-ID slug from chess.com/club/{url-ID}"
+              }
+            ]
+          },
+          "docs": "Get Club Profile"
+        },
+        {
+          "info": {
+            "name": "Get Club Members",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chess.com/pub/club/:url-ID/members",
+            "params": [
+              {
+                "name": "url-ID",
+                "value": "",
+                "type": "path",
+                "description": "Club URL-ID slug from chess.com/club/{url-ID}"
+              }
+            ]
+          },
+          "docs": "Get Club Members"
+        },
+        {
+          "info": {
+            "name": "Get Club Matches",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chess.com/pub/club/:url-ID/matches",
+            "params": [
+              {
+                "name": "url-ID",
+                "value": "",
+                "type": "path",
+                "description": "Club URL-ID slug from chess.com/club/{url-ID}"
+              }
+            ]
+          },
+          "docs": "Get Club Matches"
+        },
+        {
+          "info": {
+            "name": "List Clubs By Country",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chess.com/pub/country/:iso/clubs",
+            "params": [
+              {
+                "name": "iso",
+                "value": "",
+                "type": "path",
+                "description": "ISO 3166-1 alpha-2 country code (e.g. US, RU, IN)"
+              }
+            ]
+          },
+          "docs": "List Clubs By Country"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

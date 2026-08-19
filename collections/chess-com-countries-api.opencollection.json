@@ -1,0 +1,75 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Chess.com Published Data Clubs Countries API",
+    "version": "2026-05-25"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Countries",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Country Profile",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chess.com/pub/country/:iso",
+            "params": [
+              {
+                "name": "iso",
+                "value": "",
+                "type": "path",
+                "description": "ISO 3166-1 alpha-2 country code (e.g. US, RU, IN)"
+              }
+            ]
+          },
+          "docs": "Get Country Profile"
+        },
+        {
+          "info": {
+            "name": "List Players By Country",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chess.com/pub/country/:iso/players",
+            "params": [
+              {
+                "name": "iso",
+                "value": "",
+                "type": "path",
+                "description": "ISO 3166-1 alpha-2 country code (e.g. US, RU, IN)"
+              }
+            ]
+          },
+          "docs": "List Players By Country"
+        },
+        {
+          "info": {
+            "name": "List Clubs By Country",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chess.com/pub/country/:iso/clubs",
+            "params": [
+              {
+                "name": "iso",
+                "value": "",
+                "type": "path",
+                "description": "ISO 3166-1 alpha-2 country code (e.g. US, RU, IN)"
+              }
+            ]
+          },
+          "docs": "List Clubs By Country"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

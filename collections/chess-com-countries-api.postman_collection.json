@@ -1,0 +1,291 @@
+{
+  "item": [
+    {
+      "id": "4135db32-400d-46af-87b2-f2177b0f4ae4",
+      "name": "Countries",
+      "description": {
+        "content": "Country profiles, players, and clubs",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0254b7e7-cd31-4716-bcb5-302d22783361",
+          "name": "Get Country Profile",
+          "request": {
+            "name": "Get Country Profile",
+            "description": {},
+            "url": {
+              "path": [
+                "country",
+                ":iso"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "iso",
+                  "description": "(Required) ISO 3166-1 alpha-2 country code (e.g. US, RU, IN)"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e5699884-7c5c-413d-b9df-445ac1f798a7",
+              "name": "Country profile",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "country",
+                    ":iso"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "iso",
+                      "description": "(Required) ISO 3166-1 alpha-2 country code (e.g. US, RU, IN)"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"@id\": \"string\",\n  \"name\": \"string\",\n  \"code\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "70607e6a-f2d5-4a37-b523-6e6dea6ddb79",
+          "name": "List Players By Country",
+          "request": {
+            "name": "List Players By Country",
+            "description": {},
+            "url": {
+              "path": [
+                "country",
+                ":iso",
+                "players"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "iso",
+                  "description": "(Required) ISO 3166-1 alpha-2 country code (e.g. US, RU, IN)"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e79e4ec0-3a08-42fe-9f85-483e6fd679c7",
+              "name": "Players for the given country",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "country",
+                    ":iso",
+                    "players"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "iso",
+                      "description": "(Required) ISO 3166-1 alpha-2 country code (e.g. US, RU, IN)"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"players\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "32b9ea87-f725-45ba-9b15-895009e7f260",
+          "name": "List Clubs By Country",
+          "request": {
+            "name": "List Clubs By Country",
+            "description": {},
+            "url": {
+              "path": [
+                "country",
+                ":iso",
+                "clubs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "iso",
+                  "description": "(Required) ISO 3166-1 alpha-2 country code (e.g. US, RU, IN)"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0d6af041-42a1-4187-b5db-5256fb2f226c",
+              "name": "Clubs for the given country",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "country",
+                    ":iso",
+                    "clubs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "iso",
+                      "description": "(Required) ISO 3166-1 alpha-2 country code (e.g. US, RU, IN)"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"clubs\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.chess.com/pub",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "8bcb40bf-dafd-4ed2-bd6a-4a183f450e3a",
+    "name": "Chess.com Published Data Clubs Countries API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Public, read-only REST API exposing Chess.com data: player profiles and stats, monthly game\narchives (JSON and PGN), clubs and members, daily and live team matches, Swiss and round-robin\ntournaments, titled-player lists, country rosters, the daily puzzle, the streamer list, and\nlive leaderboards.\n\nThe API is unauthenticated; rate limiting applies to parallel requests (429 Too Many Requests).\nResponses use JSON-LD with ETag, Last-Modified, gzip, and JSONP support. Most endpoints refresh\nat most every 12-24 hours. Clients are encouraged to send a recognizable User-Agent including a\ncontact email or URL.\n\n\nContact Support:\n Name: Chess.com Support",
+      "type": "text/plain"
+    }
+  }
+}

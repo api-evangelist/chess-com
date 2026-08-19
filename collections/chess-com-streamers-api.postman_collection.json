@@ -1,0 +1,99 @@
+{
+  "item": [
+    {
+      "id": "a37d1188-b020-4bcb-8d41-d1833ba83866",
+      "name": "Streamers",
+      "description": {
+        "content": "Chess.com streamers",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "22f41629-9bfa-419d-b997-1610fb94efe1",
+          "name": "List Chess.com Streamers",
+          "request": {
+            "name": "List Chess.com Streamers",
+            "description": {},
+            "url": {
+              "path": [
+                "streamers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3a68e74f-bb50-418f-8bec-edb94f39dab9",
+              "name": "Chess.com streamers and their channel URLs",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "streamers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"streamers\": [\n    {\n      \"username\": \"string\",\n      \"avatar\": \"http://rjcGQmEtmGtVjYZV.jejqGmWCgjUcBiIljmfwdmRpx3Uw3OVoI9yJ-6zeMGD0ZxvstvNiW8YR\",\n      \"twitch_url\": \"http://HlEJYXoVyD.kxhcUqWo,TdMc9WhFamIiA9bmw\",\n      \"url\": \"http://p.daO3yl.-zL15pxJhiKbN,Rebqx,wW5\",\n      \"is_live\": false\n    },\n    {\n      \"username\": \"string\",\n      \"avatar\": \"https://dllAgtclQldNfbYsqRhVHXbidG.yvlXAGwG.UYXlrhjK+hv7yo5\",\n      \"twitch_url\": \"http://ibTbLiiERbKHZ.zuhQ0XmUhYDNqA0RLdofUyrHoY3JmiuE+K-Z\",\n      \"url\": \"http://LPJX.gvg3j-uyW,XMl7zWPIqsZjWPi-NZ0ldv+zhoNbvLbRwJ.FUeEHeH\",\n      \"is_live\": false\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.chess.com/pub",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "c7fd0bb9-ed67-4412-8e32-97a32902a158",
+    "name": "Chess.com Published Data Clubs Streamers API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Public, read-only REST API exposing Chess.com data: player profiles and stats, monthly game\narchives (JSON and PGN), clubs and members, daily and live team matches, Swiss and round-robin\ntournaments, titled-player lists, country rosters, the daily puzzle, the streamer list, and\nlive leaderboards.\n\nThe API is unauthenticated; rate limiting applies to parallel requests (429 Too Many Requests).\nResponses use JSON-LD with ETag, Last-Modified, gzip, and JSONP support. Most endpoints refresh\nat most every 12-24 hours. Clients are encouraged to send a recognizable User-Agent including a\ncontact email or URL.\n\n\nContact Support:\n Name: Chess.com Support",
+      "type": "text/plain"
+    }
+  }
+}

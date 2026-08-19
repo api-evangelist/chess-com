@@ -1,0 +1,109 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Chess.com Published Data Clubs Tournaments API",
+    "version": "2026-05-25"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Tournaments",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Player Tournaments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chess.com/pub/player/:username/tournaments",
+            "params": [
+              {
+                "name": "username",
+                "value": "",
+                "type": "path",
+                "description": "All-lowercase Chess.com username"
+              }
+            ]
+          },
+          "docs": "Get Player Tournaments"
+        },
+        {
+          "info": {
+            "name": "Get Tournament",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chess.com/pub/tournament/:url-ID",
+            "params": [
+              {
+                "name": "url-ID",
+                "value": "",
+                "type": "path",
+                "description": "Tournament URL-ID slug from chess.com/tournament/{url-ID}"
+              }
+            ]
+          },
+          "docs": "Get Tournament"
+        },
+        {
+          "info": {
+            "name": "Get Tournament Round",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chess.com/pub/tournament/:url-ID/:round",
+            "params": [
+              {
+                "name": "url-ID",
+                "value": "",
+                "type": "path",
+                "description": "Tournament URL-ID slug from chess.com/tournament/{url-ID}"
+              },
+              {
+                "name": "round",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Tournament Round"
+        },
+        {
+          "info": {
+            "name": "Get Tournament Round Group",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chess.com/pub/tournament/:url-ID/:round/:group",
+            "params": [
+              {
+                "name": "url-ID",
+                "value": "",
+                "type": "path",
+                "description": "Tournament URL-ID slug from chess.com/tournament/{url-ID}"
+              },
+              {
+                "name": "round",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "group",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Tournament Round Group"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

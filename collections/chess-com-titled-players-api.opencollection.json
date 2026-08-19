@@ -1,0 +1,36 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Chess.com Published Data Clubs Titled Players API",
+    "version": "2026-05-25"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Titled Players",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Titled Players",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.chess.com/pub/titled/:title-abbrev",
+            "params": [
+              {
+                "name": "title-abbrev",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List Titled Players"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

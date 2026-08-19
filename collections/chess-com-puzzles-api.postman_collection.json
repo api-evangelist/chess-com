@@ -1,0 +1,168 @@
+{
+  "item": [
+    {
+      "id": "a8607809-d50d-48ce-b458-34a1a40854d6",
+      "name": "Puzzles",
+      "description": {
+        "content": "Daily and random puzzles",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "7ece20a3-fbe9-4b2f-89a9-3840ed3dca27",
+          "name": "Get Daily Puzzle",
+          "request": {
+            "name": "Get Daily Puzzle",
+            "description": {},
+            "url": {
+              "path": [
+                "puzzle"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2961530f-e45e-45e5-95db-c06f3700ac9f",
+              "name": "The daily puzzle",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "puzzle"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"title\": \"string\",\n  \"url\": \"https://EYFvMuvsYzrXldZPuHvmroLujWooeAhz.ydjiVo8OWI3MnYmdgfxAIfTAOPG6o0b+oTqDxzb-Cl6L6i8rlULm1z\",\n  \"publish_time\": 1475,\n  \"fen\": \"string\",\n  \"pgn\": \"string\",\n  \"image\": \"https://zVsbYHxedgmWzqieBEB.ctlxZpBpDHY9RG08\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0379060a-4195-49ae-a51e-85c9b896a29d",
+          "name": "Get Random Daily Puzzle",
+          "request": {
+            "name": "Get Random Daily Puzzle",
+            "description": {},
+            "url": {
+              "path": [
+                "puzzle",
+                "random"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1b8ee6c6-642e-4df3-92b4-f85e7d34fdc5",
+              "name": "A randomly selected past daily puzzle",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "puzzle",
+                    "random"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"title\": \"string\",\n  \"url\": \"https://EYFvMuvsYzrXldZPuHvmroLujWooeAhz.ydjiVo8OWI3MnYmdgfxAIfTAOPG6o0b+oTqDxzb-Cl6L6i8rlULm1z\",\n  \"publish_time\": 1475,\n  \"fen\": \"string\",\n  \"pgn\": \"string\",\n  \"image\": \"https://zVsbYHxedgmWzqieBEB.ctlxZpBpDHY9RG08\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.chess.com/pub",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "886ca656-778d-41c8-ba1b-7288d32c179c",
+    "name": "Chess.com Published Data Clubs Puzzles API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Public, read-only REST API exposing Chess.com data: player profiles and stats, monthly game\narchives (JSON and PGN), clubs and members, daily and live team matches, Swiss and round-robin\ntournaments, titled-player lists, country rosters, the daily puzzle, the streamer list, and\nlive leaderboards.\n\nThe API is unauthenticated; rate limiting applies to parallel requests (429 Too Many Requests).\nResponses use JSON-LD with ETag, Last-Modified, gzip, and JSONP support. Most endpoints refresh\nat most every 12-24 hours. Clients are encouraged to send a recognizable User-Agent including a\ncontact email or URL.\n\n\nContact Support:\n Name: Chess.com Support",
+      "type": "text/plain"
+    }
+  }
+}
