@@ -1,5 +1,6 @@
 aid: chess-com
 url: https://raw.githubusercontent.com/api-evangelist/chess-com/refs/heads/main/apis.yml
+specificationVersion: '0.23'
 apis:
 - aid: chess-com:chess-com-clubs-api
   name: Chess.com Clubs API
