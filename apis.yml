@@ -236,12 +236,12 @@ apis:
     url: json-ld/chess-com-context.jsonld
 name: Chess.com
 tags:
-  - Chess
-  - Gaming
-  - Online Games
-  - Sports
-  - Community
-  - Education
+- Chess
+- Gaming
+- Online Games
+- Sports
+- Community
+- Education
 kind: contract
 accessModel:
   pricing: paid
@@ -258,100 +258,102 @@ accessModel:
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/chess-com.png
 access: 3rd-Party
 common:
-  - type: Website
-    url: https://www.chess.com/
-  - type: AgenticAccess
-    url: agentic-access/chess-com-agentic-access.yml
-  - type: VulnerabilityDisclosure
-    url: security/chess-com-vulnerability-disclosure.yml
-  - type: DomainSecurity
-    url: security/chess-com-domain-security.yml
-  - url: https://www.chess.com
-    name: Chess.com Home
-    type: Portal
-  - url: https://www.chess.com/news/view/published-data-api
-    name: Published Data API
-    type: Documentation
-  - url: https://support.chess.com/en/articles/9650547-published-data-api
-    name: Help Center — PubAPI
-    type: Documentation
-  - url: https://www.chess.com/membership
-    name: Premium Membership
-    type: Pricing
-  - url: https://www.chess.com/legal/privacy
-    name: Privacy Policy
-    type: PrivacyPolicy
-  - url: https://www.chess.com/legal
-    name: Terms of Service
-    type: TermsOfService
-  - url: https://www.chess.com/about
-    name: About Chess.com
-    type: AboutUs
-  - url: https://www.chess.com/news
-    name: News
-    type: Blog
-  - url: https://www.chess.com/article
-    name: Articles
-    type: Blog
-  - url: https://www.chess.com/forum
-    name: Forums
-    type: Forums
-  - url: https://www.linkedin.com/company/chess-com
-    name: LinkedIn
-    type: LinkedIn
-  - url: https://twitter.com/chesscom
-    name: Twitter / X
-    type: Twitter
-  - url: https://www.youtube.com/chess
-    name: YouTube
-    type: YouTube
-  - url: https://www.twitch.tv/chess
-    name: Twitch
-    type: Twitch
-  - url: https://github.com/chess
-    name: Chess.com GitHub
-    type: GitHubOrganization
-  - url: https://www.chess.com/coaches
-    name: Coaches
-    type: Support
-  - url: https://www.chess.com/streamers
-    name: Streamers
-    type: Documentation
-  - url: https://www.chess.com/leaderboard
-    name: Leaderboards
-    type: Documentation
-  - url: https://github.com/andyruwruw/chess-web-api
-    name: chess-web-api (Node.js wrapper)
-    type: SDKs
-  - url: https://www.npmjs.com/package/chess-web-api
-    name: chess-web-api on npm
-    type: SDKs
-  - url: https://github.com/sarartur/chess.com
-    name: chess.com (Python wrapper)
-    type: SDKs
-  - url: https://github.com/Stupidoodle/chess-com-api
-    name: chess-com-api (async Python)
-    type: SDKs
-  - url: https://github.com/sornerol/chess-com-pubapi-java-wrapper
-    name: chess-com-pubapi-java-wrapper (Java)
-    type: SDKs
-  - url: https://github.com/chrismaltais/chess-pub-api-client
-    name: chess-pub-api-client (Ruby)
-    type: SDKs
-  - url: plans/chess-com-plans-pricing.yml
-    name: Chess.com Plans
-    type: Plans
-  - url: rate-limits/chess-com-rate-limits.yml
-    name: Chess.com Rate Limits
-    type: RateLimits
-  - url: finops/chess-com-finops.yml
-    name: Chess.com FinOps
-    type: FinOps
-  - url: vocabulary/chess-com-vocabulary.yml
-    name: Chess.com Vocabulary
-    type: Vocabulary
+- type: Website
+  url: https://www.chess.com/
+- type: AgenticAccess
+  url: agentic-access/chess-com-agentic-access.yml
+- type: VulnerabilityDisclosure
+  url: security/chess-com-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/chess-com-domain-security.yml
+- url: https://www.chess.com
+  name: Chess.com Home
+  type: Portal
+- url: https://www.chess.com/news/view/published-data-api
+  name: Published Data API
+  type: Documentation
+- url: https://support.chess.com/en/articles/9650547-published-data-api
+  name: Help Center — PubAPI
+  type: Documentation
+- url: https://www.chess.com/membership
+  name: Premium Membership
+  type: Pricing
+- url: https://www.chess.com/legal/privacy
+  name: Privacy Policy
+  type: PrivacyPolicy
+- url: https://www.chess.com/legal
+  name: Terms of Service
+  type: TermsOfService
+- url: https://www.chess.com/about
+  name: About Chess.com
+  type: AboutUs
+- url: https://www.chess.com/news
+  name: News
+  type: Blog
+- url: https://www.chess.com/article
+  name: Articles
+  type: Blog
+- url: https://www.chess.com/forum
+  name: Forums
+  type: Forums
+- url: https://www.linkedin.com/company/chess-com
+  name: LinkedIn
+  type: LinkedIn
+- url: https://twitter.com/chesscom
+  name: Twitter / X
+  type: Twitter
+- url: https://www.youtube.com/chess
+  name: YouTube
+  type: YouTube
+- url: https://www.twitch.tv/chess
+  name: Twitch
+  type: Twitch
+- url: https://github.com/chess
+  name: Chess.com GitHub
+  type: GitHubOrganization
+- url: https://www.chess.com/coaches
+  name: Coaches
+  type: Support
+- url: https://www.chess.com/streamers
+  name: Streamers
+  type: Documentation
+- url: https://www.chess.com/leaderboard
+  name: Leaderboards
+  type: Documentation
+- url: https://github.com/andyruwruw/chess-web-api
+  name: chess-web-api (Node.js wrapper)
+  type: SDKs
+- url: https://www.npmjs.com/package/chess-web-api
+  name: chess-web-api on npm
+  type: SDKs
+- url: https://github.com/sarartur/chess.com
+  name: chess.com (Python wrapper)
+  type: SDKs
+- url: https://github.com/Stupidoodle/chess-com-api
+  name: chess-com-api (async Python)
+  type: SDKs
+- url: https://github.com/sornerol/chess-com-pubapi-java-wrapper
+  name: chess-com-pubapi-java-wrapper (Java)
+  type: SDKs
+- url: https://github.com/chrismaltais/chess-pub-api-client
+  name: chess-pub-api-client (Ruby)
+  type: SDKs
+- url: plans/chess-com-plans-pricing.yml
+  name: Chess.com Plans
+  type: Plans
+- url: rate-limits/chess-com-rate-limits.yml
+  name: Chess.com Rate Limits
+  type: RateLimits
+- url: finops/chess-com-finops.yml
+  name: Chess.com FinOps
+  type: FinOps
+- url: vocabulary/chess-com-vocabulary.yml
+  name: Chess.com Vocabulary
+  type: Vocabulary
 maintainers:
-  - FN: Kin Lane
-    email: info@apievangelist.com
+- FN: Kin Lane
+  email: info@apievangelist.com
 created: '2026-05-25'
-modified: '2026-05-25'
+modified: '2026-09-15'
+description: Chess.com is an online chess platform. Its public data API exposes player profiles and game
+  archives, clubs, team matches, tournaments, leaderboards, titled players and country data.
