@@ -130,6 +130,8 @@ apis:
   humanURL: https://www.chess.com/news/view/published-data-api
   baseURL: https://api.chess.com/pub/
   tags:
+  - Player
+  tags_raw:
   - Players
   properties:
   - type: OpenAPI
