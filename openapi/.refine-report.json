@@ -1,16 +1,7 @@
 {
   "provider": "chess-com",
   "sources": [
-    "chess-com-clubs-api-openapi.yml",
-    "chess-com-countries-api-openapi.yml",
-    "chess-com-games-api-openapi.yml",
-    "chess-com-leaderboards-api-openapi.yml",
-    "chess-com-matches-api-openapi.yml",
-    "chess-com-players-api-openapi.yml",
-    "chess-com-puzzles-api-openapi.yml",
-    "chess-com-streamers-api-openapi.yml",
-    "chess-com-titled-players-api-openapi.yml",
-    "chess-com-tournaments-api-openapi.yml"
+    "_original/chess-com-published-data-api-openapi.yml"
   ],
   "outputs": [
     "chess-com-clubs-api-openapi.yml",
@@ -27,6 +18,21 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "chess-com-published-data-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "chess-com-clubs-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "chess-com-countries-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "chess-com-games-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "chess-com-leaderboards-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "chess-com-matches-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "chess-com-players-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "chess-com-puzzles-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "chess-com-streamers-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "chess-com-titled-players-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "chess-com-tournaments-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

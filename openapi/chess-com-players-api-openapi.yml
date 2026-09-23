@@ -1,24 +1,13 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Chess.com Published Data Clubs Players API
+  title: Chess.com Published Data Players API
   description: 'Public, read-only REST API exposing Chess.com data: player profiles and stats, monthly game
 
     archives (JSON and PGN), clubs and members, daily and live team matches, Swiss and round-robin
 
     tournaments, titled-player lists, country rosters, the daily puzzle, the streamer list, and
 
-    live leaderboards.
-
-
-    The API is unauthenticated; rate limiting applies to parallel requests (429 Too Many Requests).
-
-    Responses use JSON-LD with ETag, Last-Modified, gzip, and JSONP support. Most endpoints refresh
-
-    at most every 12-24 hours. Clients are encouraged to send a recognizable User-Agent including a
-
-    contact email or URL.
-
-    '
+    live leaderboards.'
   version: '2026-05-25'
   contact:
     name: Chess.com Support
@@ -248,6 +237,33 @@ paths:
                       type: string
 components:
   schemas:
+    GamePlayer:
+      type: object
+      properties:
+        rating:
+          type: integer
+        result:
+          type: string
+          enum:
+          - win
+          - checkmated
+          - agreed
+          - repetition
+          - timeout
+          - resigned
+          - stalemate
+          - lose
+          - insufficient
+          - 50move
+          - abandoned
+          - kingofthehill
+          - threecheck
+          - bughousepartnerlose
+        '@id':
+          type: string
+          format: uri
+        username:
+          type: string
     Game:
       type: object
       properties:
@@ -284,6 +300,53 @@ components:
           $ref: '#/components/schemas/GamePlayer'
         black:
           $ref: '#/components/schemas/GamePlayer'
+    Error:
+      type: object
+      properties:
+        code:
+          type: integer
+        message:
+          type: string
+    RatingProfile:
+      type: object
+      properties:
+        last:
+          type: object
+          properties:
+            rating:
+              type: integer
+            date:
+              type: integer
+            rd:
+              type: integer
+        best:
+          type: object
+        record:
+          type: object
+          properties:
+            win:
+              type: integer
+            loss:
+              type: integer
+            draw:
+              type: integer
+    PlayerStats:
+      type: object
+      properties:
+        chess_daily:
+          $ref: '#/components/schemas/RatingProfile'
+        chess_rapid:
+          $ref: '#/components/schemas/RatingProfile'
+        chess_blitz:
+          $ref: '#/components/schemas/RatingProfile'
+        chess_bullet:
+          $ref: '#/components/schemas/RatingProfile'
+        tactics:
+          type: object
+        puzzle_rush:
+          type: object
+        fide:
+          type: integer
     Player:
       type: object
       properties:
@@ -325,80 +388,6 @@ components:
           format: uri
         fide:
           type: integer
-    PlayerStats:
-      type: object
-      properties:
-        chess_daily:
-          $ref: '#/components/schemas/RatingProfile'
-        chess_rapid:
-          $ref: '#/components/schemas/RatingProfile'
-        chess_blitz:
-          $ref: '#/components/schemas/RatingProfile'
-        chess_bullet:
-          $ref: '#/components/schemas/RatingProfile'
-        tactics:
-          type: object
-        puzzle_rush:
-          type: object
-        fide:
-          type: integer
-    GamePlayer:
-      type: object
-      properties:
-        rating:
-          type: integer
-        result:
-          type: string
-          enum:
-          - win
-          - checkmated
-          - agreed
-          - repetition
-          - timeout
-          - resigned
-          - stalemate
-          - lose
-          - insufficient
-          - 50move
-          - abandoned
-          - kingofthehill
-          - threecheck
-          - bughousepartnerlose
-        '@id':
-          type: string
-          format: uri
-        username:
-          type: string
-    Error:
-      type: object
-      properties:
-        code:
-          type: integer
-        message:
-          type: string
-    RatingProfile:
-      type: object
-      properties:
-        last:
-          type: object
-          properties:
-            rating:
-              type: integer
-            date:
-              type: integer
-            rd:
-              type: integer
-        best:
-          type: object
-        record:
-          type: object
-          properties:
-            win:
-              type: integer
-            loss:
-              type: integer
-            draw:
-              type: integer
   parameters:
     Month:
       name: month
@@ -408,13 +397,6 @@ components:
       schema:
         type: string
         pattern: ^(0[1-9]|1[0-2])$
-    Username:
-      name: username
-      in: path
-      required: true
-      description: All-lowercase Chess.com username
-      schema:
-        type: string
     Year:
       name: year
       in: path
@@ -423,6 +405,13 @@ components:
       schema:
         type: string
         pattern: ^[0-9]{4}$
+    Username:
+      name: username
+      in: path
+      required: true
+      description: All-lowercase Chess.com username
+      schema:
+        type: string
     Iso:
       name: iso
       in: path
@@ -433,14 +422,14 @@ components:
         minLength: 2
         maxLength: 2
   responses:
-    RateLimited:
-      description: Too Many Requests — parallel-request throttling
+    NotFound:
+      description: Resource not found
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
-    NotFound:
-      description: Resource not found
+    RateLimited:
+      description: Too Many Requests — parallel-request throttling
       content:
         application/json:
           schema:
