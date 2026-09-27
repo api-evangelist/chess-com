@@ -236,34 +236,63 @@ paths:
                     items:
                       type: string
 components:
+  parameters:
+    Month:
+      name: month
+      in: path
+      required: true
+      description: Two-digit month
+      schema:
+        type: string
+        pattern: ^(0[1-9]|1[0-2])$
+    Iso:
+      name: iso
+      in: path
+      required: true
+      description: ISO 3166-1 alpha-2 country code (e.g. US, RU, IN)
+      schema:
+        type: string
+        minLength: 2
+        maxLength: 2
+    Year:
+      name: year
+      in: path
+      required: true
+      description: Four-digit year
+      schema:
+        type: string
+        pattern: ^[0-9]{4}$
+    Username:
+      name: username
+      in: path
+      required: true
+      description: All-lowercase Chess.com username
+      schema:
+        type: string
   schemas:
-    GamePlayer:
+    RatingProfile:
       type: object
       properties:
-        rating:
-          type: integer
-        result:
-          type: string
-          enum:
-          - win
-          - checkmated
-          - agreed
-          - repetition
-          - timeout
-          - resigned
-          - stalemate
-          - lose
-          - insufficient
-          - 50move
-          - abandoned
-          - kingofthehill
-          - threecheck
-          - bughousepartnerlose
-        '@id':
-          type: string
-          format: uri
-        username:
-          type: string
+        last:
+          type: object
+          properties:
+            rating:
+              type: integer
+            date:
+              type: integer
+            rd:
+              type: integer
+        best:
+          type: object
+        record:
+          type: object
+          properties:
+            win:
+              type: integer
+            loss:
+              type: integer
+            draw:
+              type: integer
     Game:
       type: object
       properties:
@@ -300,36 +329,33 @@ components:
           $ref: '#/components/schemas/GamePlayer'
         black:
           $ref: '#/components/schemas/GamePlayer'
-    Error:
+    GamePlayer:
       type: object
       properties:
-        code:
+        rating:
           type: integer
-        message:
+        result:
           type: string
-    RatingProfile:
-      type: object
-      properties:
-        last:
-          type: object
-          properties:
-            rating:
-              type: integer
-            date:
-              type: integer
-            rd:
-              type: integer
-        best:
-          type: object
-        record:
-          type: object
-          properties:
-            win:
-              type: integer
-            loss:
-              type: integer
-            draw:
-              type: integer
+          enum:
+          - win
+          - checkmated
+          - agreed
+          - repetition
+          - timeout
+          - resigned
+          - stalemate
+          - lose
+          - insufficient
+          - 50move
+          - abandoned
+          - kingofthehill
+          - threecheck
+          - bughousepartnerlose
+        '@id':
+          type: string
+          format: uri
+        username:
+          type: string
     PlayerStats:
       type: object
       properties:
@@ -347,6 +373,13 @@ components:
           type: object
         fide:
           type: integer
+    Error:
+      type: object
+      properties:
+        code:
+          type: integer
+        message:
+          type: string
     Player:
       type: object
       properties:
@@ -388,39 +421,6 @@ components:
           format: uri
         fide:
           type: integer
-  parameters:
-    Month:
-      name: month
-      in: path
-      required: true
-      description: Two-digit month
-      schema:
-        type: string
-        pattern: ^(0[1-9]|1[0-2])$
-    Year:
-      name: year
-      in: path
-      required: true
-      description: Four-digit year
-      schema:
-        type: string
-        pattern: ^[0-9]{4}$
-    Username:
-      name: username
-      in: path
-      required: true
-      description: All-lowercase Chess.com username
-      schema:
-        type: string
-    Iso:
-      name: iso
-      in: path
-      required: true
-      description: ISO 3166-1 alpha-2 country code (e.g. US, RU, IN)
-      schema:
-        type: string
-        minLength: 2
-        maxLength: 2
   responses:
     NotFound:
       description: Resource not found

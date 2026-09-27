@@ -98,17 +98,17 @@ paths:
                 type: object
 components:
   parameters:
-    Username:
-      name: username
-      in: path
-      required: true
-      description: All-lowercase Chess.com username
-      schema:
-        type: string
     TournamentUrlId:
       name: url-ID
       in: path
       required: true
       description: Tournament URL-ID slug from chess.com/tournament/{url-ID}
+      schema:
+        type: string
+    Username:
+      name: username
+      in: path
+      required: true
+      description: All-lowercase Chess.com username
       schema:
         type: string
