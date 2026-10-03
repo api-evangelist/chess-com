@@ -236,15 +236,28 @@ paths:
                     items:
                       type: string
 components:
+  responses:
+    NotFound:
+      description: Resource not found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    RateLimited:
+      description: Too Many Requests — parallel-request throttling
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
   parameters:
-    Month:
-      name: month
+    Year:
+      name: year
       in: path
       required: true
-      description: Two-digit month
+      description: Four-digit year
       schema:
         type: string
-        pattern: ^(0[1-9]|1[0-2])$
+        pattern: ^[0-9]{4}$
     Iso:
       name: iso
       in: path
@@ -254,14 +267,6 @@ components:
         type: string
         minLength: 2
         maxLength: 2
-    Year:
-      name: year
-      in: path
-      required: true
-      description: Four-digit year
-      schema:
-        type: string
-        pattern: ^[0-9]{4}$
     Username:
       name: username
       in: path
@@ -269,117 +274,15 @@ components:
       description: All-lowercase Chess.com username
       schema:
         type: string
+    Month:
+      name: month
+      in: path
+      required: true
+      description: Two-digit month
+      schema:
+        type: string
+        pattern: ^(0[1-9]|1[0-2])$
   schemas:
-    RatingProfile:
-      type: object
-      properties:
-        last:
-          type: object
-          properties:
-            rating:
-              type: integer
-            date:
-              type: integer
-            rd:
-              type: integer
-        best:
-          type: object
-        record:
-          type: object
-          properties:
-            win:
-              type: integer
-            loss:
-              type: integer
-            draw:
-              type: integer
-    Game:
-      type: object
-      properties:
-        url:
-          type: string
-          format: uri
-        pgn:
-          type: string
-        time_control:
-          type: string
-        end_time:
-          type: integer
-        rated:
-          type: boolean
-        fen:
-          type: string
-        time_class:
-          type: string
-          enum:
-          - daily
-          - rapid
-          - blitz
-          - bullet
-        rules:
-          type: string
-          enum:
-          - chess
-          - chess960
-          - bughouse
-          - kingofthehill
-          - threecheck
-          - crazyhouse
-        white:
-          $ref: '#/components/schemas/GamePlayer'
-        black:
-          $ref: '#/components/schemas/GamePlayer'
-    GamePlayer:
-      type: object
-      properties:
-        rating:
-          type: integer
-        result:
-          type: string
-          enum:
-          - win
-          - checkmated
-          - agreed
-          - repetition
-          - timeout
-          - resigned
-          - stalemate
-          - lose
-          - insufficient
-          - 50move
-          - abandoned
-          - kingofthehill
-          - threecheck
-          - bughousepartnerlose
-        '@id':
-          type: string
-          format: uri
-        username:
-          type: string
-    PlayerStats:
-      type: object
-      properties:
-        chess_daily:
-          $ref: '#/components/schemas/RatingProfile'
-        chess_rapid:
-          $ref: '#/components/schemas/RatingProfile'
-        chess_blitz:
-          $ref: '#/components/schemas/RatingProfile'
-        chess_bullet:
-          $ref: '#/components/schemas/RatingProfile'
-        tactics:
-          type: object
-        puzzle_rush:
-          type: object
-        fide:
-          type: integer
-    Error:
-      type: object
-      properties:
-        code:
-          type: integer
-        message:
-          type: string
     Player:
       type: object
       properties:
@@ -421,16 +324,113 @@ components:
           format: uri
         fide:
           type: integer
-  responses:
-    NotFound:
-      description: Resource not found
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    RateLimited:
-      description: Too Many Requests — parallel-request throttling
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
+    Game:
+      type: object
+      properties:
+        url:
+          type: string
+          format: uri
+        pgn:
+          type: string
+        time_control:
+          type: string
+        end_time:
+          type: integer
+        rated:
+          type: boolean
+        fen:
+          type: string
+        time_class:
+          type: string
+          enum:
+          - daily
+          - rapid
+          - blitz
+          - bullet
+        rules:
+          type: string
+          enum:
+          - chess
+          - chess960
+          - bughouse
+          - kingofthehill
+          - threecheck
+          - crazyhouse
+        white:
+          $ref: '#/components/schemas/GamePlayer'
+        black:
+          $ref: '#/components/schemas/GamePlayer'
+    PlayerStats:
+      type: object
+      properties:
+        chess_daily:
+          $ref: '#/components/schemas/RatingProfile'
+        chess_rapid:
+          $ref: '#/components/schemas/RatingProfile'
+        chess_blitz:
+          $ref: '#/components/schemas/RatingProfile'
+        chess_bullet:
+          $ref: '#/components/schemas/RatingProfile'
+        tactics:
+          type: object
+        puzzle_rush:
+          type: object
+        fide:
+          type: integer
+    Error:
+      type: object
+      properties:
+        code:
+          type: integer
+        message:
+          type: string
+    GamePlayer:
+      type: object
+      properties:
+        rating:
+          type: integer
+        result:
+          type: string
+          enum:
+          - win
+          - checkmated
+          - agreed
+          - repetition
+          - timeout
+          - resigned
+          - stalemate
+          - lose
+          - insufficient
+          - 50move
+          - abandoned
+          - kingofthehill
+          - threecheck
+          - bughousepartnerlose
+        '@id':
+          type: string
+          format: uri
+        username:
+          type: string
+    RatingProfile:
+      type: object
+      properties:
+        last:
+          type: object
+          properties:
+            rating:
+              type: integer
+            date:
+              type: integer
+            rd:
+              type: integer
+        best:
+          type: object
+        record:
+          type: object
+          properties:
+            win:
+              type: integer
+            loss:
+              type: integer
+            draw:
+              type: integer

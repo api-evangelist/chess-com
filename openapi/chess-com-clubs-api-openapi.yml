@@ -153,13 +153,6 @@ components:
         description:
           type: string
   parameters:
-    ClubUrlId:
-      name: url-ID
-      in: path
-      required: true
-      description: Club URL-ID slug from chess.com/club/{url-ID}
-      schema:
-        type: string
     Iso:
       name: iso
       in: path
@@ -174,5 +167,12 @@ components:
       in: path
       required: true
       description: All-lowercase Chess.com username
+      schema:
+        type: string
+    ClubUrlId:
+      name: url-ID
+      in: path
+      required: true
+      description: Club URL-ID slug from chess.com/club/{url-ID}
       schema:
         type: string

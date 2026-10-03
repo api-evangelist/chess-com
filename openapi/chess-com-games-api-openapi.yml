@@ -118,14 +118,6 @@ paths:
                 type: string
 components:
   parameters:
-    Month:
-      name: month
-      in: path
-      required: true
-      description: Two-digit month
-      schema:
-        type: string
-        pattern: ^(0[1-9]|1[0-2])$
     Year:
       name: year
       in: path
@@ -141,6 +133,14 @@ components:
       description: All-lowercase Chess.com username
       schema:
         type: string
+    Month:
+      name: month
+      in: path
+      required: true
+      description: Two-digit month
+      schema:
+        type: string
+        pattern: ^(0[1-9]|1[0-2])$
   schemas:
     Game:
       type: object
