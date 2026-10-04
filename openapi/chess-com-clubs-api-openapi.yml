@@ -116,13 +116,6 @@ paths:
                       type: string
 components:
   schemas:
-    ClubMember:
-      type: object
-      properties:
-        username:
-          type: string
-        joined:
-          type: integer
     Club:
       type: object
       properties:
@@ -152,7 +145,21 @@ components:
           type: string
         description:
           type: string
+    ClubMember:
+      type: object
+      properties:
+        username:
+          type: string
+        joined:
+          type: integer
   parameters:
+    Username:
+      name: username
+      in: path
+      required: true
+      description: All-lowercase Chess.com username
+      schema:
+        type: string
     Iso:
       name: iso
       in: path
@@ -162,13 +169,6 @@ components:
         type: string
         minLength: 2
         maxLength: 2
-    Username:
-      name: username
-      in: path
-      required: true
-      description: All-lowercase Chess.com username
-      schema:
-        type: string
     ClubUrlId:
       name: url-ID
       in: path

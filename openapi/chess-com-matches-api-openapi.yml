@@ -115,13 +115,6 @@ paths:
                 type: object
 components:
   parameters:
-    Board:
-      name: board
-      in: path
-      required: true
-      description: Board number within the team match
-      schema:
-        type: integer
     ClubUrlId:
       name: url-ID
       in: path
@@ -129,13 +122,6 @@ components:
       description: Club URL-ID slug from chess.com/club/{url-ID}
       schema:
         type: string
-    MatchId:
-      name: ID
-      in: path
-      required: true
-      description: Numeric team-match ID
-      schema:
-        type: integer
     Username:
       name: username
       in: path
@@ -143,3 +129,17 @@ components:
       description: All-lowercase Chess.com username
       schema:
         type: string
+    Board:
+      name: board
+      in: path
+      required: true
+      description: Board number within the team match
+      schema:
+        type: integer
+    MatchId:
+      name: ID
+      in: path
+      required: true
+      description: Numeric team-match ID
+      schema:
+        type: integer

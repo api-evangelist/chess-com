@@ -142,6 +142,33 @@ components:
         type: string
         pattern: ^(0[1-9]|1[0-2])$
   schemas:
+    GamePlayer:
+      type: object
+      properties:
+        rating:
+          type: integer
+        result:
+          type: string
+          enum:
+          - win
+          - checkmated
+          - agreed
+          - repetition
+          - timeout
+          - resigned
+          - stalemate
+          - lose
+          - insufficient
+          - 50move
+          - abandoned
+          - kingofthehill
+          - threecheck
+          - bughousepartnerlose
+        '@id':
+          type: string
+          format: uri
+        username:
+          type: string
     Game:
       type: object
       properties:
@@ -178,30 +205,3 @@ components:
           $ref: '#/components/schemas/GamePlayer'
         black:
           $ref: '#/components/schemas/GamePlayer'
-    GamePlayer:
-      type: object
-      properties:
-        rating:
-          type: integer
-        result:
-          type: string
-          enum:
-          - win
-          - checkmated
-          - agreed
-          - repetition
-          - timeout
-          - resigned
-          - stalemate
-          - lose
-          - insufficient
-          - 50move
-          - abandoned
-          - kingofthehill
-          - threecheck
-          - bughousepartnerlose
-        '@id':
-          type: string
-          format: uri
-        username:
-          type: string
