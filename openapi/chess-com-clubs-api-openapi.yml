@@ -115,6 +115,30 @@ paths:
                     items:
                       type: string
 components:
+  parameters:
+    ClubUrlId:
+      name: url-ID
+      in: path
+      required: true
+      description: Club URL-ID slug from chess.com/club/{url-ID}
+      schema:
+        type: string
+    Iso:
+      name: iso
+      in: path
+      required: true
+      description: ISO 3166-1 alpha-2 country code (e.g. US, RU, IN)
+      schema:
+        type: string
+        minLength: 2
+        maxLength: 2
+    Username:
+      name: username
+      in: path
+      required: true
+      description: All-lowercase Chess.com username
+      schema:
+        type: string
   schemas:
     Club:
       type: object
@@ -152,27 +176,3 @@ components:
           type: string
         joined:
           type: integer
-  parameters:
-    Username:
-      name: username
-      in: path
-      required: true
-      description: All-lowercase Chess.com username
-      schema:
-        type: string
-    Iso:
-      name: iso
-      in: path
-      required: true
-      description: ISO 3166-1 alpha-2 country code (e.g. US, RU, IN)
-      schema:
-        type: string
-        minLength: 2
-        maxLength: 2
-    ClubUrlId:
-      name: url-ID
-      in: path
-      required: true
-      description: Club URL-ID slug from chess.com/club/{url-ID}
-      schema:
-        type: string

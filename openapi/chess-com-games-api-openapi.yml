@@ -118,21 +118,6 @@ paths:
                 type: string
 components:
   parameters:
-    Year:
-      name: year
-      in: path
-      required: true
-      description: Four-digit year
-      schema:
-        type: string
-        pattern: ^[0-9]{4}$
-    Username:
-      name: username
-      in: path
-      required: true
-      description: All-lowercase Chess.com username
-      schema:
-        type: string
     Month:
       name: month
       in: path
@@ -141,34 +126,22 @@ components:
       schema:
         type: string
         pattern: ^(0[1-9]|1[0-2])$
+    Username:
+      name: username
+      in: path
+      required: true
+      description: All-lowercase Chess.com username
+      schema:
+        type: string
+    Year:
+      name: year
+      in: path
+      required: true
+      description: Four-digit year
+      schema:
+        type: string
+        pattern: ^[0-9]{4}$
   schemas:
-    GamePlayer:
-      type: object
-      properties:
-        rating:
-          type: integer
-        result:
-          type: string
-          enum:
-          - win
-          - checkmated
-          - agreed
-          - repetition
-          - timeout
-          - resigned
-          - stalemate
-          - lose
-          - insufficient
-          - 50move
-          - abandoned
-          - kingofthehill
-          - threecheck
-          - bughousepartnerlose
-        '@id':
-          type: string
-          format: uri
-        username:
-          type: string
     Game:
       type: object
       properties:
@@ -205,3 +178,30 @@ components:
           $ref: '#/components/schemas/GamePlayer'
         black:
           $ref: '#/components/schemas/GamePlayer'
+    GamePlayer:
+      type: object
+      properties:
+        rating:
+          type: integer
+        result:
+          type: string
+          enum:
+          - win
+          - checkmated
+          - agreed
+          - repetition
+          - timeout
+          - resigned
+          - stalemate
+          - lose
+          - insufficient
+          - 50move
+          - abandoned
+          - kingofthehill
+          - threecheck
+          - bughousepartnerlose
+        '@id':
+          type: string
+          format: uri
+        username:
+          type: string
