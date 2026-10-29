@@ -1,4 +1,4 @@
-# Chess.com (chess-com)
+# Chess.com
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,86 +64,183 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/chess-com/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/chess-com/refs/heads/main/apis.yml)
+Chess.com is an online chess platform. Its public data API exposes player profiles and game archives, clubs, team matches, tournaments, leaderboards, titled players and country data.
 
-## Scope
+**Areas:** Chess · Gaming · Online Games · Sports · Community · Education
 
-- **Access:** 3rd-Party
+## Chess.com on APIs.io
 
-## Tags
+Everything profiled for Chess.com is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/chess-com/](https://apis.io/providers/chess-com/)** — or go straight to one of the APIs or properties below.
 
-- Chess
-- Gaming
-- Online Games
-- Sports
-- Community
-- Education
+### APIs (10)
 
-## Timestamps
+- [Chess.com Clubs API](https://apis.io/apis/chess-com/chess-com-clubs-api/) — Club profiles, members, and team matches
+- [Chess.com Countries API](https://apis.io/apis/chess-com/chess-com-countries-api/) — Country profiles, players, and clubs
+- [Chess.com Games API](https://apis.io/apis/chess-com/chess-com-games-api/) — Daily, live, and archived games (JSON and PGN)
+- [Chess.com Leaderboards API](https://apis.io/apis/chess-com/chess-com-leaderboards-api/) — Live leaderboards across time controls and variants
+- [Chess.com Matches API](https://apis.io/apis/chess-com/chess-com-matches-api/) — Daily and live team match details
+- [Chess.com Players API](https://apis.io/apis/chess-com/chess-com-players-api/) — Profiles, stats, online state, archives, clubs, matches, tournaments
+- [Chess.com Puzzles API](https://apis.io/apis/chess-com/chess-com-puzzles-api/) — Daily and random puzzles
+- [Chess.com Streamers API](https://apis.io/apis/chess-com/chess-com-streamers-api/) — Chess.com streamers
+- [Chess.com Titled Players API](https://apis.io/apis/chess-com/chess-com-titled-players-api/) — Lists of titled players by FIDE title
+- [Chess.com Tournaments API](https://apis.io/apis/chess-com/chess-com-tournaments-api/) — Tournament details, rounds, and groups
 
-- **Created:** 2026-05-25
-- **Modified:** 2026-05-25
+### Published properties
 
-## APIs
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-### Chess.com Published Data API
+#### Agentic access (1)
 
-Public, unauthenticated REST API exposing player profiles, monthly game archives (with PGN download), club rosters, daily and live team matches, Swiss/round-robin tournaments, titled players, country rosters, the daily puzzle, the streamer list, and live leaderboards across daily, blitz, bullet, rapid, tactics, lessons, and chess variants. JSON-LD response shape with ETag, Last-Modified, gzip, and JSONP support; data refreshes at most every 12-24 hours.
+Which operations an agent can call, which act, and which need a human in the loop.
 
-- **Human URL:** [https://www.chess.com/news/view/published-data-api](https://www.chess.com/news/view/published-data-api)
-- **Base URL:** `https://api.chess.com/pub/`
+- [Chess Com Agentic Access](https://apis.io/agentic-access/chess-com/chess-com-agentic-access/)
 
-#### Tags
+#### JSON Schema (3)
 
-- Chess
-- Gaming
-- Players
-- Public Data
+The data models the API reads and writes.
 
-#### Properties
+- [Chess.com Club](https://apis.io/schemas/chess-com/chess-com-club/)
+- [Chess.com Game](https://apis.io/schemas/chess-com/chess-com-game/)
+- [Chess.com Player](https://apis.io/schemas/chess-com/chess-com-player/)
 
+#### JSON Structure (1)
+
+Data models expressed in JSON Structure.
+
+- [Chess Com Player Structure](https://apis.io/json-structure/chess-com/chess-com-player-structure/)
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Chess Com Context](https://apis.io/jsonld/chess-com/chess-com-context/)
+
+#### Vocabulary (1)
+
+The provider's domain terms, defined.
+
+- [Chess Com Vocabulary](https://apis.io/vocabularies/chess-com/chess-com-vocabulary/)
+
+#### Examples (3)
+
+Example requests and responses.
+
+- [Chess Com Get Daily Puzzle Example](https://apis.io/examples/chess-com/chess-com-get-daily-puzzle-example/)
+- [Chess Com Get Monthly Archive Example](https://apis.io/examples/chess-com/chess-com-get-monthly-archive-example/)
+- [Chess Com Get Player Profile Example](https://apis.io/examples/chess-com/chess-com-get-player-profile-example/)
+
+#### Collections (11)
+
+Postman and Open Collection request collections.
+
+- [Chess.com Published Data Clubs API](https://apis.io/collections/chess-com/open-chess-com-clubs-api/)
+- [Chess.com Published Data Clubs Countries API](https://apis.io/collections/chess-com/open-chess-com-countries-api/)
+- [Chess.com Published Data Clubs Games API](https://apis.io/collections/chess-com/open-chess-com-games-api/)
+- [Chess.com Published Data Clubs Leaderboards API](https://apis.io/collections/chess-com/open-chess-com-leaderboards-api/)
+- [Chess.com Published Data Clubs Matches API](https://apis.io/collections/chess-com/open-chess-com-matches-api/)
+- [Chess.com Published Data Clubs Players API](https://apis.io/collections/chess-com/open-chess-com-players-api/)
+- [Chess.com Published Data API](https://apis.io/collections/chess-com/open-chess-com-published-data-api/)
+- [Chess.com Published Data Clubs Puzzles API](https://apis.io/collections/chess-com/open-chess-com-puzzles-api/)
+- [Chess.com Published Data Clubs Streamers API](https://apis.io/collections/chess-com/open-chess-com-streamers-api/)
+- [Chess.com Published Data Clubs Titled Players API](https://apis.io/collections/chess-com/open-chess-com-titled-players-api/)
+- [Chess.com Published Data Clubs Tournaments API](https://apis.io/collections/chess-com/open-chess-com-tournaments-api/)
+
+#### Governance rules (2)
+
+Spectral rulesets for the provider's contracts.
+
+- [Chess.com — jsonschema rules](https://apis.io/rules/chess-com/chess-com-jsonschema-spectral-rules/)
+- [Chess.com API Rules](https://apis.io/rules/chess-com/chess-com-rules/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Chess Com Domain Security](https://apis.io/security/chess-com/chess-com-domain-security/)
+- [Chess Com Vulnerability Disclosure](https://apis.io/security/chess-com/chess-com-vulnerability-disclosure/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Chess Com Plans Pricing](https://apis.io/plans/chess-com/chess-com-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Chess Com Rate Limits](https://apis.io/rate-limits/chess-com/chess-com-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Chess Com Finops](https://apis.io/finops/chess-com/chess-com-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.chess.com/)
 - [Documentation](https://www.chess.com/news/view/published-data-api)
-- [Documentation](https://support.chess.com/en/articles/9650547-published-data-api)
-- [OpenAPI](openapi/chess-com-published-data-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/chess-com-published-data-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/chess-com-published-data-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [JSON Schema](json-schema/chess-com-player-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/chess-com-game-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/chess-com-club-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON-LD](json-ld/chess-com-context.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
-
-## Common Properties
-
-- [Portal](https://www.chess.com)
-- [Documentation](https://www.chess.com/news/view/published-data-api)
-- [Documentation](https://support.chess.com/en/articles/9650547-published-data-api)
 - [Pricing](https://www.chess.com/membership)
-- [Privacy Policy](https://www.chess.com/legal/privacy)
-- [Terms of Service](https://www.chess.com/legal)
-- [About Us](https://www.chess.com/about)
-- [Blog](https://www.chess.com/news)
-- [Blog](https://www.chess.com/article)
-- [Forum](https://www.chess.com/forum)
-- [LinkedIn](https://www.linkedin.com/company/chess-com)
-- [Twitter](https://twitter.com/chesscom)
-- [YouTube](https://www.youtube.com/chess)
-- [Twitch](https://www.twitch.tv/chess)
-- [GitHub Organization](https://github.com/chess)
 - [Support](https://www.chess.com/coaches)
-- [Documentation](https://www.chess.com/streamers)
-- [Documentation](https://www.chess.com/leaderboard)
-- [SDK](https://github.com/andyruwruw/chess-web-api)
-- [SDK](https://www.npmjs.com/package/chess-web-api)
-- [SDK](https://github.com/sarartur/chess.com)
-- [SDK](https://github.com/Stupidoodle/chess-com-api)
-- [SDK](https://github.com/sornerol/chess-com-pubapi-java-wrapper)
-- [SDK](https://github.com/chrismaltais/chess-pub-api-client)
-- [Plans](plans/chess-com-plans-pricing.yml)
-- [Rate Limits](rate-limits/chess-com-rate-limits.yml)
-- [Fin Ops](finops/chess-com-finops.yml)
-- [Vocabulary](vocabulary/chess-com-vocabulary.yml)
+- [Blog](https://www.chess.com/news)
+- [Terms of service](https://www.chess.com/legal)
+- [Privacy policy](https://www.chess.com/legal/privacy)
+- [GitHub](https://github.com/chess)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** info@apievangelist.com
+**Kin Score 41.1** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 57.1 |
+| Contract quality | 50.7 |
+| Contract governance | 27.3 |
+| Operational transparency | 15.8 |
+| Developer ergonomics | 42.9 |
+| Access clarity | 39.5 |
+
+**Agent readiness 19.8** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | na |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | na |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | na |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 24.5** — Education & Research
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/chess-com/](https://apis.io/providers/chess-com/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Chess.com: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/chess-com/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
